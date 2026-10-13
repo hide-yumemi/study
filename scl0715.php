@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="7/17(金)の職業訓練授業ノートです。各種プログラミング言語の特徴、インタプリタとコンパイラ方式の違い、コンパイルの7ステップについてまとめています。">
+    <title>プロイング言語の実行方式と基礎的なデータ構造・制御構造 | 職業訓練及び自主学習</title>
+    <!-- 共通のベースCSSを読み込み -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- このページを見やすくするための専用埋め込みスタイル -->
+    <style>
+        .note-section {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+        .note-title {
+            color: #1e3a8a;
+            font-size: 18px;
+            font-weight: bold;
+            border-left: 5px solid #ff8c00; /* オレンジのアクセント縦線 */
+            padding-left: 12px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .note-section p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .note-section p:last-child {
+            margin-bottom: 0;
+        }
+        .note-section ul, 
+        .note-section ol {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+        .note-section li {
+            font-size: 14.5px;
+            color: #475569;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .note-section li strong {
+            color: #1e3a8a;
+        }
+        code {
+            font-family: Consolas, Monaco, monospace;
+            background-color: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .sub-heading {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .info-box {
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid #64748b;
+        }
+        .flow-text {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+            text-align: center;
+            margin: 15px 0;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 共通ヘッダー -->
+    <?php include 'header.php'; ?>
+
+    <!-- メインレイアウト（共通CSSの2カラム構造） -->
+    <div class="container">
+        <main class="main-content">
+            <h2>7/17(金) 職業訓練授業ノート</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 35px;">代表的なプログラミング言語の特徴、プログラムを実行するまでの仕組み（ビルド工程）の備忘録</p>
+
+            <!-- セクション1 -->
+            <div class="note-section">
+                <h3 class="note-title">代表的なプログラミング言語とその特徴</h3>
+                <p>IT分野で活用される主要なプログラム言語の仕組みと歴史的な背景です。</p>
+                
+                <ul>
+                    <li><strong>C言語：</strong> OSや組み込みアプリなど広範囲で利用される<strong>コンパイラ言語</strong>。元は「UNIX」というOSの移植性を高める目的で作られたため、ハードウェアに近い低級なレベルの記述までこなせる非常に柔軟で強力な言語。</li>
+                    <li><strong>COBOL（コボル）：</strong> 事務処理用に古くから使用されている言語。現在は新規開発で使うことはほぼ無いが、過去の大型汎用コンピュータで構築されたシステム（医療系、金融系など）の維持・改修業務で今なお根強く利用される。</li>
+                    <li><strong>Java（ジャバ）：</strong> 大規模ネットワークシステムやWeb開発で多く使われる<strong>コンパイラ言語</strong>。オブジェクト指向が前提となっており、<strong>「特定機種に依存しない（Write once, run anywhere）」</strong>を目標としている。Java仮想マシン（JVM）というクッションを挟むことでOSを選ばず動作する。</li>
+                    <li><strong>BASIC（ベーシック）：</strong> 初心者向けに作られた古い言語。書いたその場で1行ずつ実行し確かめられる<strong>インタプリタ方式</strong>が主流。未完成のコードでも途中まで実行して動作確認しながら開発できる。</li>
+                    <li><strong>JavaScript：</strong> 動的なWebコンテンツ作成に必須の<strong>インタプリタ方式（スクリプト言語）</strong>。入力フォームのチェックや動的な表示切り替えを「クライアント側（ブラウザ側）」で高速に処理する。名前は似ているが<strong>Javaとは一切の関連がない</strong>。</li>
+                    <li><strong>Python（パイソン）：</strong> <strong>人工知能（AI）技術や機械学習・ディープラーニング</strong>の開発で圧倒的なシェアを誇る言語。専門的なライブラリが非常に充実しており、コードの可読性が高く初心者の学習用としても人気がある。</li>
+                </ul>
+            </div>
+
+            <!-- セクション2 -->
+            <div class="note-section">
+                <h3 class="note-title">プログラムの実行方式と関連用語</h3>
+                <p>プログラムがコンピュータに命令として伝わるまでの方式と裏方プログラムの解説です。</p>
+                
+                <ul>
+                    <li><strong>インタプリタ方式：</strong> 人間が書いたソースコードを事前に翻訳せず、実行時に1行ずつ機械語に変換しながらそのまますぐに実行していく方式。</li>
+                    <li><strong>コンパイル：</strong> 人間が書いたソースコードを、コンピュータが直接理解できる「0と1の機械語（目的プログラム）」にあらかじめ一括変換すること。</li>
+                </ul>
+
+                <div class="sub-heading">■ コンパイラ方式における実行までの流れ</div>
+                <p>プログラムを実行可能な状態にするまでには、コンパイラ以外に「リンカ」と「ローダ」という2つの裏方システムが連動します。</p>
+                
+                <div class="flow-text">
+                    ソースコード ➔ [ コンパイラ ] ➔ 目的プログラム ➔ [ リンカ ] ➔ 実行ファイル ➔ [ ローダ ] ➔ 実行（メモリへ読込）
+                </div>
+
+                <ul>
+                    <li><strong>リンカ（連携編集プログラム）：</strong> コンパイルによってできた複数の目的プログラムや、標準ライブラリのプログラムを1つに結合（リンク）させて、1つの「実行ファイル（.exeなど）」を作るプログラム。</li>
+                    <li><strong>ローダ（起動プログラム）：</strong> 完成した実行ファイルを、実際に動かす時に主記憶装置（メインメモリ）へと読み込んで起動させるプログラム。</li>
+                </ul>
+
+                <div class="sub-heading">■ リンク（結合）の3つの手法</div>
+                <ul>
+                    <li><strong>静的リンク（スタティックリンク）：</strong> プログラムの作成（ビルド）時に、あらかじめライブラリを一体化して完全に埋め込んでおく手法。</li>
+                    <li><strong>動的リンク（ダイナミックリンク）：</strong> プログラムのロード時（起動する瞬間）に、必要な外部ライブラリを結合させる手法。</li>
+                    <li><strong>ランタイム・リンク：</strong> プログラムの実行中、その特定の機能や関数が必要になった「まさにその瞬間」に初めてリンクする方式。</li>
+                </ul>
+            </div>
+
+            <!-- セクション3 -->
+            <div class="note-section">
+                <h3 class="note-title">コンパイルの詳細な7ステップ</h3>
+                <p>コンパイラがソースコードを一括変換する内部では、以下の7つの工程が順番に実行されています。</p>
+                
+                <ol>
+                    <li><strong>ソースコード：</strong> 人間が記述した元々のプログラム。</li>
+                    <li><strong>字句解析：</strong> コードを最小の単位（トークン：単語や記号）に分解し、不正な文字がないか調べる。</li>
+                    <li><strong>構文解析：</strong> 言語の文法規則に従い、プログラムの構造を「構文木（AST）」として表現する。</li>
+                    <li><strong>意味解析：</strong> 変数の型チェックなど、宣言と使い方の矛盾やエラーがないかを厳密に検査する。</li>
+                    <li><strong>中間コード生成：</strong> 特定の環境（CPU）に依存しない、最適化しやすい中間のコードを一度作成する。</li>
+                    <li><strong>最適化：</strong> 無駄な処理の削除や処理順の並び替えを行い、実行速度や効率を極限まで向上させる。</li>
+                    <li><strong>コード生成：</strong> 動かす環境（CPU）に合わせた「目的プログラム（オブジェクトコード）」を最終出力する。</li>
+                </ol>
+            </div>
+            <!-- セクション4 -->
+            <div class="note-section">
+                <h3 class="note-title">構造化プログラミング（3つの制御構造）</h3>
+                <p>基本情報技術者試験のアルゴリズムでも必須となる概念です 。原則として、どんなに複雑なプログラムも以下の「3つの基本制御構造」の組み合わせだけで構築されます 。</p>
+                
+                <ul>
+                    <li><strong>1. 順次構造：</strong> 条件による分岐などをせず、上から下へ一本道で順番に処理を行う構造 。</li>
+                    <li><strong>2. 選択構造（分岐）：</strong> <code>if文</code> や <code>switch文</code> のように、何かしらの条件によってお別れ道（分岐）を作って処理を行う構造 。</li>
+                    <li><strong>3. 反復構造（ループ）：</strong> ある一定の条件が満たされている間、同じ処理を何度も回り道（ループ）して繰り返す構造 。</li>
+                </ul>
+
+                <div class="sub-heading">■ 擬似言語における反復構造（ループ）の重要なルール</div>
+                <p>アルゴリズム問題（擬似言語）では、ループの条件をチェックする「タイミング」によって、実行回数に決定的な違いが生まれます 。</p>
+                
+                <ul>
+                    <li><strong>前判定ループ（ <code>while</code> / <code>for</code> ）：</strong> 処理を<strong>実行する前</strong>に条件をチェックする 。最初から条件を満たしていなければ、中の処理は「一度も実行されない（実行回数0回）」というケースがあり得ます 。</li>
+                    <li><strong>後判定ループ（ <code>do-while</code> ）：</strong> 処理を<strong>実行した後</strong>に条件をチェックする 。そのため、条件がどうであれ、最低でも「必ず1回は実行される」のが特徴です 。</li>
+                    <li><strong>回数指定ループ（ <code>for〜endfor</code> ）：</strong> 「10回繰り返す」など、あらかじめ指定した回数分だけきっちりループを繰り返す構造です 。</li>
+                </ul>
+            </div>
+
+            <!-- セクション5 -->
+            <div class="note-section">
+                <h3 class="note-title">データの持ち方（データ構造）</h3>
+                <p>プログラムがパソコンのメモリ上で、効率よくデータを管理・整理するための仕組みです 。</p>
+
+                <div class="sub-heading">① 配列（Array）</div>
+                <p>同じデータ型のデータを、メモリ上に<strong>隙間なく連続した領域</strong>に一列に並べて管理する構造です 。</p>
+                <ul>
+                    <li>データの場所を「添字（インデックス：0番目、1番目…）」で直接ピンポイント指定できるため、**データへのアクセスが極めて高速**というメリットがあります 。</li>
+                    <li>1列の「一次元配列」や、格子状の「二次元配列」などがあります 。ただし、後からデータのサイズ（部屋の数）を柔軟に増やしたり減らしたりしにくい点がデメリットです。</li>
+                </ul>
+
+                <div class="sub-heading">② リスト（線型リスト）</div>
+                <p>データ本体と一緒に、**「次のデータがメモリのどこにあるか」を示す情報（ポインタ）**をセットで保持して繋ぎ合う構造です 。</p>
+                <ul>
+                    <li>メモリ上でバラバラな場所にデータが散らばって配置されていても、矢印（ポインタ）で数珠繋ぎにできるため、**データの途中の挿入や削除が非常に簡単**に行えます 。</li>
+                    <li><strong>単方向リスト：</strong> 次のデータへのポインタのみを持つ（一方通行） 。</li>
+                    <li><strong>双方向リスト：</strong> 前と次の両方のポインタを持つため、前後を自由に行き来できる 。</li>
+                    <li><strong>循環リスト：</strong> 最後尾のデータが先頭のデータを指し、輪（ループ）のようにつながっている構造 。</li>
+                </ul>
+
+                <div class="sub-heading">③ キュー（Queue） / FIFO（フィフォ）</div>
+                <p>銀行のレジの行列のように、<strong>「先に入れたデータが、先に出ていく」</strong>というデータ構造です 。別名「待ち行列」とも呼ばれます 。</p>
+                <ul>
+                    <li><strong>FIFO（First-In First-Out）：</strong> 先入れ先出しのルール 。プリンタの印刷待ちジョブ管理や、イベントの処理順番待ちに利用されます 。</li>
+                </ul>
+
+                <div class="sub-heading">④ スタック（Stack） / LIFO（ライフォ）</div>
+                <p>机の上に積み重なった本や、お皿の山のようなイメージのデータ構造です 。<strong>「後から入れたデータが、最初に出ていく」</strong>という動きをします 。</p>
+                <ul>
+                    <li><strong>LIFO（Last-In First-Out）：</strong> 後入れ先出しのルール 。ブラウザの「戻る」ボタンの履歴管理や、プログラム内で関数を呼び出した際の元の場所の記憶（コールスタック）に使われます 。</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <!-- 右側：更新履歴（共通パーツ history.php を呼び出し、右横並びにします） -->
+        <?php include 'history.php'; ?>
+
+    </div> <!-- .container -->
+
+    <!-- 右下：トップボタン -->
+    <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
+
+</body>
+</html>
