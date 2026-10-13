@@ -8,7 +8,7 @@
     <title>自作万年カレンダー</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<body>
 <?php include 'header.php'; ?>
 
 <div class="container">

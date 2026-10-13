@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,102 +8,10 @@
     <meta name="description" content="7/6(月)の職業訓練授業ノートです。VSCodeの環境設定やHTML/CSS/JavaScriptの基礎知識をまとめています。">
     <title>7/6(月)職業訓練授業 | ポートフォリオサイト</title>
     <!-- 共通のベースCSSを読み込み -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- 💡 このノートページを見やすくするための専用追加スタイルを埋め込みました -->
-    <style>
-        /* ノート全体の段落（各セクション）の装飾 */
-        .note-section {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 25px 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        }
-        
-        /* 中見出し（h2にクラス名をつけて専用装飾） */
-        .note-title {
-            color: #1e3a8a;
-            font-size: 18px;
-            font-weight: bold;
-            border-left: 5px solid #ff8c00; /* 画面のアクセントになるオレンジの縦線 */
-            padding-left: 12px;
-            margin-bottom: 15px;
-            margin-top: 0;
-        }
-        
-        /* 本文テキストの調整 */
-        .note-section p {
-            font-size: 15px;
-            color: #334155;
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-        .note-section p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* 箇条書き（ul / ol）の余白と見栄えの調整 */
-        .note-section ul, 
-        .note-section ol {
-            padding-left: 20px;
-            margin: 12px 0;
-        }
-        .note-section li {
-            font-size: 14.5px;
-            color: #475569;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        .note-section li strong {
-            color: #1e3a8a;
-        }
-        
-        /* ソースコードブロック（pre / code）の装飾 */
-        pre {
-            background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 15px 20px;
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-        pre code {
-            font-family: Consolas, Monaco, 'Andale Mono', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #334155;
-            background-color: transparent;
-            padding: 0;
-            border-radius: 0;
-        }
-        
-        /* 文中内のインラインコード（`タグ表現など）の目立たせ */
-        code {
-            font-family: Consolas, Monaco, monospace;
-            background-color: #f1f5f9;
-            color: #b91c1c; /* タグ特有の赤文字強調 */
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        /* 強調文字（em / b）のカラー調整 */
-        em {
-            color: #e07b00;
-            font-weight: bold;
-            font-style: normal;
-        }
-        b {
-            color: #1e3a8a;
-            background-color: #eff6ff;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -167,22 +76,23 @@
             <div class="note-section">
                 <h3 class="note-title">HTML / CSS / JavaScript の基礎知識</h3>
                 <p><strong>■ HTMLとは</strong><br>
-                HTML（ハイパーテキストマークアップランゲージ）は、Webサイトに表示する文字や画像に見出し・段落などの構造上の意味をつけて指定していく言語。HTMLのみで表示すると、指定した順に上から下へ縦並び・横書きで表示される。配置や色、サイズなどのデザインは<em>CSS</em>で指定する。</p>
-                
+                    HTML（ハイパーテキストマークアップランゲージ）は、Webサイトに表示する文字や画像に見出し・段落などの構造上の意味をつけて指定していく言語。HTMLのみで表示すると、指定した順に上から下へ縦並び・横書きで表示される。配置や色、サイズなどのデザインは<em>CSS</em>で指定する。</p>
+
                 <p style="margin-top: 15px;"><strong>■ CSSとは</strong><br>
-                CSS（カスケーディングスタイルシート）は、Webサイトのデザインを担当する。基本的にはHTMLと別ファイルにし、拡張子は.cssを使用する。</p>
-                
+                    CSS（カスケーディングスタイルシート）は、Webサイトのデザインを担当する。基本的にはHTMLと別ファイルにし、拡張子は.cssを使用する。</p>
+
                 <p style="margin-top: 15px;"><strong>■ JavaScriptとは</strong><br>
-                木構造でできているHTMLの構造体に対し、動的な変化をつけるプログラム言語。HTMLは木構造（DOM構造）の為、Webでよく使用される。最近では<b>「Vanilla.js（バニラJS）」</b>と呼ばれることもあり、フレームワーク等を何も手を加えられていない純粋なJavaScriptを指す。</p>
+                    木構造でできているHTMLの構造体に対し、動的な変化をつけるプログラム言語。HTMLは木構造（DOM構造）の為、Webでよく使用される。最近では<b>「Vanilla.js（バニラJS）」</b>と呼ばれることもあり、フレームワーク等を何も手を加えられていない純粋なJavaScriptを指す。</p>
             </div>
             <!-- セクション6 -->
             <div class="note-section">
                 <h3 class="note-title">&lt;!DOCTYPE html&gt; と &lt;html lang="ja"&gt; について</h3>
                 <p><strong>■ <code>&lt;!DOCTYPE html&gt;</code> について</strong><br>
-                HTML文書のドキュメントタイプの指定。この宣言でHTML5であることを示す。</p>
-                
+                    HTML文書のドキュメントタイプの指定。この宣言でHTML5であることを示す。</p>
+
                 <p style="margin-top: 15px;"><strong>■ <code>&lt;html lang="ja"&gt;</code> について</strong><br>
-                <code>&lt;html&gt;</code>～<code>&lt;/html&gt;</code>は木構造で、その内部にHTML文書を作成する。タグの後に付ける <code>lang="ja"</code> のようなものを属性と呼び、そのサイトが何語表示なのかを指定する。例えば、Google翻訳が自動で言語を取得する際この情報を利用している。</p>
+                    <code>&lt;html&gt;</code>～<code>&lt;/html&gt;</code>は木構造で、その内部にHTML文書を作成する。タグの後に付ける <code>lang="ja"</code> のようなものを属性と呼び、そのサイトが何語表示なのかを指定する。例えば、Google翻訳が自動で言語を取得する際この情報を利用している。
+                </p>
             </div>
 
             <!-- セクション7 -->
@@ -199,10 +109,10 @@
             <div class="note-section">
                 <h3 class="note-title">head内の重要な設定（charset と title）</h3>
                 <p><strong>■ <code>&lt;meta charset="UTF-8"&gt;</code> について</strong><br>
-                文字コードの指定。ブラウザの設定に応じたコードで変換されるため、指定がないと文字化けの可能性が出てしまう。ブラウザはHTMLを上から順に実行するので、日本語を使用する前に文字コードを指定する。そのため、<code>&lt;head&gt;</code> 内の最初に書くことが多い。</p>
-                
+                    文字コードの指定。ブラウザの設定に応じたコードで変換されるため、指定がないと文字化けの可能性が出てしまう。ブラウザはHTMLを上から順に実行するので、日本語を使用する前に文字コードを指定する。そのため、<code>&lt;head&gt;</code> 内の最初に書くことが多い。</p>
+
                 <p style="margin-top: 15px;"><strong>■ ページタイトルの指定</strong><br>
-                ブラウザのタブ欄に表示される「表示しているページ」のタイトルを <code>&lt;title&gt;</code>～<code>&lt;/title&gt;</code> で指定する。ユーザーにどのサイトにいるかを明示するため、サイト名とページ名を併記することが多い。</p>
+                    ブラウザのタブ欄に表示される「表示しているページ」のタイトルを <code>&lt;title&gt;</code>～<code>&lt;/title&gt;</code> で指定する。ユーザーにどのサイトにいるかを明示するため、サイト名とページ名を併記することが多い。</p>
             </div>
 
             <!-- セクション9 -->
@@ -214,7 +124,7 @@
                     <li>各タグに属性として指定。例えば <code>style</code> 属性などで直接指定。</li>
                 </ul>
                 <p>※ただし、基本的には外部CSSファイルに書き、HTMLからそのファイルを読み込む方法が推奨される。</p>
-                
+
                 <p style="margin-top: 20px;"><strong>■ 外部CSSファイルの読み込み</strong></p>
                 <p>外部CSSファイルは <code>&lt;link&gt;</code> タグを使用して読み込む（例: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>）。</p>
                 <ul>
@@ -223,7 +133,7 @@
                     <li>同じサーバーのCSS：相対パスで指定。</li>
                     <li>他サーバーのCSS：httpから始まる絶対パスで指定。</li>
                 </ul>
-                
+
                 <p style="margin-top: 20px;"><strong>■ CSS読み込み以外のlinkの例</strong></p>
                 <p>ファビコン画像を指定する場合：<code>&lt;link rel="icon" href="パス"&gt;</code>。ここでのパスはファビコン画像への相対パス。</p>
             </div>
@@ -251,4 +161,5 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

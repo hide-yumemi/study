@@ -11,8 +11,8 @@
             <button class="menu-btn">授業内容</button>
             <div class="dropdown-content">
                 <a href="./0609_0703.php">2026/06/09～07/03：基本情報処理（60時間）</a>
-                <a href="./html_css_jp.php">2026/07/06～09/14：html/css/javascript(220時間)</a>
-                <a href="./datebase_php.php">2026/07/15～11/19：データベース・php(208時間)</a>
+                <a href="./0706_0914.php">2026/07/06～09/14：html/css/javascript(220時間)</a>
+                <a href="./0715_1119.php">2026/07/15～11/19：データベース・php(208時間)</a>
             </div>
         </div>
 
@@ -31,8 +31,8 @@
         <div class="menu-item">
             <button class="menu-btn">自主学習</button>
             <div class="dropdown-content">
-                <a href="vscode_github_setup.php">Git：VSCodeとGitHubの連携</a>
-                <a href="index.php?page=self1">JavaScriptの深掘り</a>
+                <a href="./vscode_github_setup.php">Git：VSCodeとGitHubの連携</a>
+                <a href="./index.php?page=self1">JavaScriptの深掘り</a>
             </div>
         </div>
 
@@ -40,9 +40,8 @@
         <div class="menu-item">
             <button class="menu-btn">作品</button>
             <div class="dropdown-content">
-                <!-- 画像の指定通り、動作確認のため別タブ（_blank）で開く設定 -->
-                <a href="original_mannen.php">オリジナル万年カレンダー</a>
-                <a href="original_squash.php">オリジナルスカッシュ</a>
+                <a href="./original_mannen.php">オリジナル万年カレンダー</a>
+                <a href="./original_squash.php">オリジナルスカッシュ</a>
             </div>
         </div>
     </nav>
