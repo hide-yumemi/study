@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>万年カレンダー</title>
+	<link href="mannen.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+	<main>
+		<h1>万年カレンダー</h1>
+		<p>2000年1月以降のカレンダーを表示します。<br>
+		西暦と月を入力し、表示ボタンをクリックしてください。</p>
+		<form>
+			<input id="year" type="text" size="8">年
+			<input id="month" type="text" size="4">月
+			<input id="hyouzi" type="button" value="表示"><br>
+			<input id="mae" type="button" value="前月">
+			<input id="tugi" type="button" value="次月">
+		</form>
+		<p id="error">2000年1月以降を指定してください</p>
+		<table></table>
+	</main>
+</div>
+	<script>
+//ほかのページで使えるように、全体をcarender関数に
+		function carender(){
+			const Mae=document.getElementById("mae");
+			const Tugi=document.getElementById("tugi");
+			const Hyouzi=document.getElementById("hyouzi");
+			const Year=document.getElementById("year");
+			const Month=document.getElementById("month");
+	//カレンダー作成関数
+			function mannen(){
+				const Care=document.getElementsByTagName("table")[0];
+				const Error=document.getElementById("error");
+				if(Year.value<2000){ //2000年より前の年ならエラー表示
+					Error.style.display="block"
+					Care.innerHTML="";
+					Mae.style.display="none";
+					Tugi.style.display="none";
+					return;//2000年より前ならカレンダーは表示せずここで脱出
+				}
+				Error.style.display="none";//2000年以降ならエラー行非表示
+				let day=1,day2,youbi=6;	//2000年1月1日は土曜日
+				let matsu=new Array(31,28,31,30,31,30,31,31,30,31,30,31);//末日の配列を用意
+				let nen=Year.value-2000;	//2000年からの経過年数
+				let mon=Month.value-1;	//34行目配列に合わせる
+				let keika=nen;	//1年に曜日が1ずれる
+				let uruu=Math.floor(nen/4);	//まず４の倍数の数を求め、その後100年単位の分を減らす
+				uruu-=(Math.floor(nen/400)*3);//400年に３回うるう年じゃない
+				nen%=400;
+				uruu-=Math.floor(nen/100);//残った400年未満で100年おきにうるう年じゃない
+				if(Year.value%400==0 || (Year.value%4==0 && Year.value%100!=0)){	//指定がうるう年だった場合月で変わるのでいったん減らす
+					uruu--;
+				}
+				uruu++;//2000年がうるう年なので１加算
+				keika+=uruu;	//曜日がずれる経過日数にうるう年の回数加算
+				for(i=0;i<mon;i++){	//指定年月の前月までの日数を経過に加算
+					keika+=matsu[i];
+				}
+				if(mon>=2 && (nen%400==0 || (nen%4==0 && nen%100!=0)) ){	//指定年がうるう年で3月以降なら１加算
+					keika++;
+				}			
+				youbi=(youbi+keika)%7;	//指定月の1日の曜日算出
+				let table="<caption>"+Year.value+"年"+Month.value+"月</caption><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>";
+				day-=youbi;	//カレンダー１週目日曜日の日付算出
+				if(nen%400==0 || (nen%4==0 && nen%100!=0) ){	//うるう年2月なら末日29日に
+					matsu[1]=29;
+				}
+				while(1){
+					table+="<tr>";
+					for(let i=0;i<7;i++){
+						if(day<1 || day>matsu[mon]){	//カレンダーに出力するのは1日から末日まで
+							day2="";
+						}
+						else{
+							day2=day;
+						}
+						table+="<td>"+day2+"</td>";
+						day++;
+					}
+					table+="</tr>";
+					if(day>matsu[mon]){
+						break;//末日まで出力したら翌週は不要
+					}
+				}
+				Care.innerHTML=table;//カレンダー表示
+				Mae.style.display="inline";//前月ボタン表示
+				Tugi.style.display="inline";//次月ボタン表示
+			}
+	//指定月入力欄を1月前にしてカレンダー作成を呼び出し
+	//カレンダー関数を使うので、フォームの年月を前月にして呼出
+			function zenngetu(){
+				let year2=Year.value;
+				let month2=Month.value;
+				if(month2==1){//今が1月なら前月は前年12月
+					month2=12;
+					year2--;
+				}
+				else{
+					month2--;
+				}
+				Year.value=year2;
+				Month.value=month2;
+				mannen();
+			}
+	//指定月入力欄を1月後にしてカレンダー作成を呼び出し
+	//カレンダー関数を使うので、フォームの年月を翌月にして呼出
+			function yokutsuki(){
+				let year2=Year.value;
+				let month2=Month.value;
+				if(month2==12){//今が12月なら翌月は翌年１月
+					month2=1;
+					year2++;
+				}
+				else{
+					month2++;
+				}
+				Year.value=year2;
+				Month.value=month2;
+				mannen();
+			}
+			Hyouzi.onclick=mannen;
+			Mae.onclick=zenngetu;
+			Tugi.onclick=yokutsuki;
+		}
+		carender();
+	</script>
+</body>
+</html>

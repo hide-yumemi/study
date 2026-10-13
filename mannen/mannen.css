@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+html{
+	font-size:62.5%;
+}
+
+#wrapper{
+	width:500px;
+	margin:0 auto;
+	font-family:"Yu Gothic",游ゴシック,YuGothic,游ゴシック体,Meiryo,メイリオ,"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3",sans-serif;
+	font-size:1.8rem;
+	line-height:1.6;
+	box-sizing:border-box;
+	}
+	
+main{
+	display:block;
+}
+
+h1{
+	font-size:2.4rem;
+}
+
+table{
+	margin-top:2rem;
+	border:1px solid rgb(0,0,0);
+	border-collapse:collapse;
+}
+
+th{
+	border:1px solid rgb(0,0,0);
+	width:5rem;
+}
+
+td{
+	text-align:right;
+	border:1px solid rgb(0,0,0);
+	padding-right:10px;
+}
+
+th:nth-child(7),td:nth-child(7){
+	color:blue;
+}
+
+th:nth-child(1),td:nth-child(1){
+	color:red;
+}
+
+#mae,#tugi,#error{
+	display:none;
+}

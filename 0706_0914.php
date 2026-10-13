@@ -95,102 +95,96 @@
                     </tr>
                     <tr>
                         <td class="td-date">08/03</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl0803.php" class="td-link">入力フォーム作成の基礎</a></td>
+                        <td><a href="scl0803_lesson.php" class="td-link">実技</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/04</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="td-date">08/04</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0804.php" class="td-link">実践フォームとCSS角丸表現</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/05</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0805.php" class="td-link">Javascriptの変数と定数の定義・演算子の挙動と注意点</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/06</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0806.php" class="td-link">条件分岐（if / switch）とブロックスコープの基礎</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/07</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0807.php" class="td-link">JavaScript：ループ処理（while / do-while）の基礎とbreak文による制御</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/10</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0810.php" class="td-link">jsにおけるfor文の構造とループの使い分け</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/12</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0812.php" class="td-link">データ構造（木構造）・探索・整列アルゴリズムとUML表現</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/17</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0817.php" class="td-link">配列の基礎と多次元配列・配列操作</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/18</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0818.php" class="td-link">Mathオブジェクトと乱数制御アルゴリズム</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/20</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0820.php" class="td-link">JavaScript：DOM要素の動的取得とHTMLコレクションの制御・スタイル操作基礎</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/21</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0821.php" class="td-link">要素の動的・静的取得</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/25</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0825.php" class="td-link">insertAdjacentHTMLによる要素挿入と動的・静的オブジェクトの応用検証</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/26</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0826.php" class="td-link">JavaScript：HTML属性操作とclassListによる安全なCSSクラス動的制御</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/28</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0828.php" class="td-link">JavaScript：関数の基本設計（引数・戻り値）とaddEventListenerによるイベント駆動制御</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">08/31</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0831.php" class="td-link">thisによる関数の共通化、各種デバイスイベントオブジェクトとフォームバリデーション基礎</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/01</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0901.php" class="td-link">タイマー処理（setTimeout / setInterval）の制御メカニズムとカレンダー生成アルゴリズム</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/02</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                    </tr>
+                        <td><a href="scl0902.php" class="td-link">万年カレンダー設計要件と純粋算術による曜日・末日算出アルゴリズム演習</a></td>
+                        <td>上部作品にて掲載</td>
                     <tr>
                         <td class="td-date">09/03</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl0903.php" class="td-link">講師の解答例と解説</a></td>
+                        <td><a href="./mannen/mannen.html" target="_blank">先生の解答例</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/04</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="" class="td-link">スカッシュゲームの紹介・改造</a></td>
                         <td></td>
                     </tr>
                     <tr>
