@@ -175,41 +175,41 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/02</td>
-                        <td><a href="scl0902.php" class="td-link">万年カレンダー設計要件と純粋算術による曜日・末日算出アルゴリズム演習</a></td>
+                        <td><a href="scl0902.php" class="td-link">万年カレンダー作成・アルゴリズム演習</a></td>
                         <td>上部作品にて掲載</td>
                     <tr>
                         <td class="td-date">09/03</td>
-                        <td><a href="scl0903.php" class="td-link">講師の解答例と解説</a></td>
-                        <td><a href="./mannen/mannen.html" target="_blank">先生の解答例</a></td>
+                        <td><a href="scl0903.php" class="td-link">万年カレンダー講師の解答例</a></td>
+                        <td><a href="./mannen/mannen.html" target="_blank">講師の解答例</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/04</td>
-                        <td><a href="" class="td-link">スカッシュゲームの紹介・改造</a></td>
-                        <td></td>
+                        <td><a href="scl0904.php" target="_blank" class="td-link">スカッシュゲーム紹介・解説(※講師が用意したファイル)</a></td>
+                        <td>教材</td>
                     </tr>
                     <tr>
                         <td class="td-date">09/07</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0907.php" class="td-link">再帰関数と二分探索木のアルゴリズム</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/08</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl0908.php" target="_blank"　class="td-link">ゲーム：リバーシの紹介・解説(※講師が用意したファイル)</a></td>
+                        <td>教材</td>
                     </tr>
                     <tr>
                         <td class="td-date">09/09</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0909.php" class="td-link">データベースの設計思想・SQL操作とトランザクション管理</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/11</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0911.php" class="td-link">スライドショーの構築と座標・リサイズ制御</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/14</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl0914.php" class="td-link">自習（作品作成or過去の教材を改造）</a></td>
                         <td></td>
                     </tr>
                 </tbody>

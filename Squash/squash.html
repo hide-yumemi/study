@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>スカッシュ</title>
+	<style>
+		#wall{
+			position:absolute;
+			left:46px;
+			top:46px;
+		}
+		#ball{
+			position:absolute;
+			left:200px;
+			top:100px;
+		}
+		#bar{
+			position:absolute;
+			left:200px;
+			top:400px;
+		}
+		form{
+			position:absolute;
+			left:500px;
+			top:100px;
+		}
+		#ten,#zanki{
+			text-align:right;
+		}
+	</style>
+</head>
+<body>
+	<img id="wall" src="wall.png">
+	<img id="ball" src="ball.png">
+	<img id="bar" src="bar.png">
+	<form>
+		残機<input id="zanki" type="text" size="4" value="0">
+		得点<input id="ten" type="text" size="4" value="0">点
+	</form>
+	<script>
+		let x,y,point,speed=100,zan=0; // ボールの初期位置
+		let dx=10,dy=10; // ボールの移動距離
+		let rx=200;
+		const wall=document.getElementById("wall");
+		const bar=document.getElementById("bar");
+		const ten=document.getElementById("ten");
+		
+		function move(){
+			let TimeID=setTimeout(move,speed);
+			let ball=document.getElementById("ball");
+			x+=dx;
+			y+=dy;
+			ball.style.left=x+"px";
+			ball.style.top=y+"px";
+			if (x<=50 || x+10>=450){
+				dx=-dx;
+			}
+			if (y<=50){
+				dy=-dy;
+			}
+			if (rx-10<=x && x<=rx+50 && y+10==400){
+				dy=-dy;
+				point+=10;
+				ten.value=point;
+				if(point%10==0 && speed!=10){
+					speed-=10;
+				}
+			}
+			if(y>=440){
+				clearTimeout(TimeID);
+			}
+		}
+		function racket(event)
+		{
+			rx=event.clientX-25;
+			if (50<=rx && rx+50<=450){
+				bar.style.left=rx+"px";
+			}
+		}
+		wall.onmousemove=function(event){
+			racket(event);
+		}
+		bar.onclick=function(){
+			let zanki=document.getElementById("zanki");
+			if(zan==0){
+				zan=2;
+				speed=100;
+				point=0;
+				ten.value=point;
+			}
+			else{
+				zan--;
+			}
+			zanki.value=zan;
+			x=200;
+			y=100;
+			move();
+		}
+	</script>
+</body>
+</html>

@@ -36,7 +36,7 @@
                 
                 <div style="margin: 20px 0;">
                     <a href="./mannen/mannen.html" target="_blank" class="td-link" style="font-size: 16px; font-weight: bold; background-color: #f1f5f9; padding: 12px 20px; border-radius: 8px; border: 1px solid #cbd5e1; display: inline-block;">
-                        👉 先生の解答例・実技検証コードはこちら
+                        👉 講師の解答例・実技検証コードはこちら
                     </a>
                 </div>
             </div>

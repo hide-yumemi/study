@@ -1,181 +1,161 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow">
-    <meta name="description" content="8/10(月)の職業訓練授業ノートです。JavaScriptのfor文の基本構造（初期化式・条件式・更新式）、ループ文（while/do-while）の明確な使い分けの基準、実技検証やアルゴリズム問題（倍々貯金）をまとめています。">
-    <title>8/10(月)職業訓練授業：for文の構造とループの使い分け | ポートフォリオサイト</title>
-    <!-- 共通のベースCSSを読み込み -->
-    <link rel="stylesheet" href="style.css">
-    <!-- ノート・共通追加CSSを読み込み -->
-    <link rel="stylesheet" href="scl_style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="9/7(月)の職業訓練授業ノートです。JavaScriptにおける再帰関数の仕組み（階乗計算）や、二分探索木の絶対ルール、Classを用いたデータ構造の組み立てと巡回アルゴリズムをまとめています。">
+  <title>9/7(月)職業訓練授業：再帰関数と二分探索木のアルゴリズム | ポートフォリオサイト</title>
+  <!-- 共通のベースCSSを読み込み -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ノート・共通追加CSSを読み込み -->
+  <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
-    <!-- 共通ヘッダー -->
-    <?php include 'header.php'; ?>
+  <!-- 共通ヘッダー -->
+  <?php include 'header.php'; ?>
 
-    <!-- メインレイアウト -->
-    <div class="container">
-        <main class="main-content">
-            <h2>8/10(月) 職業訓練授業ノート</h2>
-            <p style="color: #666; font-size: 14px; margin-bottom: 35px;">
-                反復処理の標準である「for文」の仕組みを解剖し、状況に応じたループ構文の選択基準、および実践的なアルゴリズムの実装を学びます。
-            </p>
+  <!-- メインレイアウト -->
+  <div class="container">
+    <main class="main-content">
+      <h2>9/7(月) 職業訓練授業ノート</h2>
+      <p style="color: #666; font-size: 14px; margin-bottom: 35px;">
+        プログラムの高度な制御を司る「再帰関数」の設計方法と、データを高速に探索・整理するための構造体「二分探索木」の仕組みを深く学びます。
+      </p>
 
-            <!-- セクション1：for文の基本構造 -->
-            <div class="note-section">
-                <h3 class="note-title">1. for文の基本構造と実行メカニズム</h3>
-                <p>
-                    回数が決まっている繰り返し処理を行う際、最も標準的に使用される構文です。3つの式を1行の中に記述します。
-                </p>
-<pre><code>for (初期化式; 条件式; 更新式) {
-    // ループ処理（繰り返したい命令）
-}</code></pre>
+      <!-- セクション1：再帰関数 -->
+      <div class="note-section">
+        <h3 class="note-title">1. 再帰関数（自己呼び出し）の実行メカニズム</h3>
+        <p>
+          <strong>再帰関数（さいきかんすう）</strong>とは、関数ブロックの内部で、さらに**自分自身を呼び出す（自己呼び出し）** 処理を繰り返す仕組みのことです。
+        </p>
+        <p>
+          再帰を設計する際は、処理を終了させて呼び出し元へ戻していく条件（<strong>ストッパー / ベースケース</strong>）を必ず最優先で備える必要があります。これがないと無限に自分を呼び出し続け、パソコンのメモリ上限（コールスタック領域）を迎えてプログラムが強制終了（スタックオーバーフロー）してしまいます。
+        </p>
 
-                <div class="sub-heading">各式の役割と特徴</div>
-                <ul>
-                    <li><strong>初期化式：</strong> ループ開始時に**最初の一度だけ**実行されます。一般的に <code>let i = 0;</code> のようにカウンター変数を宣言します。ここで宣言された変数は、for文のブロック内 <code>{ }</code> のみを有効範囲とする**ブロックスコープ**になります。
-                        <br><small>※カウンター変数の名前は、単一ループでは <code>i</code>、2重ループでは <code>j</code>、3重ループでは <code>k</code> を使うのが世界的な慣例（インデックスの略）です。</small>
-                    </li>
-                    <li><strong>条件式：</strong> 各周回の**処理を実行する直前**に毎回判定されます。結果が <code>true</code> の間はブロック内の処理を実行し、<code>false</code> になった瞬間にループを終了します。</li>
-                    <li><strong>更新式：</strong> ブロック内の処理が**終わった直後（次の周へ進む手前）**に実行されます。<code>i++</code> などでカウンターの値を増やします。2周目以降は「更新式 ➔ 条件式」の順で処理が流れます。</li>
-                </ul>
-
-                <p style="margin-top: 15px; font-size: 14px; color: #1e3a8a; background-color: #eff6ff; padding: 12px; border-radius: 6px;">
-                    <strong>💡 最も美しい基本形（指定回数繰り返す）</strong><br>
-                    単純に「X回処理をループさせたい」という場合は、<code>i</code> を <code>0</code> からスタートし、条件式を <code>i &lt; X</code> とする書き方が、配列のインデックス（0番目から開始）とも親和性が高く、業界のデファクトスタンダード（標準）となっています。
-                    <br><code>for (let i = 0; i &lt; X; i++) { /* 処理 */ }</code>
-                </p>
-            </div>
-
-            <!-- セクション2：ループ文の使い分け -->
-            <div class="note-section">
-                <h3 class="note-title">2. 各種ループ文（while / do-while / for）の最適な選択基準</h3>
-                <p>
-                    JavaScriptのすべての反復処理は <code>while</code> 文に書き換えることが可能ですが、ソースコードのシンプルさや可読性を保つために、プロの現場では以下の基準で明確に使い分けます。
-                </p>
-                <ul>
-                    <li><strong>for文：</strong> カウンター変数が存在し、「あらかじめ繰り返す回数や終了条件の基準」が数値として決まっている場合に最適です。</li>
-                    <li><strong>do-while文：</strong> 終了条件に関わらず「最低でも1回は必ず処理を実行させたい」かつ、途中で <code>break</code> による強制終了を行わないケースに使用します。</li>
-                    <li><strong>while文：</strong> 「特定の状態が変化するまで」など、繰り返す回数が事前に全く予想できないケース（ユーザーが正しい値を入力するまで無限に繰り返すなど）に使用します。</li>
-                </ul>
-            </div>
-
-            <!-- セクション3：実技・動作チェックログ -->
-            <div class="note-section">
-                <h3 class="note-title">3. 実技：for文の基本検証と構文書き換え</h3>
-                <p>授業内で行った各種ループパターンの動作検証と、while文への相互書き換えのログです。</p>
-                
-                <div class="sub-heading">① 指定回数の繰り返し（文字列の連続連結）</div>
-<pre><code>&lt;script&gt;
-let str = "";
-for (let i = 0; i &lt; 5; i++) { // iが 0, 1, 2, 3, 4 と変化
-    str += "あ";
-}
-console.log(str); // 出力結果: "あああああ"
-&lt;/script&gt;</code></pre>
-
-                <div class="sub-heading">② 1から10までの合計値を求める（数値を扱うループ）</div>
-                <p>このケースでは、カウンターの <code>i</code> を <code>1</code> から始めたほうが、数学的な思考とコードが直感的に一致するため効率的になります。</p>
-<pre><code>&lt;script&gt;
-let sum = 0;
-for (let i = 1; i &lt;= 10; i++) {
-    sum += i;
-}
-console.log(sum); // 出力結果: 55
-&lt;/script&gt;</code></pre>
-
-                <div class="sub-heading">③ for文 ＋ break（1から100まで加算し、3000を超えたら強制終了）</div>
-<pre><code>&lt;script&gt;
-let sum2 = 0;
-for (let i = 1; i &lt;= 100; i++) {
-    sum2 += i;
-    if (sum2 &gt; 3000) {
-        console.log(i + "を足した時点で3000を超えました");
-        break; // 💡 ループを強制終了して脱出
+        <div class="sub-heading">📐 代表的な形（数学の階乗 n! を表現したもの）</div>
+        <pre><code>function factorial(n) {
+    // 【ストッパー / ベースケース】
+    if (n &lt;= 1) {
+        return 1;
+    } else {
+        // 自分自身を呼び出し、計算を一時停止してメモリに積み上げていく
+        return n * factorial(n - 1);
     }
 }
-console.log("最終的な合計は" + sum2);
-&lt;/script&gt;</code></pre>
+// 実行例
+console.log(factorial(5)); // 結果: 120 (5! = 5 × 4 × 3 × 2 × 1)</code></pre>
 
-                <div class="sub-heading">④ 同一仕様をwhile文で表現した場合（相互書き換えの検証）</div>
-                <p>同じロジックをwhile文に書き換えると、初期化やカウンターのインクリメントが分散するため、構造的にはfor文の方がスッキリ書けることが実証されます。</p>
-<pre><code>&lt;script&gt;
-let sum3 = 0;
-let cnt = 1; // カウンター変数を外で定義
-while (sum3 &lt;= 3000 && cnt &lt;= 100) {
-    sum3 += cnt;
-    if (sum3 &gt; 3000) {
-        console.log(cnt + "を足した時点で3000を超えました");
-        break;
+        <p style="font-size: 14px; color: #555; background-color: #f8fafc; padding: 12px; border-radius: 6px; border-left: 4px solid #64748b; margin-top: 15px;">
+          <strong>💡 階乗（かいじょう）数学ルールと防衛コード</strong><br>
+          正の整数を対象とし、1から指定した値まで全ての整数を掛け合わせた答えを求める計算（記号は「!」）です。数学の例外ルールとして「0! = 1」と定義されているため、上記の <code>n &lt;= 1</code> の判定で正しく動作します。
+          <br>ただし、引数 <code>n</code> にマイナスの値（-5など）が渡されるとストッパーをすり抜けてフリーズするため、実務では関数開始直後にマイナス値を弾く例外チェックを挟むのが一般的です。
+        </p>
+      </div>
+
+      <!-- セクション2：二分探索木の概念 -->
+      <div class="note-section">
+        <h3 class="note-title">2. 二分探索木（Binary Search Tree）の絶対ルール</h3>
+        <p>
+          データを格納する際、通常の「配列」のままだと、1万件のデータから1つの目的データを探すのに最悪1万回のチェック（線形探索）が必要となり処理が低速化します。
+        </p>
+        <p>
+          これに対し、**二分探索木**のルールに従ってデータを魔法の本棚のように配置すると、1万件の中からでも、最高でわずか<strong>13回</strong>のチェックを行うだけで目的のデータへダイレクトに到達できます。
+        </p>
+
+        <div class="sub-heading">🌟 データの配置を決める「1つの絶対ルール」</div>
+        <p>親ノード（基準となる節点）から見て、ぶら下がる子データは必ず以下の大小関係で枝分かれを繰り返します。</p>
+        <ul>
+          <li>親の<strong>左側</strong>にぶら下がるデータ ➔ 自分より**「小さい（若い・五十音順で手前）」**</li>
+          <li>親の<strong>右側</strong>にぶら下がるデータ ➔ 自分より**「大きい（後ろ・五十音順で後ろ）」**</li>
+        </ul>
+
+        <!-- 概念図ブロック -->
+        <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14.5px; text-align: center; line-height: 1.5;">
+          <div style="color: #1e3a8a; font-weight: bold;">[50] (根：ルート)</div>
+          <div style="margin: 5px 0;">/ &nbsp; \</div>
+          <div>[30] (左：50より小) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [70] (右：50より大)</div>
+          <div style="margin: 5px 0;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /</div>
+          <div style="color: #ff8c00; font-weight: bold;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[60] (新要素：50より大きく、70より小さい)</div>
+        </div>
+      </div>
+
+      <!-- セクション3：JavaScriptでの表現（2つのアプローチ） -->
+      <div class="note-section">
+        <h3 class="note-title">3. プログラムによる表現（国家試験向け・実務向けの2手法）</h3>
+        <p>二分探索木をコードで表現する場合、開発目的やターゲット環境に応じてアプローチを切り替えます。</p>
+
+        <div class="sub-heading">アプローチA：【国家試験・資格向け】3つの配列で表現する</div>
+        <p>オブジェクト指向（Class）を習得する前や、基本情報技術者試験などの「疑似言語問題」のデータ構造のトレース対策に直結する手法です。インデックス（要素番号）でデータのリンク関係を表現します。</p>
+        <pre><code>// インデックス番号:    0          1         2         3
+let node =  ["さき", "あやか", "はるか", "あや"];
+let left =  [   1,       3,       -1,      -1]; // 左の子（-1は「子なし」を示す）
+let right = [   2,      -1,       -1,      -1]; // 右の子</code></pre>
+
+        <div class="sub-heading">アプローチB：【実践・モダン実務向け】ClassとObjectで表現する</div>
+        <p>実際のフロントエンド・バックエンドの実務開発で用いられる、メモリ上のポインタ（参照）の仕組みを完全に活用した美しいオブジェクト表現です。</p>
+        <pre><code>class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;  // 左の子への参照リンク（初期状態は空）
+        this.right = null; // 右の子への参照リンク（初期状態は空）
     }
-    cnt++; // 更新をブロック内で手動実行
 }
-console.log("最終的な合計は" + sum3);
-&lt;/script&gt;</code></pre>
-            </div>
+// データのインスタンス化と組み立て
+const root = new TreeNode(50);
+root.left = new TreeNode(30);
+root.right = new TreeNode(70);</code></pre>
+      </div>
 
-            <!-- セクション4：練習問題（倍々貯金ゲーム） -->
-            <div class="note-section">
-                <h3 class="note-title">4. 応用演習：倍々貯金ゲームのアルゴリズム解析</h3>
-                <p><strong>【問題設定】</strong> 1日目1円、2日目2円、3日目4円…と、毎日前日の倍額を30日間貯金する。ただし総額が100万円を超えた時点で終了し、その日数と総額を出力する。</p>
-                
-                <div class="sub-heading">💡 自分のコード（累計を計算するアプローチ）</div>
-                <p><code>2 ** day</code>（累乗演算子）を用いてその日の額を毎回算出し、加算していく直感的なアプローチです。</p>
-<pre><code>&lt;script&gt;
-let totalMoney = 0;
-let dailyMoney = 1;
-for (let day = 1; day &lt;= 30; day++) {
-    totalMoney += dailyMoney;
-    if (totalMoney &gt; 1000000) {
-        console.log(day + "日目で超える");
-        break;
-    }
-    dailyMoney = 1 * 2 ** day; // 次の日のための累乗計算
-}
-console.log(totalMoney + "円で終了");
-&lt;/script&gt;</code></pre>
+      <!-- セクション4：巡回（ウォーク） -->
+      <div class="note-section">
+        <h3 class="note-title">4. 核心アルゴリズム：木の中を歩く「巡回（Walk）」の順序制御</h3>
+        <p>
+          再帰関数を使って木構造の中を探索（巡回）する際、ノードの「どの位置」を通過したタイミングでデータを処理（画面出力など）するかによって、取り出せるデータの規則性がガラッと変化します。
+        </p>
 
-                <div class="sub-heading">✨ 先生の解説コード（無駄のない洗練された最適化ロジック）</div>
-                <p>重い累乗計算を使わず、既存の変数に対して <strong><code>chokin *= 2;</code></strong> を行うことで処理負荷を下げています。また、30日経過しても100万円に届かなかった場合の「例外処理」が美しく設計されています。</p>
-<pre><code>&lt;script&gt;
-let chokin = 1;     // その日の貯金額（初期値1円）
-let chokinSum = 0;  // 貯金総額（累計）
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
+          <thead>
+            <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 10px; text-align: left; width: 25%;">巡回アルゴリズム名</th>
+              <th style="padding: 10px; text-align: left;">処理を実行するタイミングと特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px;"><strong>先行順（プリオーダー）</strong></td>
+              <td style="padding: 10px;">ノードの**「左側（侵入時）」**を通過した瞬間にデータを処理する。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px;"><strong>間順（インオーダー）</strong></td>
+              <td style="padding: 10px; color: #1e3a8a; font-weight: bold;">ノードの「真下（底）」を通過した瞬間にデータを処理する。<br>➔ これを実行すると、データが必ず「数値順（または五十音順）」に綺麗に整列されて出力されるという、二分探索木最大の醍醐味となるアルゴリズム。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px;"><strong>後行順（ポストオーダー）</strong></td>
+              <td style="padding: 10px;">ノードの**「右側（脱出時）」**を通過した瞬間にデータを処理する。</td>
+            </tr>
+          </tbody>
+        </table>
 
-for (let i = 1; i &lt;= 30; i++) {
-    chokinSum += chokin;
-    if (chokinSum &gt; 1000000) {
-        console.log(i + "日目で貯金終了"); // 条件達成で即脱出
-        break;
-    }
-    chokin *= 2; // 💡 非常にシンプルに次の日の貯金額を2倍にする
-}
+        <div class="sub-heading">🔄 応用課題：逆インオーダーアルゴリズム（五十音の逆順出力）</div>
+        <p>
+          「真下を通過する際、通常（左から右）とは異なり、<strong>『右の子 ➔ 自分（出力） ➔ 左の子』</strong> の順で再帰を逆回りに呼び出す」というロジックを組むことで、データを**高い方から低い方（五十音の逆順）へ降順ソート**して出力させることができます。
+        </p>
+      </div>
 
-// 📌 例外処理：30日経過しても100万円に届かなかった場合の判定を「ループの外」に美しく配置
-if (chokinSum &lt;= 1000000) {
-    console.log("30日間で貯金終了");
-}
-console.log("貯金額は" + chokinSum + "円");
-&lt;/script&gt;</code></pre>
+    </main>
 
-                <p class="note" style="font-size: 13.5px; color: #e07b00; background-color: #fffbeb; padding: 12px; border-radius: 6px; margin-top: 15px; border-left: 4px solid #ff8c00;">
-                    <strong>📐 数学的な裏付けとアルゴリズムの美しさ</strong><br>
-                    毎日1円、2円、4円…と倍々に増える幾何級数（等比数列）の総額には、<strong>「その日の貯金額の2倍 － 1」</strong> という美しい数学的規則性（数式構造）が存在します。<br>
-                    20日目の貯金額は <code>2 ** 19 = 524,288円</code> であるため、20日目の総額は <code>524,288 × 2 － 1 ＝ 1,048,575円</code> となり、ちょうど<strong>20日目</strong>に100万円を突破することが計算上でも完璧に証明されます。
-                </p>
-            </div>
+    <!-- 右側：更新履歴 -->
+    <?php include 'history.php'; ?>
 
-        </main>
+  </div> <!-- .container -->
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
-    </div> <!-- .container -->
-
-    <!-- 右下：トップボタン -->
-    <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
+  <!-- 右下：トップボタン -->
+  <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>
