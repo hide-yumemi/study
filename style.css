@@ -182,6 +182,29 @@ body {
     text-align: center;
 }
 
+/* 1列目：日付列 */
+.lesson-table th:nth-child(1),
+.lesson-table td:nth-child(1) {
+    font-weight: bold;
+    color: #666;
+    width: 80px;      /* 元の横幅を維持 */
+    text-align: center; /* 中央寄せに統一 */
+}
+
+/* 3列目：生コードコピペ用列 */
+.lesson-table th:nth-child(3),
+.lesson-table td:nth-child(3) {
+    width: 160px;     /* 「生コードコピペ用」が絶対に改行されない幅に拡張 */
+    text-align: center; /* ボタンの文字を中央に寄せて綺麗に整列 */
+}
+
+/* 4列目：動作確認列 */
+.lesson-table th:nth-child(4),
+.lesson-table td:nth-child(4) {
+    width: 100px;     /* 「動作確認」が1行で美しく収まる幅に固定 */
+    text-align: center; /* リンク文字を中央に配置 */
+    
+}
 /* リンクのデザイン */
 .link-board {
     color: #1e3a8a;

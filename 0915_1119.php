@@ -27,52 +27,51 @@
                 <tbody>
                     <tr>
                         <td class="td-date">09/15</td>
-                        <td><a href="scl0915.php" class="td-link">サーバーサイドスクリプト・XAMPP開発環境構築・date関数応用制御</a></td>
+                        <td><a href="scl0915.php" class="td-link">XAMPP環境構築とdate関数応用</a></td>
                         <td><a href="scl0915_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0915_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/16</td>
-                        <td><a href="scl0916.php" class="td-link">変数・乱数・データ型とエラーの深刻度</a></td>
+                        <td><a href="scl0916.php" class="td-link">変数・乱数・データ型とエラー深刻度</a></td>
                         <td><a href="scl0916_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0916_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/17</td>
-                        <td><a href="scl0917.php" class="td-link">クッキー・定数・データ型の詳細とヒアドキュメント</a></td>
+                        <td><a href="scl0917.php" class="td-link">クッキー・定数とヒアドキュメント</a></td>
                         <td><a href="scl0917_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0917_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/24</td>
-                        <td><a href="scl0924.php" class="td-link">演算子・文字列連結の罠・配列の高度な操作</a></td>
+                        <td><a href="scl0924.php" class="td-link">文字列連結の罠と配列の高度な操作</a></td>
                         <td><a href="scl0924_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/25</td>
-                        <td><a href="scl0925.php" class="td-link">制御構文の応用・代替構文（コロン構文）とswitch文の注意点</a></td>
+                        <td><a href="scl0925.php" class="td-link">代替構文（コロン構文）とswitch文</a></td>
                         <td><a href="scl0924_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/28</td>
-                        <td><a href="scl0928.php" class="td-link">関数の引数初期値設定・型指定と可変関数の動的呼び出し</a></td>
+                        <td><a href="scl0928.php" class="td-link">関数の引数設定・型指定と可変関数</a></td>
                         <td><a href="scl0928_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0928_run.php" class="td-link">動作確認</a></td>
                     </tr>
-
                     <tr>
                         <td class="td-date">09/29</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="scl0928.php" class="td-link">9/28授業内容の【実技】無名関数と外部ファイル読込検証</a></td>
+                        <td><a href="scl0929_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
+                        <td><a href="scl0929_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/30</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="scl0928.php" class="td-link">9/28授業内容の【実技】POST多次元配列とフォーム保安対策</a></td>
+                        <td><a href="scl0930_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
+                        <td><a href="scl0930_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/02</td>
