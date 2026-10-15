@@ -1,6 +1,6 @@
-<div class="update-history" style="margin-top: 40px; padding-top: 25px; border-top: 1px dashed #cbd5e1;">
-    <h3 style="font-size: 16px; border-bottom: 2px solid #cbd5e1; padding-bottom: 5px; margin-top: 0;">🔄 更新履歴・活動ログ</h3>
-    <ul style="list-style: none; padding-left: 0; font-size: 13px; line-height: 1.6; color: #475569;">
+<div class="update-history">
+    <h3>🔄 更新履歴・活動ログ</h3>
+    <ul class="history-list">
         <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
             <strong style="color: #1e3a8a;">2026/10/15</strong><br>
             🚀 <strong>【サイトUI/UX大リニューアル】</strong><br>

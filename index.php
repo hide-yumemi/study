@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IT経験が0の私が職業訓練を受講しながら日々プログラミングの自主勉強や授業の内容をレンタルサーバーで作成していましたが、ポートフォリオとして活用できれば効率化が図れると思い、さらにGithubの操作を覚える為に作成サイトです。">
+    <meta name="description" content="IT経験が0の私が職業訓練を受講しながら日々プログラミングの自主勉強や授業の内容をレンタルサーバーで作成していくサイトです。">
     <title>職業訓練及び自主学習 | ポートフォリオサイト</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,10 @@
     <div class="container">
         <main class="main-content">
         </main>
+
+        <aside class="sidebar-history">
             <?php include 'history.php'; ?>
+        </aside>
     </div>
 
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
