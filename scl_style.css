@@ -148,3 +148,68 @@ b {
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 4px;
 }
+
+/* ==========================================
+   クイズエリア専用の共通追加スタイル
+   ========================================== */
+
+/* クイズ全体を包む外枠 */
+.quiz-container {
+    border: 2px solid #cbd5e1;
+    background-color: #f8fafc;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* クイズ各問題の白いカード */
+.quiz-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+.quiz-box:last-child {
+    margin-bottom: 5px; /* 最後だけ余白を調整 */
+}
+
+/* 問題文のテキスト */
+.quiz-question {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+/* 開閉アコーディオン（details） */
+.quiz-details {
+    cursor: pointer;
+    color: #1e3a8a;
+    font-size: 14.5px;
+}
+.quiz-details summary {
+    font-weight: bold;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+/* アコーディオンが開いた中身（正解と解説） */
+.quiz-answer-area {
+    color: #334155;
+    background-color: #f1f5f9;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: default; /* 解説文の上ではカーソルを通常に戻す */
+}
+
+/* 正解の緑文字強調 */
+.quiz-correct-text {
+    font-weight: bold;
+    color: #16a34a;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* ==========================================
+   🧠 復習ミニクイズ専用（quiz.css）
+   インラインスタイルを完全排除し、クラスで統括管理
+   ========================================== */
+
+/* クイズエリア全体を包む大きなグレーの枠 */
+.quiz-container {
+    border: 2px solid #cbd5e1; 
+    background-color: #f8fafc;
+    padding: 25px 30px; 
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* クイズ各問題の白いカード型ボックス */
+.quiz-box {
+    margin-bottom: 20px; 
+    padding: 15px; 
+    background-color: #ffffff; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+}
+.quiz-box:last-child {
+    margin-bottom: 5px; /* 最下部の余白調整 */
+}
+
+/* 太字の問題文テキスト */
+.quiz-question {
+    font-weight: bold; 
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* 青色の開閉アコーディオンリンク（details） */
+.quiz-details {
+    cursor: pointer; 
+    color: #1e3a8a; 
+    font-size: 14.5px;
+}
+.quiz-details summary {
+    font-weight: bold; 
+    outline: none; 
+    margin-bottom: 5px;
+    user-select: none; /* 文字選択の青反転を防止 */
+}
+.quiz-details summary:hover {
+    color: #ff8c00; /* ホバー時にサイトのアクセントカラーに変身 */
+}
+
+/* アコーディオンが開いた内部（正解と解説のグレー背景） */
+.quiz-answer-area {
+    color: #334155; 
+    background-color: #f1f5f9; 
+    padding: 15px; 
+    border-radius: 6px; 
+    margin-top: 10px;
+    cursor: default; /* 解説文の上では矢印カーソルに戻す */
+    line-height: 1.6;
+}
+
+/* 正解の鮮やかな緑文字強調パネル */
+.quiz-correct-text {
+    font-weight: bold; 
+    color: #16a34a; 
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border-bottom: 1px dashed #bbf7d0;
+    padding-bottom: 6px;
+}
