@@ -51,16 +51,17 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/25</td>
-                        <td><a href="scl0925.php" class="td-link">制御構文の応用・代替構文とswitch文の注意点</a></td>
-                        <td>↑と同一</td>
-                        <td>↑と同一</td>
+                        <td><a href="scl0925.php" class="td-link">制御構文の応用・代替構文（コロン構文）とswitch文の注意点</a></td>
+                        <td><a href="scl0924_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
+                        <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/28</td>
-                        <td><a href="scl0928.php" class="td-link">ファイルの読み込み・関数の高度な引数と配列制御</a></td>
+                        <td><a href="scl0928.php" class="td-link">関数の引数初期値設定・型指定と可変関数の動的呼び出し</a></td>
                         <td><a href="scl0928_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
-                        <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
+                        <td><a href="scl0928_run.php" class="td-link">動作確認</a></td>
                     </tr>
+
                     <tr>
                         <td class="td-date">09/29</td>
                         <td><a href="" class="td-link"></a></td>

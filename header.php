@@ -1,7 +1,7 @@
 <!-- 固定ヘッダー・ナビゲーション -->
 <header class="site-header">
     <h1 class="site-title">
-        職業訓練及び自主学習
+        <a href="index.php" style="color:  inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
         <span class="site-desc">IT経験が0の私が職業訓練を受講しながら日々プログラミングの自主勉強や授業の内容をレンタルサーバーで作成していましたが、ポートフォリオとして活用できれば効率化が図れると思い、さらにGithubの操作を覚える為に作成サイトです。</span>
     </h1>
 
@@ -32,7 +32,6 @@
             <button class="menu-btn">自主学習</button>
             <div class="dropdown-content">
                 <a href="./vscode_github_setup.php">Git：VSCodeとGitHubの連携</a>
-                <a href="./index.php?page=self1">JavaScriptの深掘り</a>
             </div>
         </div>
 
