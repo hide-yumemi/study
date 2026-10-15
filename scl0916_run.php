@@ -83,7 +83,6 @@ var_dump($dob);</code></pre>
 
             <p style="margin-top: 25px;"><a href="scl0916.php" class="td-link">➔ 9月16日の授業解説ノート（まとめ）へ戻る</a></p>
         </main>
-        <?php include 'history.php'; ?>
     </div>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 </body>

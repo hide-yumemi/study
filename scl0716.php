@@ -129,10 +129,6 @@
             </div>
 
         </main>
-
-        <!-- 右側：更新履歴（共通パーツ history.php を呼び出し、右横並びにします） -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

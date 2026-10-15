@@ -249,8 +249,7 @@ endforeach;</code></pre>
 
         </main>
 
-        <!-- 右側：共通更新履歴の呼び出し -->
-        <?php include 'history.php'; ?>
+
 
     </div> <!-- .container -->
 

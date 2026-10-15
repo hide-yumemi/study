@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- クイズ専用CSSを読み込み -->
     <link rel="stylesheet" href="quiz.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -21,7 +23,7 @@
     <!-- メインレイアウト -->
     <div class="container">
         <main class="main-content">
-            
+
             <h2>9/24(木)職業訓練授業</h2>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">演算子・文字列連結の罠・配列の高度な操作</p>
 
@@ -36,52 +38,70 @@
             <div class="note-section">
                 <h3 class="note-title">2. 文字列演算子（重要：半角スペースの罠）</h3>
                 <p>PHPにおける文字列連結は、 echo 文の内部ではカンマ <code>,</code> による連結が可能ですが、その他の場所ではドット <code>.</code> による連結を行います。</p>
-                
-                <div class="sub-heading">### ⚠ 半角スペースなしによるパースエラー</div>
+
+                <div class="sub-heading"> ⚠ 半角スペースなしによるパースエラー</div>
                 <p>数字（または数値を格納した変数）と <code>.</code> （ドット）を連結させる際、前後に<strong>半角スペースがない状態</strong>だと、プログラムはドットを文字列連結ではなく「小数点（浮動小数点型）」として解釈してしまいます。</p>
-                
-<pre><code>&lt;?php
+
+                <pre><code>&lt;?php
 $age = 15;
 $tom = ' Tom is ' . $age . ' years old.'; // ⭕ 正常（Tom is 15 years old）
 $tom = ' Tom is ' . $age. ' years old.'; // ❌ Parse error!
 // $ageの後に半角スペースが無いため「15.years」という不正な小数と認識されます。
 ?&gt;</code></pre>
 
-                <div class="sub-heading">### 💡 小数点として認識されるルール</div>
+                <div class="sub-heading"> 💡 小数点として認識されるルール</div>
                 <ul>
                     <li><strong>前にドット：</strong> <code>.2</code> は <code>0.2</code> と判断される。</li>
                     <li><strong>後にドット：</strong> <code>2.</code> は <code>2.0</code> と判断される（※ブラウザ出力時は末尾の0が省略され <code>2</code> と表示）。</li>
                     <li><strong>前後にドット：</strong> 小数点が2つある状態になり、文法エラー（Parse error）になります。</li>
                 </ul>
 
-                <div class="sub-heading">### ✅ 対策：文字列連結として正しく認識させるには</div>
+                <div class="sub-heading"> ✅ 対策：文字列連結として正しく認識させるには</div>
                 <p>① <strong>「 . 」の前後に必ず半角スペースを空ける</strong>、または<br>
-                ② <strong>数字を "" や '' で囲んで明示的に文字列化する</strong> のどちらかで対応します。</p>
+                    ② <strong>数字を "" や '' で囲んで明示的に文字列化する</strong> のどちらかで対応します。</p>
             </div>
             <!-- 3. 論理演算子 ＆ 比較演算子 -->
             <div class="note-section">
                 <h3 class="note-title">3. 論理演算子 ＆ 比較演算子</h3>
-                
-                <div class="sub-heading">### 排他的論理和（XOR）</div>
+
+                <div class="sub-heading"> 排他的論理和（XOR）</div>
                 <p>PHPでは排他的論理和（ <code>xor</code> ）が使えます。<strong>「両辺のどちらか一方のみが true の場合」</strong> に結果が true となります（両方 true、または両方 false の場合は false になります）。</p>
-                
+
                 <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; text-align: center;">
                     <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
-                        <th style="padding: 8px;">A</th><th style="padding: 8px;">B</th><th style="padding: 8px;">結果</th>
+                        <th style="padding: 8px;">A</th>
+                        <th style="padding: 8px;">B</th>
+                        <th style="padding: 8px;">結果</th>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 8px;">0</td><td style="padding: 8px;">0</td><td style="padding: 8px; font-weight: bold;">0</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 8px;">0</td><td style="padding: 8px;">1</td><td style="padding: 8px;">1</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 8px;">1</td><td style="padding: 8px;">0</td><td style="padding: 8px;">1</td></tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 8px;">1</td><td style="padding: 8px;">1</td><td style="padding: 8px; font-weight: bold;">0</td></tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 8px;">0</td>
+                        <td style="padding: 8px;">0</td>
+                        <td style="padding: 8px; font-weight: bold;">0</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 8px;">0</td>
+                        <td style="padding: 8px;">1</td>
+                        <td style="padding: 8px;">1</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 8px;">1</td>
+                        <td style="padding: 8px;">0</td>
+                        <td style="padding: 8px;">1</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 8px;">1</td>
+                        <td style="padding: 8px;">1</td>
+                        <td style="padding: 8px; font-weight: bold;">0</td>
+                    </tr>
                 </table>
 
-                <div class="sub-heading">### 比較演算子のバリエーション</div>
+                <div class="sub-heading"> 比較演算子のバリエーション</div>
                 <ul>
                     <li><code>$a != $b</code> または <code>$a &lt;&gt; $b</code> ： 値が等しくない時に true（型は自動変換されます）。</li>
                     <li><code>$a !== $b</code> ： 値、もしくは型のどちらか（あるいは両方）が等しくない時に true。</li>
                 </ul>
 
-                <div class="sub-heading">### 宇宙船演算子（ &lt;=&gt; ）</div>
+                <div class="sub-heading"> 宇宙船演算子（ &lt;=&gt; ）</div>
                 <p>結果が true/false の2択ではなく、<strong>「1, 0, -1」の3択</strong>で返るのが特徴です。通常の if文 よりも、 switch 文などで条件分岐させる際によく使用されます（型は問いません）。</p>
                 <ul>
                     <li>値1 &gt; 値2 のとき： <code>1</code> を返す</li>
@@ -98,10 +118,10 @@ $tom = ' Tom is ' . $age. ' years old.'; // ❌ Parse error!
                     <li><strong>連想配列：</strong> 添字の部分に、任意の文字列などの「キー（Key）」を指定して作成する配列。</li>
                 </ul>
 
-                <div class="sub-heading">### 💡 キーの自動連番ルール（混合配列）</div>
+                <div class="sub-heading"> 💡 キーの自動連番ルール（混合配列）</div>
                 <p>PHPでは、キーを指定する要素と指定しない要素を<strong>同じ配列内に混在（混合配列）</strong> させることができます。キーを指定しなかった要素には、 <strong>それまでに使われた最大の数値キー ＋ 1</strong> の連番キーが自動的に設定されます。</p>
-                
-<pre><code>&lt;?php
+
+                <pre><code>&lt;?php
 $fruits_mixed = array(
     'peach',       // 自動的にキー [0]
     'blueberry',   // 自動的にキー [1]
@@ -112,7 +132,7 @@ $fruits_mixed = array(
 );
 ?&gt;</code></pre>
 
-                <div class="sub-heading">### 🔲 要素 of 追加方法まとめ</div>
+                <div class="sub-heading"> 🔲 要素 of 追加方法まとめ</div>
                 <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px;">
                     <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
                         <th style="padding: 8px; text-align: left; width: 25%;">配列タイプ</th>
@@ -143,7 +163,7 @@ $fruits_mixed = array(
                     <li><strong>挿入：</strong> <code>array_splice()</code> を使用します。 ※ただし、キーの指定が維持できないため、連想配列では基本的に使用しません。</li>
                     <li><strong>削除・分割：</strong> PHPには直接要素をピンポイントで削除する専用関数ではなく、<strong>「配列の分割・切り出し」</strong> を行うことで、残った側を結果として扱い、削除の代わりとします。</li>
                 </ul>
-<pre><code>// 🎬 分割・削除の検証例
+                <pre><code>// 🎬 分割・削除の検証例
 $fruits_mixed = array('peach', 'blueberry', 'apple'=&gt;'red', 'banana'=&gt;'yellow', 'orange'=&gt;'orange', 'melon');
 // 添字2番目から2つの要素を切り出す（元の配列から切り離される）
 $result = array_splice($fruits_mixed, 2, 2);</code></pre>
@@ -154,9 +174,9 @@ $result = array_splice($fruits_mixed, 2, 2);</code></pre>
                 <h3 class="note-title">6. 多次元配列 ＆ 配列の演算</h3>
                 <p><strong>多次元配列</strong>の構造や考え方（配列の中にさらに配列が入る階層構造）は、 <strong>JavaScriptと共通（同じ）</strong> です。</p>
 
-                <div class="sub-heading">### 🔲 配列の比較（ == と === の違い ）</div>
+                <div class="sub-heading"> 🔲 配列の比較（ == と === の違い ）</div>
                 <p>PHPでは配列同士を比較演算子で判定する際、型や値だけでなく「順序」が影響します。</p>
-<pre><code>&lt;?php
+                <pre><code>&lt;?php
 $a = array('a' =&gt; 1, 'b' =&gt; 3, 'c' =&gt; 5);
 $b = array('a' =&gt; 1, 'c' =&gt; 5, 'b' =&gt; 3); // $aと中身のペアは同じだが順序が違う
 
@@ -164,14 +184,14 @@ var_dump($a == $b);  // ⭕ true (値とキーのセットがすべて一致し�
 var_dump($a === $b); // ❌ false (値・キーだけでなく「格納順」まで一致していないとダメ)
 ?&gt;</code></pre>
 
-                <div class="sub-heading">### 🔲 配列の足し算（結合 + 演算子）</div>
+                <div class="sub-heading"> 🔲 配列の足し算（結合 + 演算子）</div>
                 <p><code>$変数a + $変数b</code> とした場合、 <strong>左側の配列（ベース）が最優先</strong>されます。</p>
                 <ul>
                     <li>両方の配列に<strong>同じキー</strong>がある場合：左側（ベース）の値が保持され、右側の値は無視（破棄）されます。</li>
                     <li>左側（ベース）にしかないキー：そのまま残ります。</li>
                     <li>右側の配列にしかないキー：ベース配列の**末尾（後ろ）に追加**されます。</li>
                 </ul>
-<pre><code>&lt;?php
+                <pre><code>&lt;?php
 $a = array('a' =&gt; 1, 'b' =&gt; 3, 'c' =&gt; 5);
 $c = array('a' =&gt; 1, 'b' =&gt; 2); // 'b'のキーが重複している
 
@@ -248,8 +268,6 @@ var_dump($c + $a); // 💡 結果: bは左側の $c の値「2」になり、 $c
 
         </main>
 
-        <!-- 右側：共通更新履歴の呼び出し -->
-        <?php include 'history.php'; ?>
 
     </div> <!-- .container -->
 
@@ -257,4 +275,5 @@ var_dump($c + $a); // 💡 結果: bは左側の $c の値「2」になり、 $c
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

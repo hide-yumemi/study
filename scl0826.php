@@ -134,10 +134,6 @@ linkElem.textContent = "Yahooはこちら";               // 表示テキスト�
             </div>
 
         </main>
-
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

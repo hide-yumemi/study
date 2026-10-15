@@ -89,9 +89,6 @@
 
         </main>
 
-        <!-- 右側：更新履歴（共通パーツを呼び出し） -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

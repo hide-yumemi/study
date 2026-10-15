@@ -170,9 +170,6 @@ strArr.splice(4, 1, "挿入1", "挿入2");
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

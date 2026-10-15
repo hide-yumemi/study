@@ -166,9 +166,6 @@ let result = add(1, 2); // 💡 変数resultに「3」が代入される</code><
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

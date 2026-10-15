@@ -206,9 +206,6 @@ if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

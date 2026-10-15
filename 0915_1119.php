@@ -57,9 +57,9 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/28</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="scl0928.php" class="td-link">ファイルの読み込み・関数の高度な引数と配列制御</a></td>
+                        <td><a href="scl0928_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
+                        <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/29</td>

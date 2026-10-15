@@ -168,9 +168,6 @@ let result2 = ++num4; // 先に num4 が 2 になり、そのあとで result2 �
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

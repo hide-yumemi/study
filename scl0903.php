@@ -77,8 +77,6 @@
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
 
     </div> <!-- .container -->
 

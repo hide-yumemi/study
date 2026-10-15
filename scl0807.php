@@ -176,10 +176,7 @@ console.log(numA); // 最後に足し算された正確な数値（14）が出�
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
-    </div> <!-- .container -->
+     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>

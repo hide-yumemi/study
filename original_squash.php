@@ -211,7 +211,6 @@
         </script>
 
     </main>
-    <?php include 'history.php'; ?>
 </div>
 
 <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>

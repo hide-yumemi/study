@@ -123,9 +123,6 @@ border-radius: 10px 20px / 30px 40px;</code></pre>
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

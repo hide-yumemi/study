@@ -437,8 +437,7 @@ if (num % 2 === 0) {
 
         </main>
 
-        <!-- 右側：更新履歴（containerの中で正しく横並びにします） -->
-        <?php include 'history.php'; ?>
+
 
     </div> <!-- .container -->
 

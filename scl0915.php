@@ -319,9 +319,6 @@ echo "今日は" . $week[$w_num] . "曜日です"; // 文字列連結演算子�
 
         </main>
 
-        <!-- 右側：共通更新履歴の呼び出し -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->

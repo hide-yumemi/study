@@ -96,10 +96,6 @@
 </code></pre>
 
     </main>
-
-    <!-- 右側：共通の更新履歴を呼び出し -->
-    <?php include 'history.php'; ?>
-
   </div> <!-- .container -->
 
   <!-- 右下：トップボタン -->

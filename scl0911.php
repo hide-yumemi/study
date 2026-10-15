@@ -237,9 +237,6 @@ let slide_y = window.pageYOffset + clientRect.top;  // ページ最上部から�
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
-
     </div> <!-- .container -->
 
     <!-- 💡 【JavaScriptプログラムの制御ロジック】 -->

@@ -172,8 +172,6 @@ cell.classList.add("today");          // 今日の日付のマスに背景色の
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
 
     </div> <!-- .container -->
 

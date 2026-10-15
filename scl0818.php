@@ -174,8 +174,6 @@ console.log(mark1 + "の" + num1);
 
         </main>
 
-        <!-- 右側：更新履歴 -->
-        <?php include 'history.php'; ?>
 
     </div> <!-- .container -->
 

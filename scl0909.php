@@ -380,9 +380,6 @@ FROM chumon INNER JOIN shohin ON chumon.商品ID = shohin.商品ID;</code></pre>
 
     </main>
 
-    <!-- 右側：更新履歴 -->
-    <?php include 'history.php'; ?>
-
   </div> <!-- .container -->
 
   <!-- 右下：トップボタン -->
