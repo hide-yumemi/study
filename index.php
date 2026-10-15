@@ -19,7 +19,7 @@
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/15</strong><br>
-                    ・授業内容9/29までの分を更新<br>
+                    ・授業内容9/29までを更新<br>
                     ・デザイン変更<br>
                     ・全授業ノートを1カラム仕様へ変更。<br>
                     ・全実技デモ画面「記述＆出力結果」へ変更。<br>
