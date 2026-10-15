@@ -27,10 +27,6 @@
                 </p>
             </div>
         </main>
-
-    <?php include 'history.php'; ?>
-
-
     <!-- 右下：トップボタン -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 

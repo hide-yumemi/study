@@ -77,8 +77,6 @@
             </div>
         </main>
 
-        <?php include 'history.php'; ?>
-
     </div>
 
     <!-- 右下：トップボタン -->
