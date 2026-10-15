@@ -24,7 +24,7 @@
     <div class="container">
         <main class="main-content">
 
-            <h2>9/24(木)職業訓練授業</h2>
+            <h1>9/24(木)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">演算子・文字列連結の罠・配列の高度な操作</p>
 
             <!-- 1. 演算子の基本 -->

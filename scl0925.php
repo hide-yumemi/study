@@ -22,7 +22,7 @@
     <div class="container">
         <main class="main-content">
             
-            <h2>9/25(金)職業訓練授業</h2>
+            <h1>9/25(金)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">制御構文の応用・代替構文（コロン構文）・switch文の注意点・配列のループ処理</p>
 
             <p style="margin-bottom: 25px;">

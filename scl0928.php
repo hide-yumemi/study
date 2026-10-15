@@ -24,7 +24,7 @@
     <div class="container">
         <main class="main-content">
 
-            <h2>9/28(月)職業訓練授業</h2>
+            <h1>9/28(月)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">制御構造 of 終了・ファイルの読み込み・関数の高度な引数と参照</p>
 
             <!-- 1. PHPの実行を終了させる（exit / die） -->

@@ -24,7 +24,7 @@
     <div class="container">
         <main class="main-content">
 
-            <h2>9/16(水)職業訓練授業</h2>
+            <h1>9/16(水)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">コメントルール・可変変数・乱数・データ型・エラーの深刻度と厳格モード</p>
 
             <!-- 1. コメントアウトのルール -->

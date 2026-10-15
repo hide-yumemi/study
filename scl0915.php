@@ -22,7 +22,7 @@
     <div class="container">
         <main class="main-content">
             
-            <h2>9/15(火)職業訓練授業</h2>
+            <h1>9/15(火)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">PHPの基本的な仕組み・WEBサーバー・環境構築（XAMPP）</p>
 
             <!-- 1. 基本的な仕組み -->

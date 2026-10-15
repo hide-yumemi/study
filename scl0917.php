@@ -24,7 +24,7 @@
     <div class="container">
         <main class="main-content">
 
-            <h2>9/17(木)職業訓練授業</h2>
+            <h1>9/17(木)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">クッキーの仕組み・定数と動的取得・データ型の罠・複数行テキストの代入・型キャスト</p>
 
             <!-- 1. クッキー（Cookie）の仕組み -->
