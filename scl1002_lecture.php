@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>授業中の記述</title>
+</head>
+<body>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;職業訓練10月02日 php授業&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;職業訓練10月02日&lt;/h1&gt;
+
+  ['name']
+ユーザーの付けたファイル名
+サーバーで正式に保存する時に必要に応じて使用する事もある。
+但し、サーバーには多数 of ユーザーからフォルダが送信される事を考えると
+ファイル名が被る事があり得るので、
+このファイル名を使うにしても、日時や乱数と組み合わせて使用する。
+
+例）
+ユーザーが「image.jpg」と付けていた場合
+202610021308image.jpg のようにしてサーバーに保存。
+
+データベースに画像は保存出来ないので
+サーバーに保存したファイル名やパス等をデータベースに保管する。
+
+['tmp_name']
+ユーザーから送信されたファイルを一時保管している。（テンポラリフォルダ）
+このファイルをphpで正式保存する時は、ファイルの移動命令
+move_uploaded_file()
+で行う。この命令時に tep_name で受け取れるパスを使用する。
+送信され、保存されたファイルは
+&lt;form&gt;のactionで指定したファイルでのみ
+アクセス可能となっている。
+その為、ファイルをサーバー内に正式に保存する必要は
+actionで指定されたphpファイルで実行しなければならない。
+
+['tmp_name']
+ move_uploaded_file(['tmp_name']で取得できるパス 、保存するファイルパス);
+
+実行しているphpファイルからの相対パス
+imagesフォルダに1002image.jpgという名前で保存するなら
+images/1002image.jpg と指定
+
+この処理は、処理結果を成功 true 失敗 false
+で返すので、if(move_uploaded_file())
+の形で失敗時（サーバーの不調か指定フォルダが存在しない等）の処理を指定できる。
+※指定した保存先の同名ファイルが既に存在されている場合
+「上書き保存」となり旧ファイルがなくなる。
+指定したファイルが存在しているか確認
+file_exists(phpファイルからの相対パス);
+存在している　true
+存在していない　false
+
+例）
+同名の時にファイル保存を中止
+if(file_exists(~));
+exit('時間をおいて送信を再度行って下さい');
+endif;
+move_uploaded_file(~);
+
+同名の時ファイル名変更
+while(1):
+　ファイル名作成処理
+　if(!file_exists(=)); //同名ファイルがなければ
+break;                          //ループ終了
+endif;
+endwhile;
+move_uploaded_file(~);
+
+サーバー内に保存されたファイルの削除
+unlink(phpからの相対パス);
+でファイルの削除となる。
+
+['size']
+送信されたファイルのバイト単位のサイズ
+phpで保存するファイルのサイズを限定する時に
+使用
+
+['type']
+送信されたファイルのMIMEタイプ 
+例）
+.jpg　image/jpeg
+.html text/html
+
+MIMEタイプは拡張子が増えれば増える。
+アプリケーションで、保存する形式が変わった時に
+注意が必要。例えば、　xls → xlsx　と変わった時など
+MIMEタイプが共通とは限らず
+両方を許可するかどうかの判断が必要になる。
+  
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!-- http://localhost/study/scl1002_lecture.php --&gt;</code></pre>
+</body>
+</html>

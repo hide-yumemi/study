@@ -25,12 +25,6 @@
             <h1>9/25(金)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">制御構文の応用・代替構文（コロン構文）・switch文の注意点・配列のループ処理</p>
 
-            <p style="margin-bottom: 25px;">
-                <!-- 💡 24日の実入力コードと同一のため、リンク先を24日分へ直接合流・マッピングさせています -->
-                👉 <a href="scl0924_lecture.php" target="_blank" class="td-link">この日の授業内実技コード（生ソース画面）を別タブで開いて丸ごと複製する</a>
-                ｜ <a href="scl0924_run.php" class="td-link">動作確認</a>
-            </p>
-
             <!-- 1. 制御構文とブロック文の閉じ構文 -->
             <div class="note-section">
                 <h3 class="note-title">1. 制御構文とブロック文の閉じ構文</h3>

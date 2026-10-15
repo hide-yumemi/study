@@ -31,7 +31,8 @@
         <div class="menu-item">
             <button class="menu-btn">自主学習</button>
             <div class="dropdown-content">
-                <a href="./vscode_github_setup.php">Git：VSCodeとGitHubの連携</a>
+                <a href="./vscode_github_setup.php">Git・VSCodeとGitHubの連携</a>
+                <a href="scl_self_study_0928_0930.php">フォームデータの安全な送受信とサニタイズ技術</a>
             </div>
         </div>
 

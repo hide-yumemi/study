@@ -20,7 +20,7 @@
                     <tr>
                         <th>日付</th>
                         <th>授業内容まとめ</th>
-                        <th>生コードコピペ用</th>
+                        <th>コードコピペ用</th>
                         <th>動作確認</th>
                     </tr>
                 </thead>
@@ -75,19 +75,19 @@
                     </tr>
                     <tr>
                         <td class="td-date">10/02</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl1002.php" class="td-link">$_FILESによるファイルアップロードとサーバー側ファイル操作</a></td>
+                        <td><a href="scl1002_lecture.php" target="_blank" class="td-link">授業の記述</td>
+                        <td>特になし</td>
+                    </tr>
+                    <tr>
+                        <td class="td-date">10/02</td>
+                        <td><a href="scl1002_kadai.php" class="td-link">課題：フォーム処理プログラムの作成</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/05</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="td-date">10/06</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="" class="td-link">定期テスト第4回目・課題解説</a></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -117,12 +117,6 @@
                     </tr>
                     <tr>
                         <td class="td-date">10/14</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="td-date">10/15</td>
                         <td><a href="" class="td-link"></a></td>
                         <td></td>
                         <td></td>
