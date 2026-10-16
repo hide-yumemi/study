@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                         <td class="td-date">10/05</td>
-                        <td><a href="" class="td-link">定期テスト第4回目・課題解説</a></td>
+                        <td><a href="" class="td-link">課題解説・</a></td>
                         <td></td>
                         <td></td>
                     </tr>
