@@ -19,6 +19,9 @@
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
+                    📝 10/5までの授業ノートの更新
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                    <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 9/30までの授業ノートの追加　表のデザイン変更と授業内容のタイトルの要約化を行いました。
 
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">

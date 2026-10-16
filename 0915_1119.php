@@ -92,6 +92,12 @@
                         <td></td>
                     </tr>
                     <tr>
+                        <td class="td-date">10/06</td>
+                        <td><a href="" class="td-link"></a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td class="td-date">10/07</td>
                         <td><a href="" class="td-link"></a></td>
                         <td></td>
@@ -121,7 +127,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="td-date">10/16</td>
                         <td><a href="" class="td-link"></a></td>
                         <td></td>
