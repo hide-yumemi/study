@@ -102,7 +102,13 @@ greet('こんにちは'); // 「ゲストさん、こんにちは」と出力さ
                 <p>関数に渡される引数のデータ型をあらかじめ指定しておく仕組みです。これにより、意図しない型のデータが渡されて関数が誤作動を起こすのを未然に防ぐことができます。配列処理を行う際などに特によく活用されます。</p>
                 <p><strong>書き方：</strong> 型と引数名の間を「半角スペース」で区切って指定します。</p>
                 <pre><code>function 関数名(型 $引数名) { 〜 }</code></pre>
-                <p><strong>主要な型の一覧：</strong> <code>string</code> （文字列）、 <code>int</code> （整数）、 <code>float</code> （浮動小数点数）、 <code>bool</code> （論理値）、 <code>array</code> （配列）</p>
+                <p><strong>主要な型の一覧：</strong>
+                <ul>
+                    <li><code>string</code> （文字列）</li>
+                    <li><code>int</code> （整数）</li>
+                    <li><code>float</code> （浮動小数点数）</li>
+                    <li><code>bool</code> （論理値）</li>
+                    <li><code>array</code> （配列）</li>
             </div>
 
             <!-- 5. array_map() 関数 -->

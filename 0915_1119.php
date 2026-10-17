@@ -63,13 +63,13 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/29</td>
-                        <td><a href="scl0928.php" class="td-link">9/28授業内容の【実技】無名関数と外部ファイル読込検証</a></td>
+                        <td><a href="scl0929.php" class="td-link">スーパーグローバル変数とセキュリティ対策</a></td>
                         <td><a href="scl0929_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0929_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/30</td>
-                        <td><a href="scl0928.php" class="td-link">9/28授業内容の【実技】POST多次元配列とフォーム保安対策</a></td>
+                        <td><a href="scl0930.php" class="td-link">選択系コントロールの処理とテキストエリア改行制御</a></td>
                         <td><a href="scl0930_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0930_run.php" class="td-link">動作確認</a></td>
                     </tr>
