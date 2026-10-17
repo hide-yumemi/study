@@ -74,22 +74,28 @@
                         <td><a href="scl0930_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
+                        <td class="td-date">09/30</td>
+                        <td><a href="scl0930_kadai.php" class="td-link">課題：送受信入力フォームの作成</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                                        <tr>
+                        <td class="td-date">10/02</td>
+                        <td><a href="scl0930_kadai_Anser.php" class="td-link">課題の解答</td>
+                        <td></td>
+                        <td><a href="scl0930_kadai_Anser_run.php" class="td-link">動作確認</td>
+                    </tr>
+                    <tr>
                         <td class="td-date">10/02</td>
                         <td><a href="scl1002.php" class="td-link">$_FILESによるファイルアップロードとサーバー側ファイル操作</a></td>
                         <td><a href="scl1002_lecture.php" target="_blank" class="td-link">授業の記述</td>
-                        <td>特になし</td>
-                    </tr>
-                    <tr>
-                        <td class="td-date">10/02</td>
-                        <td><a href="scl1002_kadai.php" class="td-link">課題：フォーム処理プログラムの作成</td>
-                        <td></td>
-                        <td></td>
+                        <td>実技なし</td>
                     </tr>
                     <tr>
                         <td class="td-date">10/05</td>
-                        <td><a href="" class="td-link">課題解説・</a></td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="scl1005.php" class="td-link">$_FILESによるファイルアップロード技術</a></td>
+                        <td><a href="scl1005.php#code-area" class="td-link">授業の記述</a></td>
+                        <td><a href="scl1005_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/06</td>
@@ -127,7 +133,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td class="td-date">10/16</td>
                         <td><a href="" class="td-link"></a></td>
                         <td></td>

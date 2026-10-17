@@ -17,7 +17,13 @@
         <main class="main-content">
             <h3>🔄 更新履歴・活動ログ</h3>
             <ul class="history-list">
-                                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                    <strong style="color: #1e3a8a;">2026/10/16</strong><br>
+                    📝 10/18 授業内容10/5追加
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                    <strong style="color: #1e3a8a;">2026/10/16</strong><br>
+                    📝 10/17 METAタグのテンプレ化
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 9/28.29.30の授業内容のコードの修正。ヘッダー及び微調整を致しました。
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">

@@ -33,7 +33,7 @@
         <h3 class="note-title">1. $_FILESの構造と各キーの詳細</h3>
         <p>ユーザーからフォーム経由で送信されたファイル（画像やPDFなど）は、PHPのスーパーグローバル変数である二次元の連想配列 <strong>$_FILES</strong> に格納されます。</p>
 
-        <div class="sub-heading">### 🔲 $_FILES['inputのname']['各キー'] の役割</div>
+        <div class="sub-heading"> 🔲 $_FILES['inputのname']['各キー'] の役割</div>
         <ul>
           <li><code>['name']</code> ： ユーザーのPCやスマホにおける<strong>「元のファイル名」</strong>です。</li>
           <li><code>['tmp_name']</code> ： アップロードされたファイルが、サーバー側で一時的に保管されている<strong>「テンポラリフォルダ内のパス」</strong>です。</li>
@@ -41,7 +41,7 @@
           <li><code>['type']</code> ： ファイル形式を表す<strong>「MIMEタイプ（例: image/jpeg）」</strong>です。</li>
         </ul>
 
-        <div class="sub-heading">### ⚠ 最重要：ファイル名重複の回避とデータベース連携</div>
+        <div class="sub-heading"> ⚠ 最重要：ファイル名重複の回避とデータベース連携</div>
         <p>多数のユーザーからファイルが送信されるため、元のファイル名（<code>['name']</code>）のまま保存すると、同名ファイルが上書きされる危険性があります。そのため、日時や乱数を組み合わせて「<code>202610021308image.jpg</code>」のように<strong>一意（ユニーク）なファイル名に変換して保存</strong>するのが鉄則です。 </p>
         <p>また、<strong>データベースには画像そのものを保存できない</strong>ため、サーバー内に保存した「ファイル名」や「パス」をテキストデータとして保管し、連携させます。</p>
       </div>
@@ -51,7 +51,7 @@
         <h3 class="note-title">2. 正式保存とテンポラリフォルダの扱い</h3>
         <p>一時保管されているテンポラリフォルダ内のファイルは、<code>&lt;form&gt;</code> の <code>action</code> で指定した先のファイルでのみアクセス可能という制限があります。そのため、サーバー内への正式な保存処理は、必ず受け取り側のPHPファイル内で実行する必要があります。</p>
 
-        <div class="sub-heading">### 🎬 move_uploaded_file() 関数によるファイル移動</div>
+        <div class="sub-heading"> 🎬 move_uploaded_file() 関数によるファイル移動</div>
         <p>テンポラリフォルダから、目的の保存先フォルダへファイルを移動・正式保存する専用関数です。実行しているPHPファイルからの相対パスで保存先を指定します。</p>
         <p><code>move_uploaded_file($_FILES['🎨']['tmp_name'], '保存先のファイルパス');</code></p>
         <ul>
@@ -66,12 +66,12 @@
         <p><code>file_exists('対象ファイルへの相対パス')</code></p>
         <p>指定したファイルがすでに存在していれば <code>true</code> 、存在していなければ <code>false</code> を返します。</p>
 
-        <div class="sub-heading">### 💡 同名の時に保存を中止させる安全な実装例</div>
+        <div class="sub-heading"> 💡 同名の時に保存を中止させる安全な実装例</div>
         <pre><code>if (file_exists("images/" . $filename)) {
     exit('同名のファイルが存在します。時間を置いて再度送信してください。');
 }</code></pre>
 
-        <div class="sub-heading">### 💡 while文を使用した自動リネーム（別名切り替え）のループ例</div>
+        <div class="sub-heading"> 💡 while文を使用した自動リネーム（別名切り替え）のループ例</div>
         <pre><code>while (1) {
     // 新しいファイル名を作成する処理
     if (!file_exists("images/" . $new_filename)) {
