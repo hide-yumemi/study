@@ -94,7 +94,7 @@
                     <tr>
                         <td class="td-date">10/05</td>
                         <td><a href="scl1005.php" class="td-link">$_FILESによるファイルアップロード技術</a></td>
-                        <td><a href="scl1005.php#code-area" class="td-link">授業の記述</a></td>
+                        <td><a href="scl1005.txt" class="td-link">授業の記述</a></td>
                         <td><a href="scl1005_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>

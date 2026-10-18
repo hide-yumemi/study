@@ -59,7 +59,7 @@
             <div class="note-section">
                 <h3 class="note-title">3. z-index プロパティ （要素の重ね順の指定）</h3>
                 <p>要素が重なったときの、上下（手前と奥）の順番を整数値で指定します。指定する数値が大きいものほど手前（上）に重なって表示されます。</p>
-                <div class="alert-box" style="background-color: #f1f5f9; border-left: 4px solid #64748b; color: #334155;">
+                <div class="alert-box" style="background-color: #f1f5f9; border-left: 4px solid #64748b; color: #334155; padding: 10px; margin-bottom: 15px;">
                     ※重要： <code>z-index</code> は、 position の値が初期値（ <code>static</code> ）以外の要素にしか絶対に機能しません。
                 </div>
 
@@ -67,29 +67,29 @@
                 <table class="lesson-table">
                     <thead>
                         <tr>
-                            <th style="width: 100px; text-align: center;">強さ・優先度</th>
-                            <th style="width: 150px;">必須条件</th>
+                            <th style="width: 120px; text-align: center;">強さ・優先度</th>
+                            <th style="width: 180px;">必須条件</th>
                             <th>ブラウザ上の表示状態</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="text-align: center;"><span class="rank-badge" style="background-color: #eab308;">🥇 最強</span></td>
+                            <td style="text-align: center; font-weight: bold; color: #1e3a8a; font-size: 15px;">🥇 最強</td>
                             <td><code>position</code>（static以外）あり<br>＋ <strong>z-index の数値が大きい</strong></td>
                             <td style="font-weight: bold; color: #1e3a8a;">すべての要素の一番手前（上）に最優先で表示される</td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;"><span class="rank-badge" style="background-color: #94a3b8;">🥈 強い</span></td>
+                            <td style="text-align: center; font-weight: bold; color: #334155; font-size: 15px;">🥈 強い</td>
                             <td><code>position</code>（static以外）あり<br>＋ <strong>z-index の数値が小さい</strong></td>
                             <td>他の浮いている要素たちの間で、数値に応じた中間に表示される</td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;"><span class="rank-badge" style="background-color: #b45309;">🥉 普通</span></td>
+                            <td style="text-align: center; font-weight: bold; color: #b45309; font-size: 15px;">🥉 普通</td>
                             <td><code>position</code>（static以外）あり<br>➔ <strong>z-index の記述なし</strong></td>
                             <td>重なり順はHTMLコードの記述順に依存（コード上で**下に書かれているもの**が手前に重なる）</td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;"><span class="rank-badge" style="background-color: #ef4444;">❌ 最弱</span></td>
+                            <td style="text-align: center; font-weight: bold; color: #ef4444; font-size: 15px;">❌ 最弱</td>
                             <td><code>position</code> が初期値（ <code>static</code> ）</td>
                             <td style="color: #666;"><strong>z-index の記述は完全に無視される（最背面に沈む）</strong></td>
                         </tr>
@@ -100,9 +100,9 @@
             <div class="note-section">
                 <h3 class="note-title">3-2. 移動しない要素側にも relative を設定する理由</h3>
                 <p>元々その場から「動かさない要素A（static）」の上に、「絶対に移動させたい要素B（absolute）」を綺麗に重ねようとした際、要素Bがなぜか下に潜り込んで見えなくなってしまうというバグ（重なりバグ）が起きることがあります。</p>
-                <div class="info-box">
-                    <strong>💡 潜り込みバグの防ぎ方：</strong><br>
-                    原因は、要素Aのpositionが初期値（static）のままだと、重ね順の戦闘力（z-index）がゼロの最弱状態だからです。この潜り込みを防ぐために、<strong>移動させる必要がない要素A側にもあえて <code>position: relative;</code> のみを与えてz-indexの戦闘力を解放</strong>し、重ね順の主導権をきっちりコントロールできるようにするのがプロのセオリーです。
+                <div class="board-dl">
+                    <dt>💡 潜り込みバグの防ぎ方：</dt>
+                    <dd>原因は、要素Aのpositionが初期値（static）のままだと、重ね順の戦闘力（z-index）がゼロの最弱状態だからです。この潜り込みを防ぐために、<strong>移動させる必要がない要素A側にもあえて <code>position: relative;</code> のみを与えてz-indexの戦闘力を解放</strong>し、重ね順の主導権をきっちりコントロールできるようにするのがプロのセオリーです。</dd>
                 </div>
             </div>
 
@@ -111,15 +111,15 @@
                 <h3 class="note-title">4. position: relative; （本来の場所からずらす相対配置）</h3>
                 <p>本来表示される予定だった自分自身の場所を基準（起点）として、上下左右に位置をずらします。最大の特徴は、<strong>「自分が動いた後も、元の表示場所（スペース）がそのままキープされて残る」</strong>という性質です。</p>
 
-                <!-- 💡 ご提示いただいた解説画像をここに美しく組み込みました！ -->
-                <div class="sub-heading">■ 【参考視覚資料】Bの箱が本来の場所からズレて重なる表示結果</div>
-                <div style="text-align: center; margin: 20px 0; background-color: #f8fafc; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px;">
-                    <img src="img/position-relative.png" alt="position: relativeの配置検証図" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-                    <p style="font-size: 13px; color: #666; margin-top: 8px; margin-bottom: 0;">※Bの箱がズレても元の空間が維持されるため、Cが上に詰め上がらない状態を示す図</p>
+                <!-- 共通CSSの board-figure に完全準拠 -->
+                <div class="board-figure">
+                    <img src="img/position-relative.png" alt="position: relativeの配置検証図">
+                    <p class="board-figcaption">■ 【参考視覚資料】Bの箱が本来の場所からズレて重なる表示結果</p>
+                    <p style="font-size: 13px; color: #666; margin-top: 5px; margin-bottom: 0;">※Bの箱がズレても元の空間が維持されるため、Cが上に詰め上がらない状態を示す図</p>
                 </div>
 
                 <p><strong>【コード記述例】</strong></p>
-                <pre><code>/* Bの箱だけを「本来の場所」から移動させる設定 */
+                <pre><code>/* B의 箱だけを「本来の場所」から移動させる設定 */
 .b {
     position: relative; /* 1. 相対配置を有効にする（元の空間をキープ） */
     top: 10px;          /* 2. 本来の位置の上端から、10px下にずらす */
@@ -131,16 +131,16 @@
                 <ul>
                     <li><strong>A と C</strong> は本来の位置にそのまま何も影響を受けずに配置されます。</li>
                     <li><strong>B</strong> だけが、本来あるはずだった場所から、右に10px、下に10pxズレてCの上に重なるように配置されます。</li>
-                    <li>元のBの空間（スペース）はしっかりとブラウザにキープされ続けているため、**Cが上に詰まって押し上がってくることはありません**。</li>
+                    <li>元のBの空間（スペース）はしっかりとブラウザにキープされ続けているため、<strong>Cが上に詰まって押し上がってくることはありません</strong>。</li>
                 </ul>
             </div>
 
         </main>
+    </div> <!-- .container 終了 -->
 
-    </div> <!-- .container -->
-
-    <!-- 右下：トップボタン -->
+    <!-- 右下：トップボタン（既存スタイルが自動適用されます） -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
 </html>
+<!-- http://localhost/study/scl0729.php -->

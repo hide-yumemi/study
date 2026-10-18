@@ -184,8 +184,8 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/04</td>
-                        <td><a href="scl0904.php" target="_blank" class="td-link">スカッシュゲーム紹介・解説(※講師が用意したファイル)</a></td>
-                        <td>教材</td>
+                        <td>スカッシュゲーム紹介(※教材クリックで別ページ開きます)</td>
+                        <td><a href="scl0904.php" target="_blank" class="td-link">教材</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/07</td>
@@ -194,8 +194,8 @@
                     </tr>
                     <tr>
                         <td class="td-date">09/08</td>
-                        <td><a href="scl0908.php" target="_blank"　class="td-link">ゲーム：リバーシの紹介・解説(※講師が用意したファイル)</a></td>
-                        <td>教材</td>
+                        <td>ゲーム：リバーシの紹介(※教材クリックで別ページ開きます)</td>
+                        <td><a href="scl0908.php" target="_blank" 　class="td-link">教材</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">09/09</td>
