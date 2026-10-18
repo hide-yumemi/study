@@ -19,7 +19,7 @@
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
-                    📝 10/19 授業内容10/7追加
+                    📝 10/19 授業内容10/7～10/13追加
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 10/18 授業内容10/5追加
