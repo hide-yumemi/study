@@ -1,0 +1,139 @@
+﻿$sql='INSERT INTO 'post'~
+か34行で1つの命令となっている。
+これは、$sqlという変数に、INSERT INTO文を文字列として代入している命令となっており、
+INSERT INTO文のVALUEの指定の時にユーザーの入力した値を、「name」「comment」それぞれエスケープ処理を行っている。
+「created_at」は、phpで取得する日付情報をVALUE値内でdate()で行っている。
+
+mysqli_real_escape_string（接続のmysqli_connectを代入した変数,エスケープする文字列）
+この命令で、ユーザーの入力した値をデータベースに書き込みをする時に
+エスケープ処理を行って無毒化を行う。
+
+エスケープ処理による無毒化
+　SQL文を実行する時、悪意を持った物による別のSQL文を実行させる入力値をSQL文が
+　実行できないように一部の文字を置き換える。
+
+$sql="INSERT INTO 'post' ('name','comment','created_at') VALUES('"
+ここまでで1つの文字列
+.mysqli_real_escape_string($link,$name)."','"
+これが文字列　　　　　　　　　　　　　　　↑ここが文字列①
+
+.mysqli_real_escape_string($link,$comment)."','"
+これが文字列　　　　　　　　　　　　　　　　　↑ここが文字列②
+
+.date('Y-m-d H:i:s')."')";
+ここが文字列になる　↑ここが文字列③
+
+$sql="INSERT INTO 'post' ('name','comment','created_at') VALUES('エスケープした文字列','エスケープした文字列','年月日時分秒')";
+とVALUEに指定する値を'~'の形にした文になる。　　　　　　　　　　　　　　　　　　　　　　①　　　　　　　　　　②　　　　　　③
+
+プリペアドステートメントを使用しない時のSQL文の実行命令
+mysqli_query(mysqli_connectを代入した変数,SQL文もしくはSQL文を代入した変数);
+
+エスケープ処理をmysqli_real_escape_srting()で
+行ったSQL文と、ユーザーの入力値を使用しないSQL文はこの命令でSQL文を実行する。
+
+INSERT INTOのSQL文実行後
+header("Location:http~");
+の処理でページを再読み込みが実行となる。
+この再読み込みはフォーム入力を経由しない形の為、getによる送信となる。その為
+9行目のif($_SERVER["REWUEST_METHOD"])==="POST"){
+の判定がfalseとなり、ユーザーの入力値受け取りを行わず
+<!DOCTYPE html>以降の処理（表示処理）を行う
+
+<form action="bbs.php" method="post">
+<?php if(count($errors)): ?>
+のphpのif文の判定について
+入力処理で入力エラーがあった場合、INSERT INTOを行わずにこの処理に入る
+
+その時は、$errorsを用意した配列にエラーメッセージが格納されている。
+count($errors)は配列の個数を取得し、0でなければif(count($errors))がtrueとなりエラーを出力する処理に入っていく。
+
+
+if文がtrueとなった時の処理
+<ul class="error_list">
+<?php foreach($errors as $error): ?>
+<li>
+<?php htmlspecialchars($error,ENT_QUOTES,"UTF-8"); ?>
+</li>
+<?php endforeach ?>
+</ul>
+
+この一連の命令は
+・foreachを使って配列の全ての要素を取り出す
+・取り出したものをブラウザ表示する為にhtmlspecialchars()でエスケープ処理
+・エスケープ処理した文字列を<li>~</li>とタグ付け
+・foreachで出力となる<li>~</li>を<ul>~</ul>で囲みリスト完成
+という処理を行っている。
+
+データベースに格納されているデータの取得は
+SELECT文で行う
+取得するカラムを指定する事が出来る。全てのカラムを取得する時は＊で指定する。
+カラム指定
+　SELECT 'カラム','名カラム名'~  FROM 'テーブル名'
+全カラム取得
+　SELECT ＊ FROM 'テーブル名'
+
+SELECT文は
+・取得するカラムの指定
+・取得するテーブル名
+は必須となり、これにオプションで
+・取得する行の条件指定（WHERE））
+・取得データの並び替え（ORDER BY）
+などの指定を必要に応じ追加する。
+（今回は行は全て取得の為、WHEREはない）
+
+WHEREでの取得行の絞り込み
+WHERE ’カラム名’　比較演算子　値
+の形で「〇〇カラムの値が△△のもの」という指定で行う
+使える比較演算子は＜、＞、＜＝、＞＝、＝、＜＞
+また複数条件を組み合わせても可能AND ORを使用して
+’カラム名 >= 50 AND 'カラム名' <= 100
+と「50～100のもの」という条件にすることも出来る。
+
+またMySQLデータベースではあいまい検索が可能となっている
+・〇〇から始まる文字
+・△△で終わる文字
+・文中にXXを含文字
+など一部一致の形となっている。　
+あいまい検索を行う演算+
+LIKE　演算子
+KIKE演算子を使用し値の方へ
+%～０字以上の任意の文字
+_～1次の演算子。
+を使用する。
+例）
+’カラム名’LIKE ”%テレビ%”　　文中にテレビという文字を含む
+’カラム名’LIKE ”__型テレビ”　　〇〇型テレビ
+カラム名’’LIKE ”テレビ_%　　　テレビから5始まり、テレビの後ろに1以上あるもの。
+
+並び替えを行う
+ORDER BY "カラム名’ 昇順or降順
+降順　DESC
+昇順　ASC
+と指定する。
+
+SELECT ＊ FROM 'post' ORDER BY 'created.at' DESC
+SELECT ＊ で全カラム取得
+FROM ’post’でpostテーブルからとなり
+並び替えは
+　ORDER BY ’created_at’ DESC
+により、投稿日時の新しいものから順に並び替えとなっている。
+これは投稿内容のブラウザ表示を新しいものから順に表示する為に行っている。
+（ORDER BY 'id' DESC でも同じ結果となるが、ブラウザ表示する日時の方で並び替えを指定している）
+
+データベースに対してSELECT文の実行を指示
+$result=mysql_query($link,$sql);
+$sqlに入ったSQL文を$linkで接続した
+データベースに対し実行を指示し
+$resultにSELECT成功～SELECT文の実行結果（取得データ）は
+　　　　　　　　　　　データベースのSELECT文展開場所に保存され
+　　　　　　　　　　　その展開場所からデータを１件うつ取り出しする為の情報が代入
+SELECT失敗（エラー文）～falseが代入となる。
+
+
+
+
+
+
+
+

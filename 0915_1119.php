@@ -116,29 +116,35 @@
                     <tr>
                         <td class="td-date">10/08</td>
                         <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl1008.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/09</td>
                         <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl1009.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/13</td>
                         <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td><a href="scl1013.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/14</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td>講師お休みの為、特別授業でグルーピング。プログラムの楽しさを伝えるには？</a></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/16</td>
+                        <td><a href="" class="td-link"></a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td-date">10/19</td>
                         <td><a href="" class="td-link"></a></td>
                         <td></td>
                         <td></td>

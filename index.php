@@ -15,7 +15,7 @@
 
     <div class="container">
         <main class="main-content">
-            <h3>🔄 更新履歴・活動ログ</h3>
+            <h3>🔄更新履歴・活動ログ</h3>
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
