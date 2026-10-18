@@ -79,7 +79,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td class="td-date">10/02</td>
                         <td><a href="scl0930_kadai_Anser.php" class="td-link">課題の解答</td>
                         <td></td>
@@ -99,14 +99,18 @@
                     </tr>
                     <tr>
                         <td class="td-date">10/06</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="scl1006.php" class="td-link">入力フォームとファイル受信処理・フラグ管理技術</a></td>
+                        <td><a href="scl1006.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1006_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/07</td>
-                        <td><a href="" class="td-link"></a></td>
-                        <td></td>
+                        <td>
+                            <a href="scl1007.php" class="td-link">MySQLデータベースの基礎とphpMyAdmin操作</a>
+                            （準備する物：<a href="oneline_bbs.zip" download class="td-link">先生の用意した教材</a>
+                            ）
+                        </td>
+                        <td><a href="scl1007.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td></td>
                     </tr>
                     <tr>
