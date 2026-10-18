@@ -111,7 +111,7 @@
                             ）
                         </td>
                         <td><a href="scl1007.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td></td>
+                        <td><a href="./oneline_bbs/bbs.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/08</td>
