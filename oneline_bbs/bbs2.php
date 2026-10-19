@@ -74,7 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	<?php
 	$stmt = $pdo->prepare("SELECT * FROM `post` ORDER BY `created_at` DESC");
 	$result = $stmt->execute();
+	echo $stmt->fetchColumn();
 	?>
+	
 	<?php if ($result !== false): ?>
 		<ul>
 			<?php while ($result = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
