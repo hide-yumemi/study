@@ -1,4 +1,3 @@
-<!-- 固定ヘッダー・ナビゲーション -->
 <header class="site-header">
     <div class="site-title">
         <a href="index.php" style="color: inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
