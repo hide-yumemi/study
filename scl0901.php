@@ -169,7 +169,9 @@ console.log(lastDate.getDate());      // ➔ 「31」が出力される（うる
 cell.setAttribute("class", "sunday"); // 日曜日のマスに赤文字用CSSクラスを適用
 cell.classList.add("today");          // 今日の日付のマスに背景色の装飾クラスを追加</code></pre>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
 

@@ -146,7 +146,9 @@
                 <div class="sub-heading">■ タイトル（caption）の位置をコントロールする</div>
                 <p>表のタイトル（ <code>&lt;caption&gt;</code> ）は標準では表の上に表示されますが、CSSの <strong><code>caption-side: bottom;</code></strong> という命令を使うことで、表の真下（下部）へと綺麗に回り込ませて表示位置を変更することができます。</p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

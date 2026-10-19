@@ -156,7 +156,9 @@ body { font-size: 1.6rem; } /* 10px &times; 1.6 = 16px に戻す */</code></pre>
                 </ul>
                 <p>※ 日本語のフォントデータには元々斜体のデータが存在しないものが多いため、主にアルファベット（英単語）をお洒落に区別させたい際に力を発揮します 。</p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

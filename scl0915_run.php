@@ -77,8 +77,9 @@ echo "&lt;p&gt;テキストテキスト&lt;/p&gt;";</code></pre>
                 </div>
             </div>
 
-            <p style="margin-top: 25px;"><a href="scl0915.php" class="td-link">➔ 9月15日の授業解説ノート（まとめ）へ戻る</a></p>
-        </main>
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>        </main>
 
     </div>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>

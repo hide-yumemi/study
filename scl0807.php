@@ -173,7 +173,9 @@ console.log(numA); // 最後に足し算された正確な数値（14）が出�
                     </div>
                 </div>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
      </div> <!-- .container -->

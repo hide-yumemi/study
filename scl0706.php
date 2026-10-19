@@ -149,7 +149,9 @@
                     <li><strong>Googleの検索結果に載せるのを拒否：</strong> <code>&lt;meta name="robots" content="noindex,nofollow"&gt;</code>。ポートフォリオサイトなどで使用（検索結果にリンクを載せない設定）。</li>
                 </ul>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

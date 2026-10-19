@@ -225,7 +225,9 @@ EOD;</code></pre>
                     </details>
                 </div>
             </div> <!-- .quiz-container 終了 -->
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
 

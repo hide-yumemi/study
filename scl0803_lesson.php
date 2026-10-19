@@ -94,7 +94,9 @@
           &lt;/p&gt;
         &lt;/form&gt;
 </code></pre>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
     </main>
   </div> <!-- .container -->
 

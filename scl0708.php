@@ -93,7 +93,9 @@
                     <figcaption class="board-figcaption">会社の売上に関したデータです</figcaption>
                 </figure>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

@@ -134,7 +134,9 @@
                     <li>元のBの空間（スペース）はしっかりとブラウザにキープされ続けているため、<strong>Cが上に詰まって押し上がってくることはありません</strong>。</li>
                 </ul>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
     </div> <!-- .container 終了 -->
 

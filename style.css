@@ -228,3 +228,40 @@ body {
 .top-button:hover {
     background-color: #e07b00;
 }
+
+/* ==========================================
+   📚 授業の参考書紹介エリア専用スタイル
+   ========================================== */
+
+/* 本の紹介を包む薄グレーの枠（Flexboxで横並び化） */
+.book-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #1e3a8a;
+    margin-top: 20px;
+    display: flex;         /* 画像とテキストを横並びにする */
+    align-items: center;   /* 上下を中央揃えにする */
+    gap: 20px;             /* 画像とテキストの間の余白 */
+}
+
+/* 本の画像配置エリア */
+.book-image img {
+    width: 100px;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+}
+
+
+.book-details {
+    flex: 1;
+}
+
+.book-details p {
+    margin: 0 0 8px 0;
+}
+
+.book-details p:last-child {
+    margin-bottom: 0;
+}

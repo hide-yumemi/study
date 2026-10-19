@@ -215,5 +215,6 @@ foreach($fruits_mixed as $key =&gt; $value):
 &lt;!-- http://localhost/study/scl0924_lecture.php --&gt;
 &lt;!-- ↑をコピペして外部のブラウザで開いて動作チェック --&gt;
 出力してる要素毎にphpで区切る。</code></pre>
+
 </body>
 </html>

@@ -135,7 +135,9 @@ for (let i = 0; i &lt; selLi.length; i++) {
                     「要素をJavaScriptで動的に追加した後に、その要素も含めて一括でイベントを設定したりデザインを変更したい」という仕様の場合、取得タイミングをずらす（追加後に再取得する）コードを書くか、あるいは最初から自動同期してくれる <code>getElementById</code> などの動的オブジェクト（HTMLCollection）を使って定数管理しておかないと、デザインが部分的に崩れる重篤なフロントエンドのバグに直結します。
                 </p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
     </div> <!-- .container -->
 

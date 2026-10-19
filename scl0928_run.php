@@ -160,9 +160,8 @@ func_caller('foo');</code></pre>
             </div>
 
             <p style="margin-top: 25px;">
-                <a href="scl0928.php" class="td-link">➔ 9月28日の授業解説ノート（まとめ）へ戻る</a>
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
-
         </main>
 
 

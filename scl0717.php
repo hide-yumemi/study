@@ -151,7 +151,9 @@ li &gt; span { color: red; }</code></pre>
                     昔は文字をチカチカと点滅させる <code>blink</code> という値が存在しましたが、ユーザーの視覚的負担が非常に大きくUI/UXの観点から優しくないため、現在は完全廃止されています（現代のブラウザでは動作しません） 。
                 </div>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
   </div> <!-- .container -->
 

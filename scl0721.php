@@ -159,7 +159,9 @@ hr {
                 <div class="sub-heading">■ 枠線付与時のパディングの重要性</div>
                 <p>要素に <code>border</code>（枠線）を付けた際、上下は文字の行高（ <code>line-height</code> ）のおかげで自然な隙間が生まれますが、**左右の文字は枠線と完全にペタッとくっついてしまい、非常に見づらい状態**になってしまいます [1.12]。そのため、枠線を引く要素には必ずセットで <code>padding-left</code> や <code>padding-right</code> を設定し、左右に文字の逃げ道（余白）を作ってあげるのが綺麗なサイトを作るための鉄則です [1.12]。</p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
    </div> <!-- .container -->
 

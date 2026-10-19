@@ -377,7 +377,9 @@ FROM chumon INNER JOIN shohin ON chumon.商品ID = shohin.商品ID;</code></pre>
           日頃のバックアップ作業の軽さ（時間や容量の少なさ）を最優先するなら「③増分」が圧倒的に優れていますが、いざ大きな障害が起きて一刻も早く元通りにサイトを復旧させたいという復旧スピードを重視するなら「①フル」や「②差分」が圧倒的に有利になります。
         </p>
       </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
     </main>
 
   </div> <!-- .container -->

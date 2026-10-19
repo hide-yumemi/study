@@ -191,5 +191,8 @@
     	alert("白"+white+"枚、黒"+black+"枚");
     }
 </script>
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
 </body>
 </html>

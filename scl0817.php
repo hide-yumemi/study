@@ -167,7 +167,9 @@ strArr.splice(3, 2); // ➔ ["挿入", "a", "b"]
 strArr.splice(4, 1, "挿入1", "挿入2");
 &lt;/script&gt;</code></pre>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

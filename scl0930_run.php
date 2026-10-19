@@ -224,7 +224,7 @@ echo htmlspecialchars(nl2br($_POST['qus']), ENT_QUOTES, 'UTF-8');</code></pre>
             </div>
 
             <p style="margin-top: 25px;">
-                <a href="scl0930.php" class="link-board">➔ 9月30日の授業解説ノート（まとめ）へ戻る</a>
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
 
         </main>

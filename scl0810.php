@@ -166,7 +166,9 @@ console.log("貯金額は" + chokinSum + "円");
                     20日目の貯金額は <code>2 ** 19 = 524,288円</code> であるため、20日目の総額は <code>524,288 × 2 － 1 ＝ 1,048,575円</code> となり、ちょうど<strong>20日目</strong>に100万円を突破することが計算上でも完璧に証明されます。
                 </p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

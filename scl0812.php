@@ -182,7 +182,9 @@ endfor;</code></pre>
                     このように、ループの周回ごとに <code>left</code> が進むにつれて <code>right</code> が後ろから手前に連動（1周目なら5番目、2周目なら4番目…）して、完璧な左右対称のスワップが実現します。
                 </p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

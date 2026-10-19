@@ -316,7 +316,9 @@ echo "今日は" . $week[$w_num] . "曜日です"; // 文字列連結演算子�
                     </details>
                 </div>
             </div> <!-- .quiz-container 終了 -->
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

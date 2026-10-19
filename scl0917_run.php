@@ -83,7 +83,9 @@ echo nl2br($foo); // nl2brを通して出力（改行される）</code></pre>
                 </div>
             </div>
 
-            <p style="margin-top: 25px;"><a href="scl0917.php" class="td-link">➔ 9月17日の授業解説ノート（まとめ）へ戻る</a></p>
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
     </div>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>

@@ -145,7 +145,9 @@ root.right = new TreeNode(70);</code></pre>
           「真下を通過する際、通常（左から右）とは異なり、<strong>『右の子 ➔ 自分（出力） ➔ 左の子』</strong> の順で再帰を逆回りに呼び出す」というロジックを組むことで、データを**高い方から低い方（五十音の逆順）へ降順ソート**して出力させることができます。
         </p>
       </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
     </main>
 
   </div> <!-- .container -->

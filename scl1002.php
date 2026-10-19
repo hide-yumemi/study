@@ -88,7 +88,7 @@
         <p>この命令を実行するだけで、指定されたファイルの削除が即座に実行されます。一度削除したファイルはプログラムからは復元できないため、パスの指定ミス（必要なファイルを消してしまうバグ）には細心の注意が必要です。</p>
       </div>
 
-      <!-- 🧠 復習ミニクイズ（全5問） -->
+      <!--  復習ミニクイズ（全5問） -->
       <div class="quiz-container">
         <h3 class="note-title" style="border-left-color: #1e3a8a;">🧠 復習ミニクイズ（全5問）</h3>
         <p style="margin-bottom: 25px;">今日学習したファイルアップロードとサーバー操作の重要ポイントを確認しましょう。クリックすると正解と解説が表示されます。</p>
@@ -153,7 +153,9 @@
           </details>
         </div>
       </div> <!-- .quiz-container 終了 -->
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
     </main>
   </div> <!-- .container -->
 

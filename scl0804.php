@@ -120,7 +120,9 @@ border-radius: 10px 20px / 30px 40px;</code></pre>
                     これにより、正方形の縦横それぞれの中心（50%）から均等に角が削られるため、歪みのない完璧な正円を出力できます。
                 </p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

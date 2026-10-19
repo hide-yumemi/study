@@ -239,7 +239,9 @@ main {
                     それに対し、Flexboxであれば <code>justify-content: space-between;</code> を併用するか、<code>gap</code> を使うことで、余った空き領域をブラウザが自動計算してパーフェクトに美しく引き離してくれます。現代のWebコーディングにおいて、なぜFlexboxが圧倒的に主流なのかがこの実習を通して深く理解できます。
                 </div>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
    </div> <!-- .container -->

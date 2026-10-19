@@ -202,7 +202,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
           <p style="color: #666;">※ 上記のフォームから画像（JPEG形式）を選択し「送信」ボタンを押すと、ここに <code>$_FILES</code> の詳細ダンプ情報と、バリデーション通過後の画像がリアルタイムに出力されます。</p>
         <?php endif; ?>
       </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
     </main>
   </div>
 

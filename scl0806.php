@@ -203,7 +203,9 @@ if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
     console.log("平年です");
 }</code></pre>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

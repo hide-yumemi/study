@@ -234,7 +234,9 @@ let slide_y = window.pageYOffset + clientRect.top;  // ページ最上部から�
                 <div class="sub-heading">授業内プログラムでの具体例（131行目）</div>
                 <pre><code>window.onresize = changeSet; </code></pre>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

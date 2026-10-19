@@ -22,6 +22,9 @@
       <hr style="border: none; border-top:2px dotted #333;">
       <p>受信側では、未入力がある時は、入力ページへ戻るリンクを作成。全て入力されている時は、同じく入力内容を表示。</p>
     </body>
+                <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
   </main>
 
 </html>

@@ -159,7 +159,9 @@
                     <li>要素Aに <code>1</code> 、要素Bに <code>2</code> を指定 ➔ 空きスペースが「1：2」の比率で細かく配分され、要素Bの方が2倍の勢いで余白を吸収して大きく広がります 。</li>
                 </ul>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
   </div> <!-- .container -->
 

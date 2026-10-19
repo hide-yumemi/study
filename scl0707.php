@@ -86,7 +86,9 @@
                     <li><code>top</code> という名前は避ける（ブラウザの標準機能やJavaScriptの処理と誤認・衝突する可能性があるため）。</li>
                 </ol>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

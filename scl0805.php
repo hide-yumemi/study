@@ -165,7 +165,9 @@ let result2 = ++num4; // 先に num4 が 2 になり、そのあとで result2 �
                     <li><strong><code>!</code> （反転）：</strong> true を false に、false を true にひっくり返す。</li>
                 </ul>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

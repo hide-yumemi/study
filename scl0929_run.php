@@ -271,7 +271,9 @@ $hobby_array = $_POST['hobby']; // []を付けることで自動的に配列構�
             <p style="margin-top: 25px;">
                 <a href="scl0929.php" class="link-board">➔ 9月29日の授業解説ノート（まとめ）へ戻る</a>
             </p>
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
     </div> <!-- .container 終了 -->
 

@@ -171,7 +171,9 @@ if (num1 == 0) {
 console.log(mark1 + "の" + num1);
 &lt;/script&gt;</code></pre>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
 

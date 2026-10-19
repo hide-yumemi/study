@@ -133,7 +133,9 @@
                     ボタンを作る際、<code>&lt;input type="submit" value="送信"&gt;</code> という書き方もありますが、現在のモダンなWeb制作では <code>&lt;button type="submit"&gt;送信&lt;/button&gt;</code> のようにbuttonタグで囲む書き方が推奨されます。buttonタグを使うと、ボタンの中にアイコン画像（<code>&lt;img&gt;</code>）を入れるなど、デザインの自由度が劇的に上がるためです。
                 </p>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
     </div> <!-- .container -->

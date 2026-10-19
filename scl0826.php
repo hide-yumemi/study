@@ -132,7 +132,9 @@ linkElem.textContent = "Yahooはこちら";               // 表示テキスト�
                     <li><code>para.style.fontSize = "3rem";</code> ➔ ⭕ 既存のデザインを維持したまま、フォントサイズだけを安全に狙い撃ち変更（キャメルケース）</li>
                 </ul>
             </div>
-
+            <p style="margin-top: 25px;">
+                <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
     </div> <!-- .container -->
 

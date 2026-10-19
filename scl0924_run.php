@@ -246,7 +246,9 @@ endforeach;</code></pre>
             <p style="margin-top: 25px;">
                 <a href="scl0924.php" class="td-link">➔ 9月24日の授業解説ノート（まとめ）へ戻る</a>
             </p>
-
+            <p style="margin-top: 25px;">
+                <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+            </p>
         </main>
 
 
