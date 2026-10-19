@@ -18,6 +18,11 @@
             <h3>🔄更新履歴・活動ログ</h3>
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                    <strong style="color: #1e3a8a;">2026/10/20</strong><br>
+                    📝 10/20　Githubとレンタルサーバーの連結化・10/16までの授業の内容を更新しました。
+                </li>
+
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/19</strong><br>
                     📝 10/19 レンタルサーバーでもローカルでも動くようにデータベースの更新を行いました。
                 </li>
