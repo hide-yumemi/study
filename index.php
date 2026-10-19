@@ -20,27 +20,32 @@
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/19</strong><br>
                     📝 10/19 レンタルサーバーでもローカルでも動くようにデータベースの更新を行いました。
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/19</strong><br>
                     📝 10/19 授業内容10/7～10/13追加
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/19</strong><br>
                     📝 10/18 授業内容10/5追加
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 10/17 METAタグのテンプレ化
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 9/28.29.30の授業内容のコードの修正。ヘッダー及び微調整を致しました。
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 10/5までの授業ノートの更新
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/16</strong><br>
                     📝 9/30までの授業ノートの追加　表のデザイン変更と授業内容のタイトルの要約化を行いました。
-
+                </li>
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
-                    <strong style="color: #1e3a8a;">2026/10/15</strong><br>
                     ・授業内容9/29までを更新<br>
                     ・デザイン変更<br>
                     ・全授業ノートを1カラム仕様へ変更。<br>
@@ -68,4 +73,3 @@
 </body>
 
 </html>
-<!-- http://localhost/study/index.php -->

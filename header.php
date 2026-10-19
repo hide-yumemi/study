@@ -1,9 +1,9 @@
 <!-- 固定ヘッダー・ナビゲーション -->
 <header class="site-header">
     <div class="site-title">
-        <a href="index.php" style="color:  inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
+        <a href="index.php" style="color: inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
         <span class="site-desc">IT未経験の私が思い切ってIT業界へ転職する為の第一歩となる議事録・及び訓練校での学びを更新するサイトです。<br>尚、授業内容の後半にはアウトプットを目的としたAIを使ったミニクイズがあります。</span>
-</div>
+    </div>
 
     <nav class="nav-menu">
         <!-- 授業内容 -->
