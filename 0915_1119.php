@@ -145,6 +145,25 @@
                         <td><a href="scl1016.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td><a href="scl_bbs2_code.php" class="td-link">bbs2</a></td>
                     </tr>
+                    <tr>
+                        <td class="td-date">10/19</td>
+                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl1019.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="" class="td-link"></a></td>
+                    </tr>
+                    <tr>
+                        <td class="td-date">10/20</td>
+                        <td><a href="scl1020.php" class="td-link">課題：ひとこと掲示板（bbs/bbs2）に写真投稿を追加する</a></td>
+                        <td><a href="scl1020.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="./oneline_bbs/scl1020_run.php" class="td-link">写真bbs2</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td-date">10/21</td>
+                        <td><a href="scl1021.php" class="td-link"></a></td>
+                        <td><a href="scl1021.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2</a></td>
+                    </tr>
+
                 </tbody>
             </table>
         </main>
