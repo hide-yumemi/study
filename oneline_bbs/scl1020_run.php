@@ -5,7 +5,7 @@ if ($_SERVER['SERVER_NAME'] === 'localhost') {
   $id = 'root';
   $pw = '';
 } else {
-  $dbname = 'mysql:host=://infinityfree.com;dbname=if0_42505591_bbs;charset=utf8';
+  $dbname = 'mysql:host=sql210.infinityfree.com;dbname=if0_42505591_bbs;charset=utf8';
   $id = 'if0_42505591';
   $pw = 'Cvp0m9xHZOUL8pZ';
 }
@@ -66,9 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!isset($errors['image'])) {
       // 3. ファイル名の命名規則（img + 年月日時分秒 + .jpg）※合計21文字
       $image_name = 'img' . date('YmdHis') . '.jpg';
-      $upload_dir = 'uploads/';
+      $upload_dir = 'img/';
 
-      // 画像をuploadsフォルダに移動
+      // 画像をimgフォルダに移動
       if (!move_uploaded_file($uploaded_file, $upload_dir . $image_name)) {
         $errors['image'] = "画像の保存に失敗しました。";
       }
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       <h2>写真付きひと言掲示板 デモ</h2>
 
-      <p style="color: #666; font-size: 14px; margin-bottom: 25px;">指定されたすべての仕様（jpeg限定、100万バイト制限、ファイル名21文字指定、出力サイズ指定）を実装したデモ画面です。 </p>
+      <p style="color: #666; font-size: 14px; margin-bottom: 25px;">課題（jpeg限定、100万バイト制限、ファイル名21文字指定、出力サイズ指定）を実装したデモ画面です。 </p>
 
       <!-- 入力フォームエリア -->
       <div class="demo-set-container">
@@ -181,17 +181,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   </div>
 
                   <!-- タグ構成（alt="投稿画像" width="100" ）で出力 -->
-                  　　<?php if (!empty($row["img"]) && file_exists('uploads/' . $row["img"])): ?>
-                  　　<img src="uploads/<?php echo htmlspecialchars($row["img"], ENT_QUOTES, "UTF-8"); ?>" alt="投稿画像" width="100" class="post-image"><?php endif; ?>
+                  　　<?php if (!empty($row["img"]) && file_exists('img/' . $row["img"])): ?>
+                  　　<img src="img/<?php echo htmlspecialchars($row["img"], ENT_QUOTES, "UTF-8"); ?>" alt="投稿画像" width="100" class="post-image"><?php endif; ?>
 
                 </li>
 
               <?php endwhile; ?>
             </ul><?php else: ?>
-              <p style="text-align: center; color: #64748b;">投稿はまだありません。</p><?php endif; ?>
+            <p style="text-align: center; color: #64748b;">投稿はまだありません。</p><?php endif; ?>
         </div>
       </div>
-      <p style="margin-top: 25px;"><a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a></p>
+      <p style="margin-top: 25px;"><a href="../0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a></p>
     </main>
   </div><a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a><?php
                                                                         $stmt = null;
