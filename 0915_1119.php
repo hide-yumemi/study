@@ -155,7 +155,7 @@
                         <td class="td-date">10/20</td>
                         <td><a href="scl1020.php" class="td-link">課題：ひとこと掲示板（bbs/bbs2）に写真投稿を追加する</a></td>
                         <td><a href="scl1020.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="./oneline_bbs/scl1020_run.php" class="td-link">写真bbs2</a></td>
+                        <td><a href="scl1020_run.php" class="td-link">写真bbs2</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/21</td>
