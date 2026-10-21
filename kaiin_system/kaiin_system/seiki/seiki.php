@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lamg="ja">
+
 <head>
 	<meta charset="UTF-8">
 	<title>正規表現チェック</title>
 </head>
+
 <body>
-<?php
+	<?php
 
-//メールアドレスチェック例
+	//メールアドレスチェック例
 
-$mailmatch="/^[a-zA-Z0-9]+[a-zA-Z0-9\._-]*@[a-zA-Z0-9_-]+\.[a-zA-Z0-9\._-]+$/";
-$email="aaa@aa,aa";
-if(preg_match($mailmatch,$email)){
-	echo "<p>メールはマッチした</p>";
-}
-else{
-	echo "<p>メールはマッチしなかった</p>";
-}
+	// $mailmatch="/^[a-zA-Z0-9]+[a-zA-Z0-9\._-]*@[a-zA-Z0-9_-]+\.[a-zA-Z0-9\._-]+$/"; 修正
+	$mailmatch = "/^[a-zA-Z0-9]+[a-zA-Z0-9\._\-]*@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9\._\-]+$/"; //ハイフンをエスケープし忘れてた為、教材修正
+	$email = "aaa@aa,aa";
+	if (preg_match($mailmatch, $email)) {
+		echo "<p>メールはマッチした</p>";
+	} else {
+		echo "<p>メールはマッチしなかった</p>";
+	}
 
 
-//全角文字チェック例
+	//全角文字チェック例
 
-$wordmatch="/^[ぁ-んァ-ヶー々一-龠０-９]+$/u";
-$word="あア言葉１２佐々木";
-if(preg_match($wordmatch,$word)){
-	echo "<p>文字はマッチした</p>";
-}
-else{
-	echo "<p>文字はマッチしなかった</p>";
-}
+	$wordmatch = "/^[ぁ-んァ-ヶー々一-龠０-９]+$/u";
+	$word = "あア言葉１２佐々木";
+	if (preg_match($wordmatch, $word)) {
+		echo "<p>文字はマッチした</p>";
+	} else {
+		echo "<p>文字はマッチしなかった</p>";
+	}
 
-//パスワードチェック例(小文字英、大文字英、数字の３種必須)
+	//パスワードチェック例(小文字英、大文字英、数字の３種必須)
 
-$pass="aaaa1234";
-if(preg_match("/^[a-zA-Z0-9]{8,12}$/",$pass) && preg_match("/[a-z]+/",$pass) && preg_match("/[A-Z]+/",$pass) && preg_match("/[0-9]+/",$pass)){
-	echo "<p>パスはマッチした</p>";
-}
-else{
-	echo "<p>パスはマッチしなかった</p>";
-}
+	$pass = "aaaa1234";
+	if (preg_match("/^[a-zA-Z0-9]{8,12}$/", $pass) && preg_match("/[a-z]+/", $pass) && preg_match("/[A-Z]+/", $pass) && preg_match("/[0-9]+/", $pass)) {
+		echo "<p>パスはマッチした</p>";
+	} else {
+		echo "<p>パスはマッチしなかった</p>";
+	}
 
-/*
+	/*
 正規表現チェックについて
 preg_match()関数を使用し、
 第一引数にマッチ指定
@@ -79,6 +79,7 @@ A-Z　半角大文字英字
 例)[^0-9]は半角数字以外となる
 */
 
-?>
+	?>
 </body>
+
 </html>
