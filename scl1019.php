@@ -18,11 +18,8 @@
 
   <div class="container">
     <main class="main-content">
-      <h2>【10/19】PDOでのデータ取得（fetch）と掲示板の拡張準備</h2>
-
-      <p style="margin-top: 15px; margin-bottom: 25px;">
-        <a href="0915_1119.php" class="link-board">← データベース・PHP授業一覧ページへ戻る</a>
-      </p>
+      <h1>10/19(月)職業訓練授業</h1>
+      <p style="color:#666; font-size: 14px; margin-bottom: 35px;">PDOでのデータ取得（fetch）と掲示板の拡張準備</p>
 
       <!-- 1. 授業内容まとめセクション -->
       <section class="note-section">
@@ -90,7 +87,6 @@ if (\$count &gt; 0) {
         // ここで画面に出力処理（残り0行になると自動的にループ終了）
     }
 }
-
 // 4. PDO接続の切断（変数にnullを代入する）
 \$stmt = null;
 \$pdo = null;
@@ -111,7 +107,7 @@ if (\$count &gt; 0) {
         </ul>
       </section>
 
-      <!-- 4. 🧠 復習ミニクイズ（アコーディオン形式） -->
+      <!-- 4.  復習ミニクイズ（アコーディオン形式） -->
       <section class="quiz-container">
         <h3 class="note-title" style="border-left-color: #16a34a;">🧠 本日の復習ミニクイズ</h3>
         <p style="font-size: 14px; margin-bottom: 15px;">本日の講義内容から、間違いやすいポイントをクイズにしました。クリックで解答・解説が開きます。</p>
@@ -152,6 +148,7 @@ if (\$count &gt; 0) {
           </details>
         </div>
       </section>
+
       <p style="margin-top: 25px;">
         <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
       </p>

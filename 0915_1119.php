@@ -120,19 +120,19 @@
                         <td class="td-date">10/08</td>
                         <td><a href="scl1008.php" class="td-link">⓶【教材bbs】MySQLデータベースの基礎とphpMyAdmin操作技術</a></td>
                         <td><a href="scl1008.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="scl_bbs_code.php" class="td-link">bbs</a></td>
+                        <td><a href="scl_bbs_code.php" class="td-link">bbsコード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/09</td>
                         <td><a href="scl1009.php" class="td-link">⓷【教材bbs】MySQLi接続とプリペアドステートメント（書き込み・挿入編）</a></td>
                         <td><a href="scl1009.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="scl_bbs_code.php" class="td-link">bbs</a></td>
+                        <td><a href="scl_bbs_code.php" class="td-link">bbsコード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/13</td>
                         <td><a href="scl1013.php" class="td-link">⓸【教材bbs2】SELECT文によるデータ全件取得とあいまい検索・ソート処理</a></td>
                         <td><a href="scl1013.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2</a></td>
+                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2コード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/14</td>
@@ -144,17 +144,17 @@
                         <td class="td-date">10/16</td>
                         <td><a href="scl1016.php" class="td-link">⓹【教材bb2】PDO拡張機能の導入とtry-catch例外処理・静的接続のセキュリティ</a></td>
                         <td><a href="scl1016.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2</a></td>
+                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2コード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/19</td>
-                        <td><a href="" class="td-link"></a></td>
+                        <td><a href="scl1019.php" class="td-link">PDOでのデータ取得と掲示板拡張準備</a></td>
                         <td><a href="scl1019.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td><a href="" class="td-link"></a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/20</td>
-                        <td><a href="scl1020.php" class="td-link">課題：ひとこと掲示板（bbs/bbs2）に写真投稿を追加する</a></td>
+                        <td>課題：ひとこと掲示板（bbs/bbs2）に写真投稿を拡張の実施</a></td>
                         <td><a href="scl1020.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td><a href="scl1020_run.php" class="td-link">写真bbs2</a></td>
                     </tr>
@@ -162,9 +162,14 @@
                         <td class="td-date">10/21</td>
                         <td><a href="scl1021.php" class="td-link"></a></td>
                         <td><a href="scl1021.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td><a href="scl_bbs2_code.php" class="td-link">bbs2</a></td>
+                        <td><a href="scl1021_seiki_code.php" class="td-link">教材生コード</a></td>
                     </tr>
-
+                    <tr>
+                        <td class=" td-date">10/22</td>
+                        <td><a href="scl1022.php" class="td-link"></a></td>
+                        <td><a href="scl1022.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td>教材</td>
+                    </tr>
                 </tbody>
             </table>
         </main>
