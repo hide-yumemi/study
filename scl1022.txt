@@ -1,6 +1,6 @@
 1時間目
 教材（kaiin_system）の中にあるフォルダの説明
-=================ホワイトボード===============================
+=================ホワイトボード=============================
 Kaiin 
  mysqliで作成
 kaiinpdo
@@ -22,4 +22,20 @@ kaiin_hash
  ・pass varchar(12)
  ・tel  varchar(11)
 
+=================MYSQL操作===============================
+⓵新規作成
+MySQL_TOP_PAGE_KAIIN0.png
+
+⓶データベース名、文字コードを入力し、作成する。
+MySQL_TOP_PAGE_KAIIN1.png
+
+⓷テーブル名、カラム数を入力して作成する。
+MySQL_TOP_PAGE_KAIIN2.png
+
+⓸各カラムのデータを入力する
+・id int オートインクリメント プライマリー
+ ・name varchar(20),ユニーク
+ ・pass varchar(12)
+ ・tel  varchar(11)
  
+ 各項目を入力後　SRLぷれびゅで確認→問題なければ作成で　作成完了

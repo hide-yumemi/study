@@ -1,15 +1,17 @@
 ﻿<?php
-	session_start();
-	session_regenerate_id(true);
-	header('X-FRAME-OPTIONS: SAMEORIGIN');
-	$_SESSION['token']=uniqid('',true);
+session_start();
+session_regenerate_id(true);
+header('X-FRAME-OPTIONS: SAMEORIGIN');
+$_SESSION['token'] = uniqid('', true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 	<meta charset="UTF-8">
 	<title>ログイン</title>
 </head>
+
 <body>
 	<form action="log.php" method="post">
 		名前<input type="text" name="name" size="20"><br>
@@ -18,4 +20,6 @@
 		<input type="submit" value="送信">
 	</form>
 </body>
+
 </html>
+<!-- http://localhost/study/kaiin_system/kaiin_system/kaiin/login.php -->
