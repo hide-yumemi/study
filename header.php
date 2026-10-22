@@ -31,7 +31,14 @@
             <button class="menu-btn">自主学習</button>
             <div class="dropdown-content">
                 <a href="./vscode_github_setup.php">Git・VSCodeとGitHubの連携</a>
-                <a href="scl_self_study_0928_0930.php">フォームデータの安全な送受信とサニタイズ技術</a>
+                <a href="./scl_self_study_0928_0930.php">フォームデータの安全な送受信とサニタイズ技術</a>
+                <a href="./study_0903.php">JS/基礎ルール（全10問）</a>
+                <a href="./study_0907.php">JS/データ操作・型変換・配列・オブジェクト（全10問）</a>
+                <a href="./study_0908.php">JS/配列化 ＆ 非破壊メソッドについて</a>
+                <a href="./study_0910.php">JS/ループ・条件分岐・配列操作（全10問）</a>
+                <a href="./study_0911.php">JS/thisの挙動・二次元配列・応用処理（全10問）</a>
+                <a href="./study_0912.php">JS/DOMContentLoaded と e.target(演習問題)</a>
+                <a href="./study_0915.php">JS/万年カレンダーの作り方</a>
             </div>
         </div>
 

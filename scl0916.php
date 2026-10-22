@@ -187,6 +187,26 @@ echo $$var_name; // 出力結果: 1
                 <div class="sub-heading"> 【深掘り補足】厳格モード（strict_types）とは？</div>
                 <p>PHPはもともと型に寛容（ルーズ）な言語です。例えば、整数（ int ）を受け取る関数に文字列の "5" を渡しても、自動変換して動かしてしまいます。しかし、これは思わぬバグを見落とす原因になります。</p>
                 <p>ファイルの先頭に <code>declare(strict_types=1);</code> と書くと、<strong>「型を厳格にチェックするモード」</strong> に切り替わり、型が違う場合に TypeError （Fatalエラー）を発生させてその場で処理を止めてくれるようになります。</p>
+                <pre><code>&lt;?php
+<span class="code-comment">// ① 必ずPHPタグのすぐ下、他のどの処理よりも先に記述します。</span>
+declare(strict_types=1);
+
+<span class="code-comment">// ② 2つの整数（int）を受け取って、合計（: int）を計算する関数を定義。</span>
+function addNumbers(int $a, int $b): int {
+    return $a + $b;
+}
+
+<span class="code-comment">// === パターンA：正しい型を渡した場合 ===</span>
+<span class="code-comment">// どちらも整数（int）なので、問題なく「8」が出力されます。</span>
+echo addNumbers(3, 5);
+echo PHP_EOL;
+
+<span class="code-comment">// === パターンB：間違った型を渡した場合 ===</span>
+<span class="code-comment">// 第2引数に、整数ではなく文字列の "5" を渡しています。</span>
+<span class="code-comment">// 【厳格モード（strict_types=1）の場合】：TypeErrorを発生させてその場で処理を止めます。</span>
+<span class="code-comment">// 【通常のモード（記述なし）の場合】：自動で数字の 5 に変換され、「8」と出力されてしまいます。</span>
+echo addNumbers(3, "5");
+?&gt;</code></pre>
             </div>
 
             <div class="quiz-container">

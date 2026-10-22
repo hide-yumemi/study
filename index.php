@@ -19,6 +19,10 @@
             <ul class="history-list">
                 <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
                     <strong style="color: #1e3a8a;">2026/10/20</strong><br>
+                    📝 10/22　自主学習ページの項目追加
+                </li>
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+                    <strong style="color: #1e3a8a;">2026/10/20</strong><br>
                     📝 10/20　Githubとレンタルサーバーの連結化・10/16までの授業の内容を更新しました。
                 </li>
 
