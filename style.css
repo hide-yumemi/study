@@ -156,6 +156,31 @@ body {
     }
 }
 
+/* ==========================================
+   更新履歴・活動ログ（index.php専用）
+   ========================================== */
+.history-list {
+    list-style: none; 
+}
+
+/* 各ログの枠線と余白 */
+.history-item {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* 日付の青文字強調 */
+.history-date {
+    color: #1e3a8a;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
 
 /* 4.table枠組み */
 .lesson-table {

@@ -154,13 +154,13 @@
                     </tr>
                     <tr>
                         <td class="td-date">10/20</td>
-                        <td>課題：ひとこと掲示板（bbs/bbs2）に写真投稿を拡張の実施</a></td>
+                        <td>課題：ひとこと掲示板（bbs/bbs2）に写真投稿を拡張の実施</td>
                         <td><a href="scl1020.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td><a href="scl1020_run.php" class="td-link">写真bbs2</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/21</td>
-                        <td><a href="scl1021.php" class="td-link"></a></td>
+                        <td><a href="scl1021.php" class="td-link">正規表現やpreg_matchを用いたメール・パスワードの検証</a></td>
                         <td><a href="scl1021.txt" class="td-link" target="_blank">ホワイトボード</a></td>
                         <td><a href="scl1021_seiki_code.php" class="td-link">教材生コード</a></td>
                     </tr>
