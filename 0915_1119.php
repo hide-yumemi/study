@@ -52,6 +52,7 @@
                         <td><a href="scl0924_lecture.php" target="_blank" class="td-link">授業の記述</a></td>
                         <td><a href="scl0924_run.php" class="td-link">動作確認</a></td>
                     </tr>
+                    <!-- 24.25は同一ファイルで使用したのでリンクが一部同じである。 -->
                     <tr>
                         <td class="td-date">09/25</td>
                         <td><a href="scl0925.php" class="td-link">代替構文（コロン構文）とswitch文</a></td>
