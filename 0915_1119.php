@@ -166,9 +166,9 @@
                     </tr>
                     <tr>
                         <td class=" td-date">10/22</td>
-                        <td><a href="scl1022.php" class="td-link"></a></td>
+                        <td><a href="scl1022.php" class="td-link">DB操作・会員管理システム</a></td>
                         <td><a href="scl1022.txt" class="td-link" target="_blank">ホワイトボード</a></td>
-                        <td>教材</td>
+                        <td><a href="scl1022_run.php" class="td-link">教材デモ・生コード</a></td>
                     </tr>
                 </tbody>
             </table>

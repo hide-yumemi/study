@@ -10,7 +10,9 @@
     <?php include 'header.php'; ?>
     <div class="container">
         <main class="main-content">
-            <!-- ここにその日のノートやフォームを書くだけ！ -->
+
+
+
             <p style="margin-top: 25px;">
                 <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
@@ -20,3 +22,5 @@
 </body>
 
 </html>
+<!-- テンプレ用 -->
+<!--  http://localhost/study/temp.php-->

@@ -208,7 +208,7 @@ body {
 /* 4列目：動作確認列 */
 .lesson-table th:nth-child(4),
 .lesson-table td:nth-child(4) {
-    width: 140px;     /* 「動作確認」が1行で美しく収まる幅に固定 */
+    width: 180px;     /* 「動作確認」が1行で美しく収まる幅に固定 */
     text-align: center; /* リンク文字を中央に配置 */
     
 }

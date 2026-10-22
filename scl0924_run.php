@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
             margin: 25px 0 35px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
         }
+
         .demo-set-title {
             font-size: 15px;
             font-weight: bold;
@@ -28,6 +30,7 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 6px;
         }
+
         /* 「記述」の見出しと黒板コード枠 */
         .demo-label-code {
             font-size: 13px;
@@ -35,6 +38,7 @@
             color: #0f172a;
             margin-bottom: 5px;
         }
+
         /* 「出力」の見出しとリアル実行結果枠 */
         .demo-label-output {
             font-size: 13px;
@@ -42,6 +46,7 @@
             color: #16a34a;
             margin: 20px 0 5px;
         }
+
         .demo-output-box {
             background-color: #fafafa;
             border: 1px dashed #16a34a;
@@ -49,6 +54,7 @@
             padding: 15px;
             color: #334155;
         }
+
         .demo-output-box h2 {
             font-size: 14px;
             color: #475569;
@@ -58,6 +64,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -66,7 +73,7 @@
     <!-- メインレイアウト -->
     <div class="container">
         <main class="main-content">
-            
+
             <h2>9/24(木) 実技プログラム実行デモ</h2>
             <p style="color: #666; font-size: 14px; margin-bottom: 25px;">
                 プログラムの「記述（ソースコード）」と、サーバー側で実際にPHPを駆動させたブラウザ上での「出力（リアルタイム実行結果）」を1つの画面で対比して確認できます。
@@ -77,9 +84,9 @@
                  ========================================== -->
             <div class="demo-set-container">
                 <div class="demo-set-title">【テスト1】文字列連結演算と小数点自動解釈の検証</div>
-                
+
                 <div class="demo-label-code">📄 記述（ソースコード）</div>
-<pre><code>$age = 15;
+                <pre><code>$age = 15;
 $tom = 'Toms is ' . $age . ' years old.';
 echo "&lt;p&gt;" . $tom . "</p>";
 
@@ -94,14 +101,15 @@ var_dump($dbl2);</code></pre>
                     <?php
                     $age = 15;
                     $tom = 'Toms is ' . $age . ' years old.';
-                    echo "<p>" . $tom . "</p>";
-                    
+                    echo "<p>" . $tom . "
+";
+
                     $dbl1 = .2;
                     $dbl2 = 15.;
+                    echo $dbl1;
+                    echo $dbl2;
+                    var_dump($dbl2);
                     ?>
-                    <p>小数点表現の出力1（.2）：<?php echo $dbl1; ?></p>
-                    <p>小数点表現の出力2（15.）：<?php echo $dbl2; ?></p>
-                    <p>型と値のダンプ：<?php var_dump($dbl2); ?></p>
                 </div>
             </div>
 
@@ -110,9 +118,9 @@ var_dump($dbl2);</code></pre>
                  ========================================== -->
             <div class="demo-set-container">
                 <div class="demo-set-title">【テスト2】宇宙船演算子（&lt;=&gt;）の3択比較結果</div>
-                
+
                 <div class="demo-label-code">📄 記述（ソースコード）</div>
-<pre><code>$num1 = 5;
+                <pre><code>$num1 = 5;
 $num2 = 3;
 $result = $num1 &lt;=&gt; $num2;
 echo $result;</code></pre>
@@ -123,8 +131,8 @@ echo $result;</code></pre>
                     $num1 = 5;
                     $num2 = 3;
                     $result = $num1 <=> $num2;
+                    echo $result;
                     ?>
-                    <p>5 &lt;=&gt; 3 の結果（左辺が大きいので1）：<strong><?php echo $result; ?></strong></p>
                 </div>
             </div>
 
@@ -133,9 +141,9 @@ echo $result;</code></pre>
                  ========================================== -->
             <div class="demo-set-container">
                 <div class="demo-set-title">【テスト3】各種配列の初期状態と自動インデックス（混合配列）</div>
-                
+
                 <div class="demo-label-code">📄 記述（ソースコード）</div>
-<pre><code>$fruits = array('apple', 'banana', 'orange');
+                <pre><code>$fruits = array('apple', 'banana', 'orange');
 $fruits_mixed = array('peach', 'blueberry', 'apple' =&gt; 'red', 'banana' =&gt; 'yellow', 'orange' =&gt; 'orange');
 var_dump($fruits);
 var_dump($fruits_mixed);</code></pre>
@@ -157,9 +165,9 @@ var_dump($fruits_mixed);</code></pre>
                  ========================================== -->
             <div class="demo-set-container">
                 <div class="demo-set-title">【テスト4】配列要素の追加・上書き・挿入・分割（削除）</div>
-                
+
                 <div class="demo-label-code">📄 記述（ソースコード）</div>
-<pre><code>$fruits[] = 'melon'; 
+                <pre><code>$fruits[] = 'melon'; 
 $fruits_mixed[] = 'melon';
 $fruits_mixed['grape'] = 'purple';
 $fruits = 'peach'; // 上書き
@@ -172,15 +180,15 @@ $fruits_mixed2 = array_splice($fruits_mixed, 1, 3); // 分割</code></pre>
                 <div class="demo-label-output">🖥️ 出力（実際の実行結果）</div>
                 <div class="demo-output-box">
                     <?php
-                    $fruits[] = 'melon'; 
+                    $fruits[] = 'melon';
                     $fruits_mixed[] = 'melon';
                     $fruits_mixed['grape'] = 'purple';
                     $fruits = 'peach';
                     $fruits_mixed['grape'] = 'green';
-                    
+
                     array_splice($fruits, 2, 0, 'blueberry');
                     array_splice($fruits, 3, 0, ['banana', 'grape']);
-                    
+
                     $fruits2 = array_splice($fruits, 1, 3);
                     $fruits_mixed2 = array_splice($fruits_mixed, 1, 3);
                     ?>
@@ -200,9 +208,9 @@ $fruits_mixed2 = array_splice($fruits_mixed, 1, 3); // 分割</code></pre>
                  ========================================== -->
             <div class="demo-set-container">
                 <div class="demo-set-title">【テスト5】for文 ＆ foreach文による多パターンループ出力とスコープ検証</div>
-                
+
                 <div class="demo-label-code">📄 記述（ソースコード）</div>
-<pre><code>$count = count($fruits);
+                <pre><code>$count = count($fruits);
 for($i=0; $i&lt;$count; $i++):
     echo $fruits[$i];
 endfor;
@@ -221,23 +229,23 @@ endforeach;</code></pre>
                     <h2>for文による $fruits のループ出力：</h2>
                     <?php
                     $count = count($fruits);
-                    for($i=0; $i<$count; $i++):
-                        echo "<p>".$fruits[$i]."</p>";
+                    for ($i = 0; $i < $count; $i++):
+                        echo "<p>" . $fruits[$i] . "</p>";
                     endfor;
                     ?>
 
                     <h2>foreach文による $fruits2 の値のみループ出力：</h2>
                     <?php
-                    foreach($fruits2 as $value):
-                        echo "<p>".$value."</p>";
+                    foreach ($fruits2 as $value):
+                        echo "<p>" . $value . "</p>";
                     endforeach;
                     ?>
                     <p><strong>💡 ループ脱出後の $value の保持値：</strong><?php echo $value; ?></p>
 
                     <h2>foreach文による $fruits_mixed のキーと値の同時出力：</h2>
                     <?php
-                    foreach($fruits_mixed as $key => $value):
-                        echo "<p>".$key." =&gt; ".$value."</p>";
+                    foreach ($fruits_mixed as $key => $value):
+                        echo "<p>" . $key . " =&gt; " . $value . "</p>";
                     endforeach;
                     ?>
                 </div>
@@ -258,4 +266,5 @@ endforeach;</code></pre>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>
