@@ -39,3 +39,15 @@ MySQL_TOP_PAGE_KAIIN2.png
  ・tel  varchar(11)
  
  各項目を入力後　SRLぷれびゅで確認→問題なければ作成で　作成完了
+
+ 各ファイルの動作確認。
+ 教材のkaiin_systemの中にある
+ kaiin　と　kaiinpdo　は全く同じ処理で同じデータべースを共有している。
+ 主に
+ henko.html (番号の変更ページ)
+ kaiinntouroku.html （登録ページ）
+ login.html（ログインぺージ）
+ sakuzyo.html（退会ページ）
+ download.html(登録情報をSCVデータとしてダウンロードページ)
+ となっている。
+==========================================================
