@@ -1,0 +1,107 @@
+﻿9/30VScodeに入力した内容
+
+
+【ファイル1】
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>9/30 HTMLの受け渡しからPHPの受け取り</title>
+</head>
+<body>
+<!-- PHP教科書P174 -->
+<?php if(isset($_GET['name']) && strlen($_GET['name']) > 0): ?>
+<!-- isset(~)は、～が存在しているか？　strlen(~)は、～の格納された文字の長さを求めている。-->
+<p><?php echo htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');?>さん、こんにちは</p>
+<!--
+※ユーザーの入力した文字を表示する時は、htmlspecialchars()を使用してセキュリティ対策
+「"」「'」「<」「>」「&」の5つを変換することにより<>の形で作るタグと認識されない
+
+5つをブラウザに表示できる&〜;の形に変換される
+「"」 → &quot;
+「'」 → 'あるいは&apos;
+「<」 → &lt;
+「>」 → &gt;
+「&」 → &amp;
+-->
+<?php endif; ?>
+
+<form action="0930form&htmlspecialchars.php" method="get">
+<!-- action先が自ファイルなので、送信すると画面上は更新した時と同様になるが、サーバーとやり取りを行いPHPを実行している -->
+<p>
+名前を入力してください。:
+<input type="text" name="name">
+<input type="submit" value="送信">
+</p>
+</form>
+</body>
+</html>
+
+
+【ファイル2】
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>フォーム受信</title>
+</head>
+<body>
+<h1>送信データ表示</h1>
+
+<!-- 接続確認
+<?php var_dump($_POST['email']); ?>
+-->
+
+<?php 
+// フォームからデータが送信されてきているかチェック（if文の開始）
+if (!empty($_POST)): 
+?>
+
+<p>メールアドレス: <?php echo htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8'); ?></p>
+<p>血液型: <?php echo htmlspecialchars($_POST['blood'], ENT_QUOTES, 'UTF-8'); ?>型</p>
+<!--
+血液型はラジオボタンの為、制作側で指定したvalue値が送信される。
+ユーザーが入力した文字列ではないので、htmlspecialcharsの設定は不要
+また、用意したvalue値は、A,B,O,ABのみなので、画面表示の時に「型」をPHP側で追記している
+※ただしセキュリティの観点から、念のためhtmlspecialcharsを入れておくのが安全です
+-->
+
+<?php
+/*チェックボックスは配列で個数はユーザーのチェックした個数の為、毎回異なる。
+それを全件受け取るためforeach文で配列から取り出していく。
+今回、value値をコード化しており、コードのまま表示してもユーザーにはわからない。
+そのため、コードから各項目の文字列を取得できる配列を用意する*/
+$favarr = array('旅行','スポーツ','音楽','インターネット');
+//foreachで取得できるコードを使用して、画面表示では$favarr[$value]と配列から該当する文字列を取得する
+
+$fav = array();
+if (isset($_POST['fav']) && is_array($_POST['fav'])) {
+    foreach($_POST['fav'] as $value){
+        $fav[] = $favarr[$value];
+    }
+}
+//配列favに再度入れなおしてあげる
+?>
+
+<p>趣味: <?php echo implode('、', $fav); ?></p>
+<p>質問等:<br><?php echo nl2br(htmlspecialchars($_POST['qus'], ENT_QUOTES, 'UTF-8')); ?></p>
+<!--
+textareaに入力された情報は、ユーザーが入力エリアで改行をした部分に半角スペースが入る形で1行で表示される。
+これは、ユーザーの改行をphpでは改行コードで受け取りをしており、この改行コードはhtmlで表示する時には半角スペースに置き換わるhtml側の表示ルールから起こっている
+これを改行して表示したい場合は、改行コードを<br>で出力するnl2brを使用する。
+htmlspecialchars($_POST['qus'],ENT_QUOTES, 'UTF-8')を()内に書いていく
+nl2br(htmlspecialchars($_POST['qus'], ENT_QUOTES, 'UTF-8'))の形でechoを行う
+-->
+
+<?php
+else: // データが送られてきていない場合
+?>
+<p>未入力の項目があります</p>
+<p><a href="./formsend.php">入力ページへ</a></p>
+<?php
+endif; // if文の終了
+?>
+
+</body>
+</html>
+

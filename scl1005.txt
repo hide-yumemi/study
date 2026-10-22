@@ -1,7 +1,180 @@
-﻿POST送信で
-画像
-画像のタイトル的なテキスト
-の2つを送信
+﻿10/5
 
-PHP側では画像を保存し、
-<img>で画像、<figure>で指定し文章（テキスト）を<figcaption>で指定する。
+VScodeでの入力
+
+【SENDファイル】
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10/05(月)職業訓練授業</title>
+</head>
+<body>
+  <h1>画像送信</h1>
+  <form action="1005test_fileget.php" method="post" enctype="multipart/form-data">
+    <!-- 
+      formでファイル送信できるようにするには、
+      enctype="multipart/form-data"をformタグで指定する。
+      この指定ｄがないと、ファイル送信は失敗する
+    -->
+  
+    <input type="file" value="画像選択" name="file"><br>
+    <!-- 
+      ファイル送信はファイル選択ボタンが表示されるvalueにボタンが上の文字を指定
+      指定しなかった時は、ブラウザ毎に初期値にしているテキストとなる為、
+      ブラウザにより違う可能性がある
+      ブラウザによっては、valueよりもブラウザ規定値を優先するブラウザもある。
+      ボタン1つにつき選択できるファイルは1つとなっている。
+      複数ファイル送信のフォームであれば、送信するファイル数分ボタンを設置する。
+      受信側では、name属性を変えていれば別々に受け取り出来る。
+    -->
+ 
+
+  画像のタイトル<input type="text" name="title"><br>
+  <input type="submit" value="送信">
+ </form>
+
+</body>
+</html>
+<!-- http://localhost/php_study/1005test_send.php -->
+<!-- ↑をコピペして外部のブラウザで開いて動作チェック -->
+
+
+【filegetファイル】
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10/05(月)画像受信</title>
+</head>
+<body>
+  <h1>画像受信</h1>
+<p><?php var_dump($_FILES['file']['name']); ?></p>
+<p>ファイルのサイズ（バイト数）:</p>
+<p><?php var_dump($_FILES['file']['size']); ?></p>
+<p>一時保管先のパス:</p>
+<p><?php var_dump($_FILES['file']['tmp_name']); ?></p>
+<!-- tmp_nameで取得できる一時保管先のパスは、実行後に
+ その場所を見てもファイルがない。
+ これは、formで送信されたfileの一時保管場所の保管期限が、actionで指定したphpファイルの実行終了までとなっている為、 phpでは送信されたファイルを保存する場合はactionで指定されたphpファイルでmove_uploaded_file()で保存場所に移動させなければならない-->
+<p>ファイルのMIMEタイプ:<?php var_dump($_FILES['file']['type']); ?></p>
+<p>エラーコード:<?php var_dump($_FILES['file']['error']); ?></p>
+<!-- 
+ ファイルの受信の時は、まずエラーコードを確認する。
+ 0以外の場合受信に失敗しているので、失敗時の処理を行う。
+ 今回は0以外の時は再送信をしてもらう為、リンクとメッセージを表示
+ -->
+ <?php
+  if($_FILES['file']['error']!=0):
+ ?>
+  <p>ファイル送信エラーの為、再送信してください。</p>
+  <p><a href = "">送信ページへ</a></p>
+<?php
+  exit();
+// 0 以外の時は、これ以降のファイル保存処理などを行わないので、exitで終了する。
+  endif;
+?>
+  <!-- これ以降の処理は画像が正しく受信できた時の処理となる -->
+
+<?php
+  //サーバーに保存する時のファイル名を作成
+  //これを併せて、ファイルのサイズを制限したり受信できるファイル形式
+  //（MIMEタイプ）を制限する時は、判定を行い、保存しない場合は排除しte
+  //exit()する。サイズ制限
+  if($_FILES['file']['size']>1000000):
+?>
+    <p>ファイルが大きすぎます。</p>
+    <p>サイズを調整しなおしてください</p>
+    <p><a href="./filesend.php">送信ページへ</a></p>
+<?php
+   exit();
+endif;
+//ファイルの種類による制限
+  if($_FILES['file']['type'] != "image/jpeg"): //jpegファイル以外は排除
+?>
+  <p>jpeg(jpg)形式以外の形式のファイルは受付できません</p>
+  <p>ファイルの種類を確認して送信しなおしてください</p>
+  <p><a href="./1005test_send.php">送信ページへ<a></p>
+<?php
+exit();
+//画像ファイルを付け付けるときは、jpeg以外にもpngやgifも画像ファイルなので
+//そういったjpeg以外を受け付けるか判断して行う
+  endif;
+?>
+<?php
+/*
+
+ファイルサイズとファイルの種類の両方の間違いを同時に伝える
+$flag=false;
+if($_FILES['file]['size']>1000000):
+ここでphpブロック終了
+<p>ファイルサイズが大きすぎます</p>
+<p>サイズを調整して送信しなおしてください</p>
+ここでphpブロック開始
+$flag=true;エラーがあったら$flagをtrueに
+endif;
+if($_FILES['file']['type'] != "image/jpeg"):
+ここでphpブロック終了
+<p>jpeg(jpg)形式以外の形式のファイルは受付できません</p>
+<p>ファイルの種類を確認して送信しなおしてください</p>
+ここでphpブロック開始
+$flag=true;
+endif;
+if(flag):trueならエラーがあったので終了
+exit();
+endif:
+
+*/
+
+//ユーザーのつけたファイル名を使わず、phpでファイル名を作成
+//img20261005141523
+//のようにimgの後に年月日時分秒をつける形のファイル名にしていく
+//秒単位の区切りになるため、同時にアップロードされたときに同盟になる可能性を考え
+//同名ファイルが既に保存されていたらファイル名作成をやり直す形としていく。
+
+while(1): //永久ループの形
+  $filename="images/img"; //imagesフォルダ内に保存する
+  $date=date('YmdHis'); // 年月日時分秒の取得
+  $filename=$filename . $date . '.jpg'; 
+//今回はjpegなのでjpg
+//複数の種類を受け付ける場合は、MIMEタイプを使ったswitch-case文で拡張子を決定する
+
+/*switch-caseの例
+
+switch($_FILES['file']['type']):
+  case "image/jpeg":
+    $kaku=".jpg";
+    break;
+  case "image/png":
+    $kaku=".png";
+    break;
+  endswitch;
+  $filename=$filename . $date . $kaku;
+*/
+?>
+<p>ファイル名確認：<?php var_dump($filename); ?></p>
+<?php 
+//ここで、同名ファイルが保存されていない確認
+if(!file_exists($filename)):
+//file_exists()は同名ファイルが存在していたらtrue
+//していなければfalse
+//していなければ保存できるので、ifの判定時に「!」をつけて
+//file_exists()がfalseならtrue処理でループを終了（break）
+break;
+endif;
+endwhile;
+//送信されたファイルをimagesフォルダに保存
+//処理としてはtemフォルダからimagesフォルダへの移動。
+//move_uploaded_file()で実行する
+//※ @move_uploaded_file()と@をつけた形で書いてある例もあるが
+//同じ処理となっている。
+ move_uploaded_file($_FILES['file']['tmp_name'],$filename);
+?>
+<figure>
+  <img src="<?php echo $filename; ?>"  alt="アップロード画像">
+  <figcaption><?php echo htmlspecialchars($_POST['title'],ENT_QUOTES,'UTF-8'); ?></figcaption>
+</figure>
+</body>
+<
