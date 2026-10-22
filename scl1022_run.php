@@ -47,6 +47,48 @@ $demo_path = $dir_path . $current_file['demo'];
     <title>教材動作デモ ＆ 生コードプレビュー | ポートフォリオサイト</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ページ大見出しの装飾を集約 */
+        .page-title {
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 8px;
+        }
+
+        .page-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* ⚠️ デモ画面用の警告バナー（実務仕様） */
+        .demo-warning-banner {
+            background-color: #fff5f5;
+            /* 薄い赤色の背景 */
+            border-left: 6px solid #e11d48;
+            /* 左側に太い赤のアクセント線 */
+            color: #9f1239;
+            /* 濃い赤色の文字 */
+            padding: 15px 20px;
+            /* 内側の余白 */
+            margin-bottom: 25px;
+            /* 下のメニューとの隙間 */
+            border-radius: 4px;
+            /* 角を少し丸く */
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .demo-warning-banner strong {
+            color: #e11d48;
+            /* 特に強調したいキーワードの色 */
+        }
+
+        .demo-warning-banner ul {
+            margin-top: 8px;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
         /* タブメニュー専用の装飾 */
         .code-tabs {
             display: flex;
@@ -126,10 +168,19 @@ $demo_path = $dir_path . $current_file['demo'];
     <?php include 'header.php'; ?>
 
     <div class="container">
-        <!-- あなたのメインコンテンツ枠をそのまま使用 -->
         <main class="main-content">
-            <h2 style="color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 8px;">DB操作・会員管理システム 動作デモ＆生コード</h2>
-            <p style="font-size: 13px; color: #666; margin-bottom: 20px;">※上のタブを切り替えることで、それぞれの「動作デモ画面」と「プログラムコード」が連動して切り替わる。</p>
+            <h2 class="page-title">DB操作・会員管理システム 動作デモ＆生コード</h2>
+            <p class="page-desc">※上のタブを切り替えることで、それぞれの「動作デモ画面」と「プログラムコード」が連動して切り替わる。</p>
+
+            <!-- ⚠️ 記述を強化した実務仕様の警告アラートエリア -->
+            <div class="demo-warning-banner">
+                <strong>⚠️ セキュリティに関する重要なお願い</strong><br>
+                本画面は職業訓練のアウトプット用デモ画面です。悪意ある第三者への情報漏洩を防ぐため、レンタルサーバー上では<strong>実際の個人情報や、他サイトで普段お使いのID・パスワードは絶対に入力しないでください。</strong>
+                <ul>
+                    <li>動作テストを行う際は、新規登録画面からテスト用のアカウントを別途作成していただくか、以下のデモ用共通アカウントをご利用ください。</li>
+                    <li><strong>【テスト用アカウントの一例】</strong> ID: <code>test_user</code> / PASS: <code>password123</code></li>
+                </ul>
+            </div>
 
             <!-- ファイル切り替えタブ -->
             <ul class="code-tabs">
