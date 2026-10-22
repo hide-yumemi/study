@@ -13,6 +13,74 @@
   <link rel="stylesheet" href="scl_style.css">
   <!-- クイズ専用CSSの連携 -->
   <link rel="stylesheet" href="quiz.css">
+  <style>
+    /* 🛠️ 10/22ページ専用：会員構造テーブルの最適化スタイル */
+    .kaiin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14.5px;
+      background-color: #ffffff;
+      border: 2px solid #1e3a8a;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .kaiin-table th,
+    .kaiin-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+      line-height: 1.5;
+    }
+
+    .kaiin-table th {
+      background-color: #f1f5f9;
+      color: #1e3a8a;
+      font-weight: bold;
+      border-bottom: 2px solid #1e3a8a;
+    }
+
+    /* 各列の幅を黄金比で固定し、はみ出しを防止 */
+    .kaiin-table th:nth-child(1),
+    .kaiin-table td:nth-child(1) {
+      width: 15%;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    /* カラム名 */
+    .kaiin-table th:nth-child(2),
+    .kaiin-table td:nth-child(2) {
+      width: 20%;
+      font-family: monospace;
+    }
+
+    /* データ型 */
+    .kaiin-table th:nth-child(3),
+    .kaiin-table td:nth-child(3) {
+      width: 30%;
+      color: #475569;
+    }
+
+    /* 属性・制約 */
+    .kaiin-table th:nth-child(4),
+    .kaiin-table td:nth-child(4) {
+      width: 35%;
+      color: #334155;
+    }
+
+    /* 説明 */
+
+    /* レスポンシブ対応：画面が狭いときは横スクロールできるように包む */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 
 <body>
@@ -54,44 +122,48 @@
         <p>
           会員データを厳格に管理するため、phpMyAdminから新しく <code>kaiin</code> データベースを立ち上げ、同名の <code>kaiin</code> テーブルを以下の構造で設計しました。
         </p>
-        
+
         <div class="sub-heading">📐 kaiinテーブルのカラム構造（スキーマ）</div>
-        <table class="lesson-table" style="margin-top: 10px; margin-bottom: 15px;">
-          <thead>
-            <tr>
-              <th>カラム名</th>
-              <th>データ型</th>
-              <th>属性・制約</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>id</strong></td>
-              <td>INT</td>
-              <td>PRIMARY KEY / AUTO_INCREMENT</td>
-              <td>会員を識別する固有の一意の識別番号。自動連番。</td>
-            </tr>
-            <tr>
-              <td><strong>name</strong></td>
-              <td>VARCHAR(20)</td>
-              <td>UNIQUE KEY</td>
-              <td>ユーザーネーム。<b>重複登録を絶対に許さない一意の制約</b>。</td>
-            </tr>
-            <tr>
-              <td><strong>pass</strong></td>
-              <td>VARCHAR(12)</td>
-              <td>（可変文字列）</td>
-              <td>パスワード。※ハッシュ化の際はデータ長が伸びるため長さの拡張が必要。</td>
-            </tr>
-            <tr>
-              <td><strong>tel</strong></td>
-              <td>VARCHAR(11)</td>
-              <td>（可変文字列）</td>
-              <td>電話番号。先頭の「0」を保持するため、INT型ではなく必ず文字列型。</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <!-- 💻 横スクロールと専用クラスを適用して見やすさを劇的に改善 -->
+        <div class="table-responsive">
+          <table class="kaiin-table">
+            <thead>
+              <tr>
+                <th>カラム名</th>
+                <th>データ型</th>
+                <th>属性・制約</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY<br>AUTO_INCREMENT</td>
+                <td>会員を識別する固有の一意の識別番号。自動連番。</td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>VARCHAR(20)</td>
+                <td>UNIQUE KEY</td>
+                <td>ユーザーネーム。<b>重複登録を絶対に許さない一意の制約</b>。</td>
+              </tr>
+              <tr>
+                <td>pass</td>
+                <td>VARCHAR(12)</td>
+                <td>(可変文字列)</td>
+                <td>パスワード。※ハッシュ化の際はデータ長が伸びるため長さの拡張が必要。</td>
+              </tr>
+              <tr>
+                <td>tel</td>
+                <td>VARCHAR(11)</td>
+                <td>(可変文字列)</td>
+                <td>電話番号。先頭の「0」を保持するため、INT型ではなく必ず文字列型。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <p>SQLプレビュー（プレビュー画面）でエラーがないことを注意深く確認し、厳格なインデックス制約とともにテーブルを作成しました。</p>
       </section>
 
@@ -101,7 +173,7 @@
         <p>
           入力フォームを介さず、バックエンド処理プログラム（例：<code>touroku.php</code>）へ直接アクセスしてくる通信を安全に遮断する防御技術を学びました。
         </p>
-        
+
         <div class="sub-heading">3-1. 悪意のない誤アクセス（履歴や戻るボタン）への対策</div>
         <p>
           HTMLフォームを介さずURLを直接叩いたり、ブラウザの「戻る」でプログラムに再進入すると、通信は<b>GET送信</b>になります。
@@ -110,7 +182,7 @@
 
         <div class="sub-heading">3-2. 悪意をもった攻撃アクセス（不正な値のインジェクション）への対策</div>
         <p>
-          攻撃者が偽のPOSTデータを自作して送信してきたり、プログラムの隙を突いてSQLを改ざんしようとするケースへの対策は、以下の2重のフィルターで確実に防ぎます。
+          攻撃者が偽 of POSTデータを自作して送信してきたり、プログラムの隙を突いてSQLを改ざんしようとするケースへの対策は、以下の2重のフィルターで確実に防ぎます。
         </p>
         <ol>
           <li><strong>name属性の存在チェック：</strong> 指定したinputのname属性が正しく送られてきているかを <code>isset()</code> または <code>empty()</code> ではじく。</li>
@@ -130,7 +202,7 @@
         <div class="sub-heading">4-2. 重複登録を防ぐ事前SELECT照会（ユニーク確認）</div>
         <p>
           ユーザー名（<code>name</code>）はデータベース側でUNIQUE制約をかけていますが、SQL実行時にエラーを発生させるのは不格好です。
-          そのため、事前に同じ名前がいないかをSELECT文で問い合わせるのが親切な実装設計です。
+          事前に同じ名前がいないかをSELECT文で問い合わせるのが親切な実装設計です。
         </p>
         <pre><code>SELECT id FROM kaiin WHERE name = :name</code></pre>
         <ul>
@@ -185,6 +257,7 @@
             <div class="quiz-answer-area">
               <p class="quiz-correct-text">正解：直接アクセスした場合は「GET送信」になるという性質</p>
               <p>正規の入力フォーム（HTML）はデータを送信する際に <code>method="post"</code> と指定しているため、正常な通信は必ずPOSTになります。一方、直接URLを入力したり履歴から入った場合は「GET」になるため、スーパーグローバル変数などを利用して通信方式（メソッド）をチェックすれば、安全にアクセスを拒否できます。</p>
+
             </div>
           </details>
         </div>
@@ -215,11 +288,11 @@
       </section>
 
       <p style="margin-top: 25px;">
- <a href="0915_1119.php" class="link-board">➔ データベース・PHP授業一覧ページへ戻る</a>
-            </p>
-        </main>
-    </div>
-    <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
+        <a href="0915_1119.php" class="link-board">➔ データベース・PHP授業一覧ページへ戻る</a>
+      </p>
+    </main>
+  </div>
+  <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 </body>
 
 </html>
