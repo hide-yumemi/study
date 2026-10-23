@@ -1,7 +1,7 @@
 <header class="site-header">
     <div class="site-title">
         <a href="index.php" style="color: inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
-        <span class="site-desc">IT未経験の私が思い切ってIT業界へ転職する為の第一歩となる議事録・及び訓練校での学びを更新するサイトです。<br>尚、授業9/15以降のページ後半にはアウトプットを目的としAIを使ったミニクイズがあります。</span>
+        <span class="site-desc">IT未経験の私が思い切ってIT業界へ転職する為の第一歩となる議事録・及び訓練校での学びを更新するサイトです。<br>尚、授業9/15以降のページ後半にはアウトプットを目的としAIを使ったミニクイズがあります。<br>Paiza.IOはブラウザ上で様々なコードが確認できるべん</span>
     </div>
 
     <nav class="nav-menu">
@@ -49,6 +49,13 @@
                 <a href="./original_mannen.php">オリジナル万年カレンダー</a>
                 <a href="./original_squash.php">オリジナルスカッシュ</a>
             </div>
+        </div>
+
+        <!-- オンライン上でコードの確認が可能 -->
+        <div class="menu-item">
+            <button class="menu-btn"><a href="https://paiza.io/ja/projects/new" target="_blank">paiza.IO</a>
+            </button>
+
         </div>
     </nav>
 </header>

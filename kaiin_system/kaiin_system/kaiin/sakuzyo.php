@@ -34,10 +34,9 @@
 				$sql = mysqli_prepare($link,'DELETE FROM `kaiin` WHERE `name`=?');
 				mysqli_stmt_bind_param($sql,'s',$_POST['name']);
 				mysqli_stmt_execute($sql);
-//通常はここでセッション終了処理
 ?>
 		<p>退会しました</p>
-		<p><a href='kaiintouroku.php'>topページへ</a></p>
+		<p><a href='kaiintouroku.html'>topページへ</a></p>
 <?php else: ?>
 		<p>パスワードが違います</p><br>
 		<p><a href='sakuzyo.html'>前画面に戻る</a></p>
