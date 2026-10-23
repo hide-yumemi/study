@@ -15,7 +15,7 @@
         <main class="main-content">
             <h2>授業 database / php</h2>
             <p>日付：学校のスケジュールに合わせている為、休校などは飛ばしてます。</p>
-            <p>授業内容まとめ：日付ノートを元に、AIを活用しつつ補足をいれながらマークアップしたものです。</p>
+            <p>授業内容まとめ：当日のノートを元に、AIを活用しつつ補足をいれながらマークアップしたものです。</p>
             <p>ノート：学校でのホワイトボードの記述・VScode内での記述を乗せております。（個人的なメモも載せてます）
             <p>動作確認：phpはコードが隠れてしまう為,必要に応じて生コードを見せたりプログラムの動作確認を行います</p>
             <table class="lesson-table">
@@ -104,7 +104,7 @@
                     <tr>
                         <td class="td-date">10/06</td>
                         <td><a href="scl1006.php" class="td-link">入力フォームとファイル受信処理・フラグ管理技術</a></td>
-                        <td><a href="scl1006.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1006.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl1006_run.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
@@ -113,25 +113,25 @@
                             <a href="scl1007.php" class="td-link">⓵【教材解説】phpMyAdmin操作など</a>
                             （準備必須：<a href="oneline_bbs.zip" download class="td-link">先生の用意した教材</a>）
                         </td>
-                        <td><a href="scl1007.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1007.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="./oneline_bbs/bbs.php" class="td-link">動作確認</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/08</td>
                         <td><a href="scl1008.php" class="td-link">⓶【教材bbs】MySQLデータベースの基礎とphpMyAdmin操作技術</a></td>
-                        <td><a href="scl1008.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1008.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl_bbs_code.php" class="td-link">bbsコード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/09</td>
                         <td><a href="scl1009.php" class="td-link">⓷【教材bbs】MySQLi接続とプリペアドステートメント（書き込み・挿入編）</a></td>
-                        <td><a href="scl1009.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1009.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl_bbs_code.php" class="td-link">bbsコード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/13</td>
                         <td><a href="scl1013.php" class="td-link">⓸【教材bbs2】SELECT文によるデータ全件取得とあいまい検索・ソート処理</a></td>
-                        <td><a href="scl1013.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1013.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl_bbs2_code.php" class="td-link">bbs2コード</a></td>
                     </tr>
                     <tr>
@@ -143,32 +143,38 @@
                     <tr>
                         <td class="td-date">10/16</td>
                         <td><a href="scl1016.php" class="td-link">⓹【教材bb2】PDO拡張機能の導入とtry-catch例外処理・静的接続のセキュリティ</a></td>
-                        <td><a href="scl1016.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1016.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl_bbs2_code.php" class="td-link">bbs2コード</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/19</td>
                         <td><a href="scl1019.php" class="td-link">PDOでのデータ取得と掲示板拡張準備</a></td>
-                        <td><a href="scl1019.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1019.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="" class="td-link"></a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/20</td>
                         <td>課題：ひとこと掲示板（bbs/bbs2）に写真投稿を拡張の実施</td>
-                        <td><a href="scl1020.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1020.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl1020_run.php" class="td-link">写真bbs2</a></td>
                     </tr>
                     <tr>
                         <td class="td-date">10/21</td>
                         <td><a href="scl1021.php" class="td-link">正規表現やpreg_matchを用いたメール・パスワードの検証</a></td>
-                        <td><a href="scl1021.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1021.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl1021_seiki_code.php" class="td-link">教材生コード</a></td>
                     </tr>
                     <tr>
                         <td class=" td-date">10/22</td>
                         <td><a href="scl1022.php" class="td-link">DB操作・会員管理システム</a></td>
-                        <td><a href="scl1022.txt" class="td-link" target="_blank">ホワイトボード</a></td>
+                        <td><a href="scl1022.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td><a href="scl1022_run.php" class="td-link">教材デモ・生コード</a></td>
+                    </tr>
+                    <tr>
+                        <td class=" td-date">10/23</td>
+                        <td><a href="scl1023.php" class="td-link"></a></td>
+                        <td><a href="scl1023.txt" class="td-link" target="_blank">授業の記述</a></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
