@@ -19,7 +19,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 100%;
     background-color: #ffffff;
     border-bottom: 2px solid #a0522d;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -116,7 +116,7 @@ body {
 
 .main-content {
     max-width: 1100px;
-    margin:30px auto 60px;
+    margin: 30px auto 60px;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 30px;
@@ -136,8 +136,8 @@ body {
 /* 3. 画面右下のトップボタン */
 .top-button {
     position: fixed;
-    bottom: 25px;    
-    right: calc(50% - 550px - 20px - 70px); 
+    bottom: 25px;
+    right: calc(50% - 550px - 20px - 70px);
     background-color: #ff8c00;
     color: white;
     text-decoration: none;
@@ -160,7 +160,7 @@ body {
    更新履歴・活動ログ（index.php専用）
    ========================================== */
 .history-list {
-    list-style: none; 
+    list-style: none;
 }
 
 /* 各ログの枠線と余白 */
@@ -219,24 +219,31 @@ body {
 .lesson-table td:nth-child(1) {
     font-weight: bold;
     color: #666;
-    width: 80px;      /* 元の横幅を維持 */
-    text-align: center; /* 中央寄せに統一 */
+    width: 80px;
+    /* 元の横幅を維持 */
+    text-align: center;
+    /* 中央寄せに統一 */
 }
 
 /* 3列目：生コードコピペ用列 */
 .lesson-table th:nth-child(3),
 .lesson-table td:nth-child(3) {
-    width: 160px;     /* 「生コードコピペ用」が絶対に改行されない幅に拡張 */
-    text-align: center; /* ボタンの文字を中央に寄せて綺麗に整列 */
+    width: 160px;
+    /* 「生コードコピペ用」が絶対に改行されない幅に拡張 */
+    text-align: center;
+    /* ボタンの文字を中央に寄せて綺麗に整列 */
 }
 
 /* 4列目：動作確認列 */
 .lesson-table th:nth-child(4),
 .lesson-table td:nth-child(4) {
-    width: 180px;     /* 「動作確認」が1行で美しく収まる幅に固定 */
-    text-align: center; /* リンク文字を中央に配置 */
-    
+    width: 180px;
+    /* 「動作確認」が1行で美しく収まる幅に固定 */
+    text-align: center;
+    /* リンク文字を中央に配置 */
+
 }
+
 /* リンクのデザイン */
 .link-board {
     color: #1e3a8a;
@@ -272,9 +279,12 @@ body {
     border-radius: 8px;
     border-left: 4px solid #1e3a8a;
     margin-top: 20px;
-    display: flex;         /* 画像とテキストを横並びにする */
-    align-items: center;   /* 上下を中央揃えにする */
-    gap: 20px;             /* 画像とテキストの間の余白 */
+    display: flex;
+    /* 画像とテキストを横並びにする */
+    align-items: center;
+    /* 上下を中央揃えにする */
+    gap: 20px;
+    /* 画像とテキストの間の余白 */
 }
 
 /* 本の画像配置エリア */

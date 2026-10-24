@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- 💡 新設したクイズ専用の外部CSSを読み込み -->
     <link rel="stylesheet" href="quiz.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -21,7 +23,7 @@
     <!-- メインレイアウト -->
     <div class="container">
         <main class="main-content">
-            
+
             <h1>9/15(火)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">PHPの基本的な仕組み・WEBサーバー・環境構築（XAMPP）</p>
 
@@ -29,9 +31,9 @@
             <div class="note-section">
                 <h3 class="note-title">1. 基本的な仕組み（サーバーサイド・スクリプトの挙動）</h3>
                 <p>WebサーバーにPHPを実行できるプログラムが導入されている場合、 http://~ で要求された ~.php ファイル内のPHPブロックを実行し、その**実行結果のみを要求元（ブラウザ）へ送信**します。</p>
-                
-                <pre><code>&lt;?php // ここに処理を記述します ?&gt;</code></pre>
-                
+
+                <pre><code>&lt;?php  ここに処理を記述します ?&gt;</code></pre>
+
                 <p>サーバー側にPHPを認識するプログラムが必要なため、レンタルサーバーが対応しているか等を事前に調べる必要があります。</p>
 
                 <p><strong>💡 補足：現代のレンタルサーバー事情</strong></p>
@@ -46,7 +48,7 @@
             <div class="note-section">
                 <h3 class="note-title">2. WEBサーバープログラム</h3>
                 <p>代表的なWebサーバープログラムとして <strong>Apache（アパッチ）</strong> があります。</p>
-                
+
                 <div class="sub-heading"> Apacheの特徴</div>
                 <ul>
                     <li>オープンソースプログラム（無料で公開されているプログラム）</li>
@@ -84,7 +86,7 @@
             <!-- 4. XAMPPのインストール＆設定 -->
             <div class="note-section">
                 <h3 class="note-title">4. XAMPPのインストール＆設定</h3>
-                
+
                 <div class="sub-heading"> ステップ1：VS Codeの拡張機能を導入</div>
                 <p>まずはVS Codeに以下の2つの拡張機能をインストールします。</p>
                 <ul>
@@ -120,16 +122,16 @@
             <!-- 5. 基本的な構文と日時フォーマット -->
             <div class="note-section">
                 <h3 class="note-title">5. 基本的な構文と日時フォーマット</h3>
-                
+
                 <div class="sub-heading"> echo文による画面出力</div>
                 <p>echo ~; と記述すると、「~」の部分を画面に書き出します。</p>
-                
-                <pre><code>&lt;!-- PHP側（記述するコード） --&gt;
-&lt;p&gt;&lt;?php echo "テスト"; ?&gt;&lt;/p&gt;</code></pre>
+
+                <pre><code>&lt;?php echo "テスト"; ?&gt;
+出力：テスト</code></pre>
 
                 <div class="sub-heading"> サーバーの現在の時刻を取得（date関数）</div>
                 <p>date("フォーマット文字列") を使用し、特定のアルファベットを指定して日時を取得します。</p>
-                
+
                 <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; text-align: left;">
                     <thead>
                         <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
@@ -202,18 +204,19 @@
                 </table>
 
                 <div class="sub-heading"> 実践テクニックコード</div>
-<pre><code>// 1. 基本的な日時表示
-&lt;?php echo date("Y年m月d日 H時i分s秒"); ?&gt;
+                <pre><code>1. 基本的な日時表示
+&lt;?php echo date("Y年m月d日 H時i分s秒"); ?&gt;　//　YYYY年mm月dd日 hh時ii分ss秒
 
-// 2. 配列と組み合わせた日本語の曜日表示
+2. MySQLのdatetime型に合わせる場合（実務で頻出）
+&lt;?php echo date("Y-m-d H:i:s"); ?&gt;　　//　YYYY-mm-mm　HH:ii:ss
+
+3. 配列と組み合わせた日本語の曜日表示
 &lt;?php
 $week = ["日", "月", "火", "水", "木", "金", "土"];
 $w_num = date("w"); // 数値（0〜6）で出力される
 echo "今日は" . $week[$w_num] . "曜日です"; // 文字列連結演算子「.」を使用
 ?&gt;
-
-// 3. MySQLのdatetime型に合わせる場合（実務で頻出）
-&lt;?php echo date("Y-m-d H:i:s"); ?&gt;</code></pre>
+// 今日は〇曜日です。</code></pre>
             </div>
 
             <!-- 6. データベース (MySQL / phpMyAdmin) -->
@@ -221,9 +224,9 @@ echo "今日は" . $week[$w_num] . "曜日です"; // 文字列連結演算子�
                 <h3 class="note-title">6. データベース (MySQL / phpMyAdmin)</h3>
                 <p>MySQL（データベース）の管理画面は今後非常によく使うため、ブラウザにお気に入り登録（ブックマーク）しておきましょう。</p>
                 <p>💻 <strong>管理画面URL：</strong> <a href="http://localhost/phpmyadmin/" target="_blank">http://localhost/phpmyadmin/</a></p>
-                
+
                 <div class="sub-heading"> 管理画面メインメニューの機能解説</div>
-                
+
                 <p><strong>① 基本操作・管理グループ</strong></p>
                 <ul>
                     <li><strong>データベース：</strong> 新しい「データ倉庫」を作成したり、一覧やデータサイズを確認するときに使います。</li>
@@ -327,4 +330,5 @@ echo "今日は" . $week[$w_num] . "曜日です"; // 文字列連結演算子�
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

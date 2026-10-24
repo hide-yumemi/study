@@ -50,12 +50,6 @@
                 <a href="./original_squash.php">オリジナルスカッシュ</a>
             </div>
         </div>
-
-        <!-- オンライン上でコードの確認が可能 -->
-        <div class="menu-item">
-            <button class="menu-btn"><a href="https://paiza.io/ja/projects/new" target="_blank">paiza.IO</a>
-            </button>
-
         </div>
     </nav>
 </header>
