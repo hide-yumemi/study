@@ -191,21 +191,20 @@ echo $$var_name; // 出力結果: 1
 <span class="code-comment">// ① 必ずPHPタグのすぐ下、他のどの処理よりも先に記述します。</span>
 declare(strict_types=1);
 
-<span class="code-comment">// ② 2つの整数（int）を受け取って、合計（: int）を計算する関数を定義。</span>
-function addNumbers(int $a, int $b): int {
+<span class="code-comment">// ② 2つの整数（int）を受け取って、合計を計算する関数を定義。</span>
+function addNumbers(int $a, int $b): int {　//　：の後にintを付ける事によって整数を返す。という意味
     return $a + $b;
 }
 
 <span class="code-comment">// === パターンA：正しい型を渡した場合 ===</span>
-<span class="code-comment">// どちらも整数（int）なので、問題なく「8」が出力されます。</span>
 echo addNumbers(3, 5);
-echo PHP_EOL;
+echo PHP_EOL;　<span class="code-comment">// どちらも整数（int）なので、問題なく「8」が出力されます。</span>
 
 <span class="code-comment">// === パターンB：間違った型を渡した場合 ===</span>
+echo addNumbers(3, "5");
 <span class="code-comment">// 第2引数に、整数ではなく文字列の "5" を渡しています。</span>
 <span class="code-comment">// 【厳格モード（strict_types=1）の場合】：TypeErrorを発生させてその場で処理を止めます。</span>
 <span class="code-comment">// 【通常のモード（記述なし）の場合】：自動で数字の 5 に変換され、「8」と出力されてしまいます。</span>
-echo addNumbers(3, "5");
 ?&gt;</code></pre>
             </div>
 
