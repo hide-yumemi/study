@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -28,14 +30,14 @@
             <div class="note-section">
                 <h3 class="note-title">1. setTimeout による指定時間後の処理と「再帰反復」の罠</h3>
                 <p>
-                    指定した時間が経過した後に、**1度だけ**特定の処理を実行させる命令です（1000ミリ秒 ＝ 1秒）。
+                    指定した時間が経過した後に、1度だけ特定の処理を実行させる命令です（1000ミリ秒 ＝ 1秒）。
                 </p>
-<pre><code>// 構文
+                <pre><code>// 構文
 window.setTimeout(関数名, 時間(ミリ秒));</code></pre>
 
                 <div class="sub-heading">🔄 自己呼び出し（再帰）による繰り返し処理の構築</div>
                 <p>実行する関数の中で、自分自身を再び <code>setTimeout</code> で呼び出す構造（再帰呼び出し）にすることで、疑似的な繰り返し処理を作ることができます。タイマーを止めたい場合は <code>clearTimeout(タイムID);</code> を実行します。</p>
-<pre><code>let timeId;
+                <pre><code>let timeId;
 function loop() {
     // 繰り返し実行したい処理
     timeId = setTimeout(loop, 1000); // 💡 自分の処理が終わった後に、1秒後に自分を予約する
@@ -45,7 +47,7 @@ function loop() {
                 <p>
                     <code>setTimeout</code> の再帰呼び出しは、<strong>「前の処理が完全に終わってから、次の待機時間がスタートする」</strong> という特性を持っています。そのため、PCの負荷や関数の重さ（処理時間）によって、実行回数を重ねるごとに開始時間が後ろへ後ろへと累積して遅れてしまいます。
                 </p>
-                
+
                 <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
                     <thead>
                         <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
@@ -77,7 +79,7 @@ function loop() {
                     </tbody>
                 </table>
                 <p>
-                    このように、3周の処理だけで本来3000ms（3秒）間隔であってほしいはずが、**計4100ms（4.1秒）までズレ込んでしまう**ため、時計やストップウォッチのような正確な時間周期が求められる用途には絶対に向きません。
+                    このように、3周の処理だけで本来3000ms（3秒）間隔であってほしいはずが、計4100ms（4.1秒）までズレ込んでしまうため、時計やストップウォッチのような正確な時間周期が求められる用途には絶対に向きません。
                 </p>
             </div>
 
@@ -85,18 +87,18 @@ function loop() {
             <div class="note-section">
                 <h3 class="note-title">2. setInterval による正確なインターバル（周期）処理</h3>
                 <p>
-                    処理自体の実行時間に関わらず、**「指定した時間の間隔（一定の周期）ごと」に機械的に処理を強制開始させる**繰り返し命令です。
+                    処理自体の実行時間に関わらず、「指定した時間の間隔（一定の周期）ごと」に機械的に処理を強制開始させる繰り返し命令です。
                 </p>
                 <ul>
                     <li>1回命令を出すだけで勝手にループするため、<strong>関数内での自己呼び出し（再帰）は完全に不要</strong>です。</li>
                     <li>時計、カウントダウンタイマー、アクションゲームの描画ループなど、正確な時間管理が必要なシステムに採用されます。</li>
                 </ul>
-<pre><code>// タイマーの開始（IDを変数に保持し、clearInterval(timeId); で停止する）
+                <pre><code>// タイマーの開始（IDを変数に保持し、clearInterval(timeId); で停止する）
 let timeId = setInterval(関数名, 1000); </code></pre>
 
                 <p class="note" style="font-size: 13.5px; color: #b91c1c; background-color: #fff5f5; padding: 12px; border-radius: 6px; margin-top: 15px;">
                     ⚠️<strong>実務での防衛策：タイマーの「多重発火」によるフリーズバグ</strong><br>
-                    タイマー起動処理をボタンのクリックイベント（<code>onclick</code>）にそのまま設定した場合、ユーザーがボタンを連打すると、**裏側でタイマーが何重にも同時に重なって暴走起動してしまう重篤なバグ**が発生します。<br><br>
+                    タイマー起動処理をボタンのクリックイベント（<code>onclick</code>）にそのまま設定した場合、ユーザーがボタンを連打すると、裏側でタイマーが何重にも同時に重なって暴走起動してしまう重篤なバグが発生します。<br><br>
                     プロの現場では、ボタンが押された瞬間に <code>clearInterval(timeId);</code> を実行して「古いタイマーを一旦確実に消去してから新しいタイマーを動かす」か、あるいは起動中は開始ボタンに <strong><code>disabled = true;</code></strong> 属性を付与して物理的に連打させないUI設計を施すことが必須義務となっています。
                 </p>
             </div>
@@ -109,8 +111,8 @@ let timeId = setInterval(関数名, 1000); </code></pre>
                 </p>
                 <div class="sub-heading">💡 カレンダーを出力するための2大絶対条件</div>
                 <ol>
-                    <li>その月の **「1日」が何曜日** からスタートするか</li>
-                    <li>その月が **「何日まで（末日）」** 存在するか（2月の平年28日・うるう年29日の個別判定含む）</li>
+                    <li>その月の 「1日」が何曜日 からスタートするか</li>
+                    <li>その月が 「何日まで（末日）」 存在するか（2月の平年28日・うるう年29日の個別判定含む）</li>
                 </ol>
 
                 <div class="sub-heading">📋 指定年月「1日」の曜日を導き出す4ステップ</div>
@@ -129,16 +131,18 @@ let timeId = setInterval(関数名, 1000); </code></pre>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 8px; text-align: center; font-weight: bold;">2. 年数によるズレ</td>
                             <td style="padding: 8px;">地球の公転周期上、平年（365日）が経過すると翌年の曜日は「1つ」進み、うるう年（366日）を跨ぐと「2つ」進む。
-                            <br>➔ <strong>（経過年数） ＋ （その間を通過したうるう年の総回数）</strong> を計算し、年単位の曜日のズレを算出する。</td>
+                                <br>➔ <strong>（経過年数） ＋ （その間を通過したうるう年の総回数）</strong> を計算し、年単位の曜日のズレを算出する。
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 8px; text-align: center; font-weight: bold;">3. 月数によるズレ</td>
-                            <td style="padding: 8px;">指定された年の「1月1日」から、ターゲットである「指定月の1日」までの**経過日数（配列等から各月の末日を足し算）**を求め、ステップ2のズレに全て合算する。</td>
+                            <td style="padding: 8px;">指定された年の「1月1日」から、ターゲットである「指定月の1日」までの経過日数（配列等から各月の末日を足し算）を求め、ステップ2のズレに全て合算する。</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 8px; text-align: center; font-weight: bold;">4. 曜日の確定</td>
-                            <td style="padding: 8px;">算出した「総合計のズレ日数」を **<code>7</code> で割った余り（<code>%</code> 演算子）** を出す。
-                            <br>その余りの数値（0〜6）の分だけ基準年の曜日からカレンダーのインデックスをシフトさせることで、任意の年月の1日の曜日が寸分の狂いもなく確定する。</td>
+                            <td style="padding: 8px;">算出した「総合計のズレ日数」を <code>7</code> で割った余り（<code>%</code> 演算子） を出す。
+                                <br>その余りの数値（0〜6）の分だけ基準年の曜日からカレンダーのインデックスをシフトさせることで、任意の年月の1日の曜日が寸分の狂いもなく確定する。
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -147,12 +151,12 @@ let timeId = setInterval(関数名, 1000); </code></pre>
             <!-- セクション4：実務での補足情報 -->
             <div class="note-section">
                 <h3 class="note-title">4. フロントエンド実務におけるタイマー・カレンダーの近代手法</h3>
-                
+
                 <div class="sub-heading">✨ 実務スタンダード：JavaScript標準の「Dateオブジェクト」</div>
                 <p>
                     上記の数理計算はアルゴリズム的思考力を鍛える訓練には最適ですが、実務の現場では、ブラウザに標準搭載されている <strong><code>Date</code> オブジェクト</strong> を使用することで、曜日やうるう年の判定を含めた末日の算出をわずか数行で処理するのが主流です。
                 </p>
-<pre><code>// ① 任意の年月の「1日」の曜日番号をダイレクトに取得（日〜土 ➔ 0〜6）
+                <pre><code>// ① 任意の年月の「1日」の曜日番号をダイレクトに取得（日〜土 ➔ 0〜6）
 let date = new Date(2026, 9, 1); // 💡 月は0から始まるため、9は「10月」を意味します
 console.log(date.getDay());     // ➔ 10月1日の曜日が出力される
 
@@ -165,7 +169,7 @@ console.log(lastDate.getDate());      // ➔ 「31」が出力される（うる
                 <p>
                     自動生成されたカレンダーのマス目（<code>&lt;td&gt;</code>）に対し、JavaScriptの属性操作・クラス操作を組み合わせることで、デザインを動的に反映させます。
                 </p>
-<pre><code>// 曜日や当日に応じて、CSSクラスを動的にアドオンする
+                <pre><code>// 曜日や当日に応じて、CSSクラスを動的にアドオンする
 cell.setAttribute("class", "sunday"); // 日曜日のマスに赤文字用CSSクラスを適用
 cell.classList.add("today");          // 今日の日付のマスに背景色の装飾クラスを追加</code></pre>
             </div>
@@ -181,4 +185,5 @@ cell.classList.add("today");          // 今日の日付のマスに背景色の
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

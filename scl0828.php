@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -28,16 +30,16 @@
             <div class="note-section">
                 <h3 class="note-title">1. 関数（Function）の基本構造とメリット</h3>
                 <p>
-                    JavaScriptにおける**関数**とは、特定の処理（プログラム）をひとまとめにしたブロックのことです。関数内に書かれた命令は、定義しただけでは実行されず、外部から「呼び出された時」に初めて実行されます。
+                    JavaScriptにおける関数とは、特定の処理（プログラム）をひとまとめにしたブロックのことです。関数内に書かれた命令は、定義しただけでは実行されず、外部から「呼び出された時」に初めて実行されます。
                 </p>
-<pre><code>// 基本構文
+                <pre><code>// 基本構文
 function 関数名(引数1, 引数2, ...) {
     // 実行したいひとまとめの処理
 }</code></pre>
 
                 <div class="sub-heading">🤝 引数（ひきすう）とは</div>
                 <p>
-                    関数を呼び出す側から値を受け取って処理を動かす場合、<code>()</code> の中に関数内部だけで変数として機能する **「仮引数」** を設定しておきます。
+                    関数を呼び出す側から値を受け取って処理を動かす場合、<code>()</code> の中に関数内部だけで変数として機能する 「仮引数」 を設定しておきます。
                 </p>
                 <ul>
                     <li><strong>引数なし：</strong> 呼び出すだけで一連の固定処理を動かす。 （例: <code>disp();</code>）</li>
@@ -47,7 +49,7 @@ function 関数名(引数1, 引数2, ...) {
                 <div class="sub-heading">💡 関数を定義するメリットとタイミング</div>
                 <ul>
                     <li>プログラム内に制限なく<strong>何個でも作成可能</strong>で、<strong>何回でも再利用（呼び出し）</strong>できる。</li>
-                    <li>サイトを開いた瞬間ではなく、ユーザーのクリックやキー入力など**「特定のタイミングで実行したい処理」**は、すべて関数としてカプセル化して定義する。</li>
+                    <li>サイトを開いた瞬間ではなく、ユーザーのクリックやキー入力など「特定のタイミングで実行したい処理」は、すべて関数としてカプセル化して定義する。</li>
                 </ul>
             </div>
 
@@ -58,8 +60,8 @@ function 関数名(引数1, 引数2, ...) {
                     関数内の <code>return</code> 命令には、プログラムの制御において2つの重要な役割があります。
                 </p>
                 <ul>
-                    <li><strong>① 呼び出し元へ値を戻す（戻り値）：</strong> <code>return 値;</code> と書くと、関数の計算結果などを呼び出し元へパスできます。※戻せる値は1つだけのため、複数返したい場合は**配列**にして戻します。
-<pre><code>function add(x, y) {
+                    <li><strong>① 呼び出し元へ値を戻す（戻り値）：</strong> <code>return 値;</code> と書くと、関数の計算結果などを呼び出し元へパスできます。※戻せる値は1つだけのため、複数返したい場合は配列にして戻します。
+                        <pre><code>function add(x, y) {
     return x + y; // 計算結果を戻す
 }
 let result = add(1, 2); // 💡 変数resultに「3」が代入される</code></pre>
@@ -75,42 +77,43 @@ let result = add(1, 2); // 💡 変数resultに「3」が代入される</code><
                     通常のプログラムはHTMLを上から順に読み込んで実行しますが、外部CSSや <code>&lt;img&gt;</code> の画像はサーバーへ後から別途要求するため、JavaScriptの実行よりも表示が遅れる特性があります。HTMLの読み込み完了度合いに応じたタイミング制御が、DOMバグを防ぐ鍵です。
                 </p>
                 <ul>
-                    <li><strong><code>window.onload = function(){};</code> 【完全完了】：</strong> HTMLの構造だけでなく、外部CSSや画像（ <code>&lt;img&gt;</code> ）など、**すべての追加ファイルが100%ダウンロード完了した瞬間**に発火します。そのため、実行タイミングとしては最も遅くなります。</li>
-                    <li><strong><code>document.ready</code> (jQueryなど) 【DOM構築完了】：</strong> 画像やCSSの読み込み完了を待たず、**HTMLの解析（DOMツリー構造）がブラウザ内に組み上がった瞬間**に最速で即座に実行されます。要素の取得エラーを最速で防ぐ実務のスタンダードです。</li>
+                    <li><strong><code>window.onload = function(){};</code> 【完全完了】：</strong> HTMLの構造だけでなく、外部CSSや画像（ <code>&lt;img&gt;</code> ）など、すべての追加ファイルが100%ダウンロード完了した瞬間に発火します。そのため、実行タイミングとしては最も遅くなります。</li>
+                    <li><strong><code>document.ready</code> (jQueryなど) 【DOM構築完了】：</strong> 画像やCSSの読み込み完了を待たず、HTMLの解析（DOMツリー構造）がブラウザ内に組み上がった瞬間に最速で即座に実行されます。要素の取得エラーを最速で防ぐ実務のスタンダードです。</li>
                 </ul>
             </div>
 
             <!-- セクション4：イベントとaddEventListener -->
             <div class="note-section">
                 <h3 class="note-title">4. イベント駆動と addEventListener の詳細メカニズム</h3>
-                <p>ユーザーが画面に対して行ったアクション（クリック、キー入力など）を検知して関数を動かす仕組みを**イベント**と呼びます。</p>
-                
+                <p>ユーザーが画面に対して行ったアクション（クリック、キー入力など）を検知して関数を動かす仕組みをイベントと呼びます。</p>
+
                 <div class="sub-heading">⚠️ イベント登録時、関数名に カッコ `()` を付けてはいけない理由</div>
-                <p><code>要素.onclick = myFunc;</code> のように、登録時は必ず**関数名のみ（カッコなし）**で指定します。
-                <br>もし <code>myFunc()</code> と書いてしまうと、**「イベントが発生した時ではなく、サイトを開いてこのコードを読み込んだ瞬間にその場で関数が勝手に実行され、その戻り値が代入されてしまう」**という致命的な誤動作を引き起こすためです。</p>
+                <p><code>要素.onclick = myFunc;</code> のように、登録時は必ず関数名のみ（カッコなし）で指定します。
+                    <br>もし <code>myFunc()</code> と書いてしまうと、「イベントが発生した時ではなく、サイトを開いてこのコードを読み込んだ瞬間にその場で関数が勝手に実行され、その戻り値が代入されてしまう」という致命的な誤動作を引き起こすためです。
+                </p>
 
                 <div class="sub-heading">✨ addEventListener によるイベント設定のメリット</div>
                 <p>現代の標準である <code>要素.addEventListener("click", 関数名);</code> を用いると、以下の高度な制御が可能になります。</p>
                 <ol>
-                    <li>1つの要素の同じイベント（例: クリック時）に対して、**複数の異なる処理（関数）を競合させることなく安全に並行登録**できる。</li>
+                    <li>1つの要素の同じイベント（例: クリック時）に対して、複数の異なる処理（関数）を競合させることなく安全に並行登録できる。</li>
                     <li><code>"click"</code> や <code>"keydown"</code> のように、先頭に <code>on</code> を付けずにスッキリと記述する。</li>
                 </ol>
 
                 <div class="sub-heading">📐 第3引数の真偽値（true / false）とイベント伝播（流れ）の順序</div>
                 <p><code>&lt;ul&gt;</code> の中に <code>&lt;li&gt;</code> があるような入れ子構造の要素をクリックした際、イベントが親子どちらから順に実行されるかを制御します。</p>
                 <ul>
-                    <li><strong><code>false</code> （バブリングフェーズ） ※省略時デフォルト：</strong> イベントが**「内側 ➔ 外側」**（ <code>&lt;li&gt;</code> ➔ <code>&lt;ul&gt;</code> ）の順で、泡が湧き上がるように伝わります。一般的にはこれが省略されて使われます。</li>
-                    <li><strong><code>true</code> （キャプチャリングフェーズ）：</strong> イベントが**「外側 ➔ 内側」**（ <code>&lt;ul&gt;</code> ➔ <code>&lt;li&gt;</code> ）の順で、外側から捕まえるように実行されます。</li>
+                    <li><strong><code>false</code> （バブリングフェーズ） ※省略時デフォルト：</strong> イベントが「内側 ➔ 外側」（ <code>&lt;li&gt;</code> ➔ <code>&lt;ul&gt;</code> ）の順で、泡が湧き上がるように伝わります。一般的にはこれが省略されて使われます。</li>
+                    <li><strong><code>true</code> （キャプチャリングフェーズ）：</strong> イベントが「外側 ➔ 内側」（ <code>&lt;ul&gt;</code> ➔ <code>&lt;li&gt;</code> ）の順で、外側から捕まえるように実行されます。</li>
                 </ul>
             </div>
 
             <!-- セクション5：イベントオブジェクトとデフォルトキャンセル -->
             <div class="note-section">
                 <h3 class="note-title">5. イベントオブジェクトとブラウザ動作の拒否（return false）</h3>
-                
+
                 <div class="sub-heading">🎁 自動で渡される「イベントオブジェクト」</div>
                 <p>
-                    イベントによって関数が呼び出される際、引数を空にしていても、JavaScript側から自動的に**そのイベントに関する詳細な情報（座標や押されたキーのコード）を詰め込んだオブジェクト**が第1引数として渡されます。
+                    イベントによって関数が呼び出される際、引数を空にしていても、JavaScript側から自動的にそのイベントに関する詳細な情報（座標や押されたキーのコード）を詰め込んだオブジェクトが第1引数として渡されます。
                 </p>
                 <ul>
                     <li>マウスイベント：クリックされた画面上のX・Y座標など</li>
@@ -119,7 +122,7 @@ let result = add(1, 2); // 💡 変数resultに「3」が代入される</code><
 
                 <div class="sub-heading">🚫 既定動作のキャンセル（return false;）</div>
                 <p>
-                    イベントハンドラ関数内で <code>return false;</code> を実行すると、ブラウザが元から持っている**既定の動作（デフォルトの挙動）を強力に拒否・キャンセル**することができます。
+                    イベントハンドラ関数内で <code>return false;</code> を実行すると、ブラウザが元から持っている既定の動作（デフォルトの挙動）を強力に拒否・キャンセルすることができます。
                 </p>
                 <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px;">
                     <thead>
@@ -149,9 +152,9 @@ let result = add(1, 2); // 💡 変数resultに「3」が代入される</code><
             <div class="note-section">
                 <h3 class="note-title">6. 現代的な「無名関数（匿名関数）」によるスマートな記述</h3>
                 <p>
-                    イベントの発生タイミングと、そこで実行したい具体的な処理を、わざわざ外に関数を作らずに**その場に一括で記述する手法**です。
+                    イベントの発生タイミングと、そこで実行したい具体的な処理を、わざわざ外に関数を作らずにその場に一括で記述する手法です。
                 </p>
-<pre><code>// 記述例
+                <pre><code>// 記述例
 要素.onclick = function() {
     // イベント発生時にその場ですぐに動かしたい命令
 };
@@ -174,4 +177,5 @@ let result = add(1, 2); // 💡 変数resultに「3」が代入される</code><
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

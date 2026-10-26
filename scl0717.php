@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -25,7 +27,7 @@
             <div class="note-section">
                 <h3 class="note-title">1. リストマーカーの変更・制御</h3>
                 <p><code>&lt;ol&gt;</code> や <code>&lt;ul&gt;</code> の箇条書きマーク（リストマーカー）は、CSSプロパティで自由に形や画像、配置をコントロールできます 。</p>
-                
+
                 <div class="sub-heading">■ マーカーの種類を変更するプロパティ</div>
                 <ul>
                     <li><strong><code>list-style-type</code>：</strong> CSSであらかじめ用意されているキーワードを指定して、マーカーの見た目を変更します 。</li>
@@ -68,7 +70,7 @@
                 </ul>
 
                 <div class="sub-heading">⚠️ 注意！タグが混在している場合のカウントの仕組み</div>
-                <p><code>nth-child</code> は「何番目の子要素か」という**純粋な順番の数字だけで判断**します 。そのため、親要素の中に異なるタグ（h2やpなど）が混ざって並んでいる場合、タグの種類に関係なくカウントの順番が進む点に注意が必要です 。</p>
+                <p><code>nth-child</code> は「何番目の子要素か」という純粋な順番の数字だけで判断します 。そのため、親要素の中に異なるタグ（h2やpなど）が混ざって並んでいる場合、タグの種類に関係なくカウントの順番が進む点に注意が必要です 。</p>
                 <pre><code>&lt;section&gt;
   &lt;h2&gt;見出し&lt;/h2&gt;  &lt;!-- sectionの中の1番目の子要素 ➔ h2:nth-child(1) --&gt;
   &lt;p&gt;文章A&lt;/p&gt;    &lt;!-- sectionの中の2番目の子要素 ➔ p:nth-child(2) --&gt;
@@ -88,10 +90,10 @@
             <div class="note-section">
                 <h3 class="note-title">3. &lt;span&gt; タグによる部分装飾</h3>
                 <p>文章中の一部分だけに対して、HTMLタグとしての特別な意味（見出しや段落など）を持たせずに、スタイル（見た目や色）だけをピンポイントで変更したい場合に使用するインラインタグです 。</p>
-                
+
                 <div class="sub-heading">■ 実装例：リストマーカーを「青」、文字色を「赤」にするテクニック</div>
                 <p>リストマーカーと文字の色を別々に分ける際、実務でも非常によく使われる定番の記述方法です 。</p>
-                
+
                 <p><strong>【HTML】</strong></p>
                 <pre><code>&lt;ul&gt;
   &lt;li&gt;&lt;span&gt;テキストあ&lt;/span&gt;&lt;/li&gt;
@@ -118,7 +120,7 @@ li &gt; span { color: red; }</code></pre>
             <div class="note-section">
                 <h3 class="note-title">4. リンク（&lt;a&gt;タグ）の状態擬似クラス</h3>
                 <p>主に <code>&lt;a&gt;</code> タグ（リンク）の各種状態（ユーザーのマウス操作など）に対応して、動的に見た目・デザインを変更するための非常に重要なお作法です 。</p>
-                
+
                 <div class="sub-heading">■ &lt;a&gt;タグが持つ4つの状態（記述する順番もこの通りにするルール）</div>
                 <ol>
                     <li><strong><code>a:link { ... }</code> （未訪問）：</strong> まだ一度もクリックして訪れていない状態のリンクスタイル 。</li>
@@ -126,10 +128,10 @@ li &gt; span { color: red; }</code></pre>
                     <li><strong><code>a:hover { ... }</code> （マウスオーバー）：</strong> マウスカーソルがリンクの上に重なっている瞬間の状態 。</li>
                     <li><strong><code>a:active { ... }</code> （クリックした瞬間）：</strong> マウスのボタンを押し込んでいる（ダウン状態）瞬間の状態 。</li>
                 </ol>
-                
+
                 <div class="info-box">
                     <p><strong>💡 <code>:hover</code> と <code>:active</code> の拡張性:</strong><br>
-                    未訪問（link）や訪問済（visited）は <code>&lt;a&gt;</code> タグ専用ですが、<strong>マウスホバー（hover）とクリックの瞬間（active）の2つは、ボタン（button）やボックス（div）など、すべての要素に対して使用可能</strong>です 。</p>
+                        未訪問（link）や訪問済（visited）は <code>&lt;a&gt;</code> タグ専用ですが、<strong>マウスホバー（hover）とクリックの瞬間（active）の2つは、ボタン（button）やボックス（div）など、すべての要素に対して使用可能</strong>です 。</p>
                 </div>
             </div>
 
@@ -137,7 +139,7 @@ li &gt; span { color: red; }</code></pre>
             <div class="note-section">
                 <h3 class="note-title">5. テキストの飾り線（text-decoration）</h3>
                 <p>文字に対して下線、上線、打ち消し線などの装飾ラインを引いたり、逆に消したりするプロパティです 。</p>
-                
+
                 <div class="sub-heading">■ 主な設定値（値のキーワード）</div>
                 <ul>
                     <li><strong><code>none</code> ：</strong> 飾り線を一切表示しない 。<strong>リンク（aタグ）の標準の邪魔な下線を消したい時に必須</strong>となる、実務で一番よく使う値です 。</li>
@@ -145,20 +147,21 @@ li &gt; span { color: red; }</code></pre>
                     <li><strong><code>line-through</code> ：</strong> 文字の中央を貫く <span style="text-decoration: line-through; font-weight: bold; color: #dc2626;">取り消し線（中央線）</span> を表示します 。</li>
                     <li><strong><code>overline</code> ：</strong> 文字のすぐ上に <span style="text-decoration: overline; font-weight: bold; color: #1e3a8a;">上線</span> を表示します 。</li>
                 </ul>
-                
-                <div class="alert-box" style="background-color: #f1f5f9; border-left: 4px solid #64748b; color: #334155;">
+
+                <p style="margin-top: 15px; font-size: 14px; color: #b91c1c; background-color: #fff1f2; padding: 12px; border-radius: 6px; border-left: 4px solid #f43f5e; font-weight: bold;">
                     💡 廃止された設定（blink）：<br>
                     昔は文字をチカチカと点滅させる <code>blink</code> という値が存在しましたが、ユーザーの視覚的負担が非常に大きくUI/UXの観点から優しくないため、現在は完全廃止されています（現代のブラウザでは動作しません） 。
-                </div>
+                </p>
             </div>
             <p style="margin-top: 25px;">
                 <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
         </main>
-  </div> <!-- .container -->
+    </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

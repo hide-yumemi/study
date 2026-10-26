@@ -89,7 +89,7 @@
                 </ul>
 
                 <figure class="board-figure">
-                    <img src="img/img7.jpg" alt="売上グラフデータ">
+                    <img src="img/img7.jpg" alt="売上グラフデータ" width="150">
                     <figcaption class="board-figcaption">会社の売上に関したデータです</figcaption>
                 </figure>
             </div>

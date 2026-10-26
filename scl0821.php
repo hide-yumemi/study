@@ -32,13 +32,13 @@
             <div class="note-section">
                 <h3 class="note-title">1. 従来の要素取得メソッドとスタイル操作の文法</h3>
                 <p>
-                    JavaScriptを使ってHTML要素を取得する際、従来の <code>get~</code> 系のメソッドを使うと要素を**動的（ライブ状態）**に追跡することができます。後から要素が追加されても自動で最新の状態を追尾するため、取得した要素を格納する変数は書き換えを防ぐために **<code>const</code>（定数）** で宣言するのが主流です。
+                    JavaScriptを使ってHTML要素を取得する際、従来の <code>get~</code> 系のメソッドを使うと要素を動的（ライブ状態）に追跡することができます。後から要素が追加されても自動で最新の状態を追尾するため、取得した要素を格納する変数は書き換えを防ぐために <code>const</code>（定数） で宣言するのが主流です。
                 </p>
 
                 <div class="sub-heading">主要メソッドの使い分けとHTMLコレクション</div>
                 <ul>
                     <li><strong><code>document.getElementById("id名")</code>：</strong> ページ内で唯一の要素を狙い撃ちします（単一要素）。</li>
-                    <li><strong><code>document.getElementsByTagName("タグ名")</code> / <code>ClassName("クラス名")</code>：</strong> 該当する要素がすべて **「HTMLコレクション（HTMLCollection）」** という配列風の形式で取得されます。1つしか存在しなくても配列形式となるため、操作する際は必ず <code>[0]</code> のようにインデックスを指定するか、<code>for</code> 文でループ処理を行います。</li>
+                    <li><strong><code>document.getElementsByTagName("タグ名")</code> / <code>ClassName("クラス名")</code>：</strong> 該当する要素がすべて 「HTMLコレクション（HTMLCollection）」 という配列風の形式で取得されます。1つしか存在しなくても配列形式となるため、操作する際は必ず <code>[0]</code> のようにインデックスを指定するか、<code>for</code> 文でループ処理を行います。</li>
                     <li><strong><code>document.forms.name属性値</code>：</strong> フォーム要素を簡潔に取得する現場定番の記述です。</li>
                 </ul>
 

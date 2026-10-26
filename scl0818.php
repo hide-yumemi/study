@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -38,8 +40,8 @@
                 </ul>
 
                 <div class="sub-heading">💡 応用テクニック：任意の桁数で丸める方法</div>
-                <p>これらのメソッドは「小数点第〇位で切り捨てる」といった直接の桁指定ができません。そのため、特定の桁数や「100以下切り捨て」などを実現したい場合は、**【掛けて ➔ 丸めて ➔ 割る】** というステップを踏みます。</p>
-<pre><code>// 例：円周率（Math.PI）を小数点第二位（3.14）で切り捨てたい場合
+                <p>これらのメソッドは「小数点第〇位で切り捨てる」といった直接の桁指定ができません。そのため、特定の桁数や「100以下切り捨て」などを実現したい場合は、【掛けて ➔ 丸めて ➔ 割る】 というステップを踏みます。</p>
+                <pre><code>// 例：円周率（Math.PI）を小数点第二位（3.14）で切り捨てたい場合
 let enshu = Math.PI;    // 3.14159265...
 enshu *= 100;           // ➔ 314.159265...（残したい桁まで小数点を移動）
 enshu = Math.floor(enshu); // ➔ 314（小数点以下を切り捨てる）
@@ -48,7 +50,7 @@ console.log(enshu);</code></pre>
 
                 <div class="sub-heading">📊 最大値・最小値の取得</div>
                 <p>引数の中に並べられた複数の数値の中から、最大・最小の「値」そのものを抽出します。（※インデックス番号や重複個数は取得できません）</p>
-<pre><code>console.log(Math.max(2, 5, 1, 7, 3, 9, 2)); // 出力: 9 (最大値)
+                <pre><code>console.log(Math.max(2, 5, 1, 7, 3, 9, 2)); // 出力: 9 (最大値)
 console.log(Math.min(1, 5, 0, 3, 7, 0, 2)); // 出力: 0 (最小値)</code></pre>
             </div>
 
@@ -58,7 +60,7 @@ console.log(Math.min(1, 5, 0, 3, 7, 0, 2)); // 出力: 0 (最小値)</code></pre
                 <p>
                     <code>Math.random()</code> は、<strong>0以上 1未満（0 〜 0.999999...）</strong>の間の小数をランダムに1つ生成するメソッドです。これを用いて「任意の範囲の整数」を取り出すシステムを構築します。
                 </p>
-                
+
                 <div class="sub-heading">① 50個の選択肢（0〜49）から1つ取り出す場合</div>
                 <p><code>Math.floor(Math.random() * 50)</code> ➔ 掛け算により範囲が <code>0 〜 49.999...</code> になり、これを切り捨てることで <code>0 〜 49</code> の50個の整数が均等に出現します。</p>
 
@@ -69,7 +71,7 @@ console.log(Math.min(1, 5, 0, 3, 7, 0, 2)); // 出力: 0 (最小値)</code></pre
                 <ul>
                     <li><strong>切り上げ（ceil）の場合：</strong> 確率としては極めて低いものの、<code>Math.random()</code> が完全に <code>0</code> を叩き出した時に結果が <code>0</code> になってしまい、想定範囲を外れるため例外処理が必要になります。</li>
                     <li><strong>四捨五入（round）の場合：</strong> 例えば 100倍して丸める際、<code>0</code> になる範囲は「0〜0.499」、<code>1</code> になる範囲は「0.5〜1.499」となり、<strong>両端の数値（最小値と最大値）が出現する確率だけが他の半分に下がってしまう</strong>という致命的な欠陥が発生します。</li>
-                    <li><strong>切り捨て（floor）の場合：</strong> すべての数値が割り当てられる範囲（幅）が「0.999...」分で完全に一致するため、**すべての確率が100%均等**になります。</li>
+                    <li><strong>切り捨て（floor）の場合：</strong> すべての数値が割り当てられる範囲（幅）が「0.999...」分で完全に一致するため、すべての確率が100%均等になります。</li>
                 </ul>
             </div>
 
@@ -88,11 +90,11 @@ console.log(Math.min(1, 5, 0, 3, 7, 0, 2)); // 出力: 0 (最小値)</code></pre
             <div class="note-section">
                 <h3 class="note-title">4. 演習1：確率制御おみくじプログラム</h3>
                 <p>【確率設定】 大吉: 5%, 吉: 15%, 中吉: 20%, 小吉: 30%, 末吉: 25%, 凶: 5%（計100%）</p>
-                
+
                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 280px;">
                         <p><strong>💡 自分のコード（不等号 <code>&lt;=</code> 判定）</strong></p>
-<pre style="margin-top: 5px;"><code>&lt;script&gt;
+                        <pre style="margin-top: 5px;"><code>&lt;script&gt;
 let Kuji = Math.floor(Math.random() * 100); // 0~99
 if (Kuji &lt;= 4) { console.log("大吉"); } 
 else if (Kuji &lt;= 19) { console.log("吉"); } 
@@ -104,7 +106,7 @@ else { console.log("凶"); }
                     </div>
                     <div style="flex: 1; min-width: 280px;">
                         <p><strong>✨ 先生コード（変数への格納と <code>&lt;</code> 判定の統一）</strong></p>
-<pre style="margin-top: 5px;"><code>&lt;script&gt;
+                        <pre style="margin-top: 5px;"><code>&lt;script&gt;
 let KuJi = Math.floor(Math.random() * 100);
 let result; // ➔ 後で一括出力するための変数を用意
 
@@ -125,9 +127,9 @@ console.log(result); // 処理の出口を1つにする美しい設計
             <div class="note-section">
                 <h3 class="note-title">5. 演習2：トランプの商と余りによるマーク・数値の商算</h3>
                 <p>【仕様】 1〜52の乱数から、13枚ずつの4つのマーク（スペード、ハート、クラブ、ダイヤ）と、1〜13のカード番号（11以上はJ, Q, K）を数理的に割り出します。</p>
-                
+
                 <div class="sub-heading">💡 自分のコード（1〜52の生成から逆算）</div>
-<pre><code>&lt;script&gt;
+                <pre><code>&lt;script&gt;
 let card = Math.floor(Math.random() * 52) + 1; // 1~52
 let mark = Math.floor((card - 1) / 13);        // 商から 0~3 を算出
 let num = ((card - 1) % 13) + 1;               // 余りから 1~13 を算出
@@ -151,7 +153,7 @@ console.log(mark_name + "の" + num_display);
 
                 <div class="sub-heading">✨ 先生コード（0〜51のインデックスベースによる効率化）</div>
                 <p>最初に <code>0 〜 51</code> の状態で割り算（商）を行い、判定が終わった後で <code>card1++</code> してインデックスから実際のカード番号へ補正する、メモリと計算ステップを節約した高度なロジックです。</p>
-<pre><code>&lt;script&gt;
+                <pre><code>&lt;script&gt;
 let card1 = Math.floor(Math.random() * 52); // 0~51 のベース
 let mark1, num1;
 
@@ -183,4 +185,5 @@ console.log(mark1 + "の" + num1);
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

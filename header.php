@@ -3,15 +3,15 @@
         <!-- 変更点：タイトルと検索窓を横並びにするための専用の枠（title-area）を追加 -->
         <div class="title-area">
             <a href="index.php" style="color: inherit; text-decoration: none; font-weight: inherit;">職業訓練及び自主学習</a>
-            
+
             <!-- 🔍 メニューからここに引っ越し -->
             <form action="search_result.php" method="GET" class="header-search-form">
                 <input type="text" name="keyword" class="header-search-input" placeholder="サイト内検索..." required>
                 <button type="submit" class="header-search-btn">検索</button>
             </form>
         </div>
-        
-        <span class="site-desc">IT未経験の私が思い切ってIT業界へ転職する為の第一歩となる議事録・及び訓練校での学びを更新するサイトです。</span>
+
+        <span class="site-desc">IT未経験の私が思い切ってIT業界へ転職する為の第一歩となる議事録・及び訓練校での学びを更新するサイトです。<br>コードなどがある為、PCでの閲覧を推奨します。</span>
     </div>
 
     <nav class="nav-menu">

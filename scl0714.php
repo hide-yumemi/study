@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -49,19 +51,19 @@
             <div class="note-section">
                 <h3 class="note-title">CSSが適用される優先度（点数計算ルール）</h3>
                 <p>同じ要素に対して複数の異なるスタイルが指定された場合、ブラウザは「セレクタの種類」を点数化し、合計点が高い方を優先して適用します。</p>
-                
+
                 <ul>
                     <li><span class="score-badge">1,000点</span> <strong>インライン指定：</strong> HTMLタグ内に <code>style=""</code> 属性として直接書いたもの。</li>
                     <li><span class="score-badge">100点</span> <strong>id名：</strong> <code>#〜</code> の形で指定するセレクタ。</li>
                     <li><span class="score-badge">10点</span> <strong>class名：</strong> <code>.〜</code> の形で指定するセレクタ。</li>
                     <li><span class="score-badge">1点</span> <strong>タグ名：</strong> <code>p</code> や <code>div</code>、<code>li</code> などタグそのもので指定するセレクタ。</li>
                 </ul>
-                
+
                 <div class="info-box">
                     <p><strong>⚠️ 優先順位の重要ルール:</strong><br>
-                    ・組み合わせた指定は、それぞれの点数を足し算した合計点で競います。<br>
-                    ・1点のタグセレクタを10個以上組み合わせて（10点分）指定しても、1つのclass名（10点）に勝つことはできません（桁上がりの概念はありません）。<br>
-                    ・計算した結果が完全に<strong>同点の場合</strong>は、コード上で<strong>後から読み込まれた方（下に書かれている記述）</strong>が上書きして優先されます。</p>
+                        ・組み合わせた指定は、それぞれの点数を足し算した合計点で競います。<br>
+                        ・1点のタグセレクタを10個以上組み合わせて（10点分）指定しても、1つのclass名（10点）に勝つことはできません（桁上がりの概念はありません）。<br>
+                        ・計算した結果が完全に<strong>同点の場合</strong>は、コード上で<strong>後から読み込まれた方（下に書かれている記述）</strong>が上書きして優先されます。</p>
                 </div>
 
                 <div class="sub-heading">■ セレクタの組み合わせと記号の意味</div>
@@ -99,8 +101,9 @@
                 <p><code>&lt;link rel="stylesheet" href="CSSファイルへのパス"&gt;</code></p>
                 <div class="info-box">
                     <p><strong>⚠️ CSSファイルの超重要ルール:</strong><br>
-                    日本語のコメントアウトなどが文字化けするのを防ぐため、CSSファイルの**「1行目の1文字目」**に、必ず以下の文字コード指定を記述するお作法があります 。<br>
-                    <code>@charset "UTF-8";</code></p>
+                        日本語のコメントアウトなどが文字化けするのを防ぐため、CSSファイルの「1行目の1文字目」に、必ず以下の文字コード指定を記述するお作法があります 。<br>
+                        <code>@charset "UTF-8";</code>
+                    </p>
                 </div>
             </div>
 
@@ -120,8 +123,8 @@
 
                 <div class="info-box">
                     <p><strong>💡 補足：Webセーフカラー（Web Safe Colors）とは</strong><br>
-                    パソコンのスペックが低かった昔、あらゆるブラウザで共通して綺麗に表示できると定めた「216色」の安全な色を指します 。値がすべて <code>0, 51, 102, 153, 204, 255</code> のいずれかの組み合わせで作られます 。<br>
-                    ※ 現在は機器の性能が大幅に向上したため、実務で意識して考慮することは非常に稀です 。</p>
+                        パソコンのスペックが低かった昔、あらゆるブラウザで共通して綺麗に表示できると定めた「216色」の安全な色を指します 。値がすべて <code>0, 51, 102, 153, 204, 255</code> のいずれかの組み合わせで作られます 。<br>
+                        ※ 現在は機器の性能が大幅に向上したため、実務で意識して考慮することは非常に稀です 。</p>
                 </div>
 
                 <div class="sub-heading">② フォントサイズ（<code>font-size</code>）</div>
@@ -134,10 +137,10 @@
 
                 <div class="info-box">
                     <p><strong>⚠️ 【非推奨】過去の古い手法（フォントサイズ計算のバグ対策）</strong><br>
-                    昔は計算を簡単にするために、以下のような設定が流行した時期がありました 。
+                        昔は計算を簡単にするために、以下のような設定が流行した時期がありました 。
                     <pre><code>html { font-size: 62.5%; } /* 16px &times; 62.5% = 10px に基準を変更 */
 body { font-size: 1.6rem; } /* 10px &times; 1.6 = 16px に戻す */</code></pre>
-                    こうすると「1rem ＝ 10px」と換算できるため、1.4remなら14px、2.0remなら20pxと脳内計算しやすいメリットがありました 。しかし、この手法は最新のデバイスやブラウザ環境において**表示のバグを誘発するリスクがあるため、現在は非推奨**となっています 。</p>
+                    こうすると「1rem ＝ 10px」と換算できるため、1.4remなら14px、2.0remなら20pxと脳内計算しやすいメリットがありました 。しかし、この手法は最新のデバイスやブラウザ環境において表示のバグを誘発するリスクがあるため、現在は非推奨となっています 。</p>
                 </div>
 
                 <div class="sub-heading">③ 文字の太さ（<code>font-weight</code>）</div>
@@ -167,4 +170,5 @@ body { font-size: 1.6rem; } /* 10px &times; 1.6 = 16px に戻す */</code></pre>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -28,12 +30,12 @@
             <div class="note-section">
                 <h3 class="note-title">入力フォームの基本概念</h3>
                 <p>
-                    入力フォームは、ユーザーに入力や選択をしてもらう場所を作成する機能です。**入力されたデータはHTML単体では受け取ることができません。**
+                    入力フォームは、ユーザーに入力や選択をしてもらう場所を作成する機能です。入力されたデータはHTML単体では受け取ることができません。
                 </p>
                 <p>
                     入力データはJavaScriptで動的な処理に使用したり、サーバー側（PHPやJavaなど）に送信してデータベースとやり取りを行うために使用されます。データをサーバーへ送信する場合、入力部品のすべてを <code>&lt;form&gt;</code> タグの子孫要素として設置する必要があります。
                 </p>
-                
+
                 <p style="margin-top: 15px;"><strong>■ formタグの3大属性</strong></p>
                 <ul>
                     <li><strong><code>action</code> 属性：</strong> データの送信先ファイル（パスまたはURL）を指定します。同一サーバー内のファイルへ送信するのが一般的です。</li>
@@ -46,7 +48,7 @@
             <div class="note-section">
                 <h3 class="note-title">データの送信方法（GET と POST の違い）</h3>
                 <p>データの送信形式には、用途に合わせて厳格な使い分けが必要です。</p>
-                
+
                 <div class="sub-heading">① GET送信（<code>method="get"</code>）</div>
                 <p>URLの後ろに <code>?データ名=値</code> という形で、送信データを付加して送る方法です。</p>
                 <ul>
@@ -60,7 +62,7 @@
                 <ul>
                     <li>送信データがURLに表示されないため、<code>https://</code> で通信全体を暗号化することで安全にデータを運べます。</li>
                     <li>文字数の制限が事実上ないため、大量のテキストやファイル送信が可能です。</li>
-                    <li><strong>用途：</strong> パスワード、クレジットカード情報、お問い合わせ内容などの**個人情報**は必ずPOSTで送信します。</li>
+                    <li><strong>用途：</strong> パスワード、クレジットカード情報、お問い合わせ内容などの個人情報は必ずPOSTで送信します。</li>
                 </ul>
             </div>
 
@@ -68,7 +70,7 @@
             <div class="note-section">
                 <h3 class="note-title">1行入力欄（&lt;input&gt;タグ）と重要属性</h3>
                 <p>原則として <code>&lt;input&gt;</code> タグは閉じタグを持ちません。<code>type</code> 属性の値を切り替えることで様々な入力欄を出力します。</p>
-                
+
                 <p style="margin-top: 15px;"><strong>■ 代表的な type 属性の値</strong></p>
                 <ul>
                     <li><code>text</code>：制限のない通常のテキスト入力欄。</li>
@@ -91,7 +93,7 @@
             <div class="note-section">
                 <h3 class="note-title">選択系部品のマークアップルール</h3>
                 <p>ユーザーが自由入力せず、用意された項目から選ぶ部品の解説です。</p>
-                
+
                 <div class="sub-heading">① ラジオボタン（単一選択）</div>
                 <p><strong>同一の <code>name</code> 属性値</strong>を持つ <code>&lt;input type="radio"&gt;</code> の中から、ユーザーは1つだけしか選択できません。</p>
                 <ul>
@@ -113,7 +115,7 @@
             <!-- セクション5：複数行入力と特殊ボタン -->
             <div class="note-section">
                 <h3 class="note-title">複数行入力（textarea）とボタン各種</h3>
-                
+
                 <p><strong>■ 複数行入力欄（<code>&lt;textarea&gt;</code>）</strong></p>
                 <p>閉じタグが存在しますが、タグの間に文章を用意することは稀です（書いた文字は初期値として扱われます）。入力例を表示したい場合は <code>placeholder</code> 属性を利用します。</p>
                 <ul>
@@ -127,7 +129,7 @@
                     <li><code>reset</code>：フォーム内に入力された内容をすべて初期状態（全消去）に戻します。</li>
                     <li><code>button</code>：そのままでは何も起きません。JavaScriptと連携させて独自の処理を動かす際に使用します。</li>
                 </ul>
-                
+
                 <p style="margin-top: 15px; font-size: 14px; color: #555; background-color: #f8fafc; padding: 12px; border-radius: 6px; border-left: 4px solid #64748b;">
                     <strong>💡 実践プロのワンポイント補足：</strong><br>
                     ボタンを作る際、<code>&lt;input type="submit" value="送信"&gt;</code> という書き方もありますが、現在のモダンなWeb制作では <code>&lt;button type="submit"&gt;送信&lt;/button&gt;</code> のようにbuttonタグで囲む書き方が推奨されます。buttonタグを使うと、ボタンの中にアイコン画像（<code>&lt;img&gt;</code>）を入れるなど、デザインの自由度が劇的に上がるためです。
@@ -144,4 +146,5 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

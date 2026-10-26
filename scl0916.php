@@ -137,7 +137,7 @@ echo $$var_name; // 出力結果: 1
 
                 <p class="note" style="font-size: 13.5px; color: #b91c1c; background-color: #fff5f5; padding: 12px; border-radius: 6px; margin-top: 15px;">
                     <strong>⚠ 使用上の注意点</strong><br>
-                    JavaScriptの console.log() とは異なり、PHPの var_dump() は**ブラウザの画面そのものに直接データ内容を出力**してしまいます。開発中のデバッグ・確認が終わったら、本番環境に残らないよう必ず削除するかコメントアウトしましょう。
+                    JavaScriptの console.log() とは異なり、PHPの var_dump() はブラウザの画面そのものに直接データ内容を出力してしまいます。開発中のデバッグ・確認が終わったら、本番環境に残らないよう必ず削除するかコメントアウトしましょう。
                 </p>
             </div>
 

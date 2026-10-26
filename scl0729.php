@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -25,7 +27,7 @@
             <div class="note-section">
                 <h3 class="note-title">1. position プロパティの概要</h3>
                 <p>指定した要素を、通常のHTMLのルールで配置されるはずの「元の位置（流動レイアウト）」から切り離し、狙った位置へ自由に移動・固定させるプロパティです。目的や用途に合わせて5つの値（タイプ）を使い分けます。</p>
-                
+
                 <ul>
                     <li><strong><code>static</code> （初期値）：</strong> 特別な配置を行わない通常の表示形式。上下左右の位置指定（topなど）は一切効きません。</li>
                     <li><strong><code>relative</code> （相対配置）：</strong> 本来表示されるはずだった自分自身の元の位置を基準にして、そこから少しずらします。</li>
@@ -45,12 +47,12 @@
                     <li><strong>初期状態：</strong> 周りに何も指定がない状態では、画面全体（ <code>body</code> ）の左上が起点（基準）になります。</li>
                     <li><strong>親要素が基準になる条件：</strong> 親要素の position に、初期値（ <code>static</code> ）以外の値（ <code>relative</code> や <code>absolute</code> ）が指定されている場合は、<strong>その一番近い親要素の枠が「新しい基準の壁」</strong>になります。</li>
                 </ul>
-                
+
                 <div class="info-box">
                     <p><strong>💡 実務での鉄板組み合わせパターン:</strong><br>
-                    デザインが崩れないようにするため、実務では以下のように親子のセットで記述するのが大前提のルールとなっています。<br>
-                    1. 基準にしたい**親要素（BOX）**に <code>position: relative;</code> を指定する（移動はさせず、基準の旗を立てるだけ）。<br>
-                    2. その中にある**子要素（BOX）**に <code>position: absolute;</code> を指定し、<code>top: 10px; right: 10px;</code> などの位置を指定して親の枠内で動かす。</p>
+                        デザインが崩れないようにするため、実務では以下のように親子のセットで記述するのが大前提のルールとなっています。<br>
+                        1. 基準にしたい親要素（BOX）に <code>position: relative;</code> を指定する（移動はさせず、基準の旗を立てるだけ）。<br>
+                        2. その中にある子要素（BOX）に <code>position: absolute;</code> を指定し、<code>top: 10px; right: 10px;</code> などの位置を指定して親の枠内で動かす。</p>
                 </div>
                 <p>※ 移動させた先では、要素同士が空間を共有して「重なり合う状態」になります。</p>
             </div>
@@ -86,7 +88,7 @@
                         <tr>
                             <td style="text-align: center; font-weight: bold; color: #b45309; font-size: 15px;">🥉 普通</td>
                             <td><code>position</code>（static以外）あり<br>➔ <strong>z-index の記述なし</strong></td>
-                            <td>重なり順はHTMLコードの記述順に依存（コード上で**下に書かれているもの**が手前に重なる）</td>
+                            <td>重なり順はHTMLコードの記述順に依存（コード上で下に書かれているものが手前に重なる）</td>
                         </tr>
                         <tr>
                             <td style="text-align: center; font-weight: bold; color: #ef4444; font-size: 15px;">❌ 最弱</td>
@@ -119,7 +121,7 @@
                 </div>
 
                 <p><strong>【コード記述例】</strong></p>
-                <pre><code>/* B의 箱だけを「本来の場所」から移動させる設定 */
+                <pre><code>/* 箱だけを「本来の場所」から移動させる設定 */
 .b {
     position: relative; /* 1. 相対配置を有効にする（元の空間をキープ） */
     top: 10px;          /* 2. 本来の位置の上端から、10px下にずらす */
@@ -144,5 +146,6 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>
 <!-- http://localhost/study/scl0729.php -->

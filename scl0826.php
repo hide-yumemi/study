@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -39,13 +41,13 @@
                     </li>
                 </ul>
                 <p>
-                    ※どちらの手法を使用しても、指定した属性がすでにHTMLにあれば**変更（上書き）**され、なければ新しく属性が**追加**されます。
+                    ※どちらの手法を使用しても、指定した属性がすでにHTMLにあれば変更（上書き）され、なければ新しく属性が追加されます。
                 </p>
 
                 <p class="note" style="font-size: 13.5px; color: #b91c1c; background-color: #fff5f5; padding: 12px; border-radius: 6px; margin-top: 15px;">
                     ⚠️<strong>属性操作に潜む2つの落とし穴と注意点</strong><br>
                     1. <strong>入力ミスをしてもエラーが出ない：</strong> 属性名や値をタイポ（打ち間違い）しても、JavaScript側はエラーを検知せず、そのまま架空の属性としてHTMLに追加してしまいます。デバッグ時に見落としやすいため注意が必要です。<br><br>
-                    2. <strong>setAttributeによるstyle属性の上書きリスク：</strong> <code>setAttribute("style", "color:red;")</code> のようにスタイル属性を操作する場合、CSSと同じハイフン表記（ケバブケース）の文字列で記述できますが、これを実行すると、**元々要素に適用されていたインラインスタイルがすべて上書き消去**されます。
+                    2. <strong>setAttributeによるstyle属性の上書きリスク：</strong> <code>setAttribute("style", "color:red;")</code> のようにスタイル属性を操作する場合、CSSと同じハイフン表記（ケバブケース）の文字列で記述できますが、これを実行すると、元々要素に適用されていたインラインスタイルがすべて上書き消去されます。
                     <br>❌ <code>para.setAttribute("style", "font-size:3rem");</code> ➔ 先に設定した赤文字（color:red）が消えて黒に戻る
                     <br>⭕ <code>para.setAttribute("style", "color:red; font-size:3rem;");</code> ➔ 複数適用する場合はセミコロンで繋ぐ
                 </p>
@@ -71,7 +73,7 @@
                 <p>
                     これを防ぎ、特定のクラスだけを安全に管理（アドオン・デリート）するために <strong><code>classList</code></strong> APIを使用します。
                 </p>
-                
+
                 <div class="sub-heading">📋 classList で実行できる5つの主要処理</div>
                 <ul>
                     <li><strong><code>add("クラス名")</code> 【追加】：</strong> 既存のクラスを破壊せず、現在のクラス群の末尾に新しく「+1」する形で安全に追加します。</li>
@@ -86,14 +88,14 @@
             <div class="note-section">
                 <h3 class="note-title">4. className と split() によるクラス名の配列化手法</h3>
                 <p>
-                    <code>要素.className;</code> プロパティを使用すると、対象の要素に設定されているすべてのクラス名を、**半角スペースで区切られた1つの長い文字列**としてそのまま取得できます。（例: <code>"text1 text2 text3"</code>）
+                    <code>要素.className;</code> プロパティを使用すると、対象の要素に設定されているすべてのクラス名を、半角スペースで区切られた1つの長い文字列としてそのまま取得できます。（例: <code>"text1 text2 text3"</code>）
                 </p>
                 <p>
-                    しかし、文字列のままだと特定のクラスだけをプログラム（ループ処理など）で個別に精査・操作することが困難です。そこで、文字列を指定文字で分割する **<code>split()</code>** メソッドを組み合わせます。
+                    しかし、文字列のままだと特定のクラスだけをプログラム（ループ処理など）で個別に精査・操作することが困難です。そこで、文字列を指定文字で分割する <code>split()</code> メソッドを組み合わせます。
                 </p>
-                
+
                 <div class="sub-heading">文字列から配列への変換の仕組み</div>
-<pre><code>// 半角スペースで文字列をバラバラに分解し、配列に変換する
+                <pre><code>// 半角スペースで文字列をバラバラに分解し、配列に変換する
 const classArray = 要素.className.split(" ");
 
 console.log(classArray[0]); // ➔ 1つ目のクラス名をインデックス番号で個別制御可能に！</code></pre>
@@ -106,10 +108,10 @@ console.log(classArray[0]); // ➔ 1つ目のクラス名をインデックス�
             <!-- セクション5：実務での実装ユースケース -->
             <div class="note-section">
                 <h3 class="note-title">5. 実務でよく見るプロの属性操作ユースケース</h3>
-                
+
                 <div class="sub-heading">🌟 ユースケース①：パスワード入力欄の「隠す・見せる」切り替え</div>
                 <p>ログイン画面などでよくある目のアイコンをクリックするとパスワードの伏せ字が解除されるUIは、この属性操作によって実装されています。</p>
-<pre><code>// 属性を password から text へ動的に変更することで入力を可視化させる
+                <pre><code>// 属性を password から text へ動的に変更することで入力を可視化させる
 if (inputPass.getAttribute("type") === "password") {
     inputPass.setAttribute("type", "text"); // 見せるモードへ
 } else {
@@ -118,7 +120,7 @@ if (inputPass.getAttribute("type") === "password") {
 
                 <div class="sub-heading">🌟 ユースケース②：バナーやリンク先（href）とテキストの動的変更</div>
                 <p>aタグを操作する場合、URL（<code>href</code> 属性）を変更するだけでなく、画面に表示されている「案内文（テキスト文字）」も同時に変更しないとユーザーが混乱するため、<code>innerHTML</code> または <code>textContent</code> とセットで書き換えます。</p>
-<pre><code>const linkElem = document.querySelector("#my-link");
+                <pre><code>const linkElem = document.querySelector("#my-link");
 
 linkElem.setAttribute("href", "https://yahoo.co.jp"); // リンク先の属性書き換え
 linkElem.textContent = "Yahooはこちら";               // 表示テキストの書き換え</code></pre>
@@ -142,4 +144,5 @@ linkElem.textContent = "Yahooはこちら";               // 表示テキスト�
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

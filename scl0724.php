@@ -41,8 +41,8 @@
 
                 <div class="sub-heading">■ プロパティの設定値</div>
                 <ul>
-                    <li><strong><code>float: left;</code></strong> ➔ 要素が左に浮き、後続の文章や要素は**右側**へと回り込みます。</li>
-                    <li><strong><code>float: right;</code></strong> ➔ 要素が右に浮き、後続の文章や要素は**左側**へと回り込みます。</li>
+                    <li><strong><code>float: left;</code></strong> ➔ 要素が左に浮き、後続の文章や要素は右側へと回り込みます。</li>
+                    <li><strong><code>float: right;</code></strong> ➔ 要素が右に浮き、後続の文章や要素は左側へと回り込みます。</li>
                     <li><strong><code>clear: both;</code></strong> ➔ 左右どちらのフロート状態も完全に終了（解除）させます。実務では、left/rightに関わらず一発で安全に解除できる <code>both</code> が一般的に最も多く使用されます。</li>
                 </ul>
             </div>
@@ -74,8 +74,8 @@
 
                 <div class="sub-heading">■ <code>::first-letter</code> と <code>::first-line</code>（特定位置の装飾）</div>
                 <ul>
-                    <li><strong><code>::first-letter</code>：</strong> 対象の要素（段落など）の**「1行目の1文字目だけ」**にスタイルを指定します。海外の雑誌のように、小説の冒頭の1文字目だけを巨大化（ドロップキャップ）させるお洒落なデザインで頻繁に使われます。</li>
-                    <li><strong><code>::first-line</code>：</strong> 対象の要素の**「1行目全体だけ」**にスタイルを指定します。画面幅が伸び縮みして1行目に入る文字数が変わっても、ブラウザが自動判定して「その時の1行目」の文字色や太さを自動変更してくれます。</li>
+                    <li><strong><code>::first-letter</code>：</strong> 対象の要素（段落など）の「1行目の1文字目だけ」にスタイルを指定します。海外の雑誌のように、小説の冒頭の1文字目だけを巨大化（ドロップキャップ）させるお洒落なデザインで頻繁に使われます。</li>
+                    <li><strong><code>::first-line</code>：</strong> 対象の要素の「1行目全体だけ」にスタイルを指定します。画面幅が伸び縮みして1行目に入る文字数が変わっても、ブラウザが自動判定して「その時の1行目」の文字色や太さを自動変更してくれます。</li>
                 </ul>
                 <p>【first-letter の表示サンプル】</p>
                 <p class="sample-letter">職業訓練の授業は毎日新しい発見の連続です。HTMLやCSSの文法を基礎からしっかり学ぶことで、裏側の仕組みが分かります。</p>
@@ -244,7 +244,7 @@ main {
             </p>
         </main>
 
-   </div> <!-- .container -->
+    </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>

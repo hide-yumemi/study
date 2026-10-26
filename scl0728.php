@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -24,7 +26,7 @@
             <!-- セクション1 -->
             <div class="note-section">
                 <h3 class="note-title">1. Grid（グリッド）レイアウトの基本概念</h3>
-                <p>Flexboxが「一方向（横並び、または縦並び）」のレイアウトを得意とするのに対し、Gridレイアウトは**「縦と横の二次元（格子状）」**の高度なレイアウトを簡単に実現するためのプロパティです。</p>
+                <p>Flexboxが「一方向（横並び、または縦並び）」のレイアウトを得意とするのに対し、Gridレイアウトは「縦と横の二次元（格子状）」の高度なレイアウトを簡単に実現するためのプロパティです。</p>
                 <ul>
                     <li><strong>レイアウトの歴史：</strong> 昔は <code>position</code> や <code>float</code> を複雑に工夫してパズルのように配置していましたが、現在はGridを使うことで直感的な配置管理が可能になりました。</li>
                     <li><strong>設定フロー：</strong> 全体を囲む親要素（コンテナ）に対して <code>display: grid;</code> を指定した上で、方眼紙のマス目を作るようにグリッドの形状（縦・横の数と幅）を指定します。</li>
@@ -41,10 +43,10 @@
                 </ul>
 
                 <div class="sub-heading">■ 新しい比率単位「fr（フラクション）」のルール</div>
-                <p>Gridレイアウト特有の、**「全体の余白を比率で自動分配する」**非常に便利な相対単位です。</p>
+                <p>Gridレイアウト特有の、「全体の余白を比率で自動分配する」非常に便利な相対単位です。</p>
                 <ul>
                     <li><strong>比率による分配：</strong> 例えば <code>grid-template-columns: 1fr 2fr 1fr;</code> と記述すると、画面幅に合わせて横幅が「1 ： 2 ： 1」の割合で自動計算され、綺麗な3カラムが作られます。</li>
-                    <li><strong>固定値との組み合わせ優先度：</strong> <code>100px 1fr 1fr</code> のようにpxなどの固定値が混ざっている場合は、まず固定値（100px）が最優先でエリアを確保し、**残った余白のエリア**を fr の比率（1：1）で等分に分け合います。</li>
+                    <li><strong>固定値との組み合わせ優先度：</strong> <code>100px 1fr 1fr</code> のようにpxなどの固定値が混ざっている場合は、まず固定値（100px）が最優先でエリアを確保し、残った余白のエリアを fr の比率（1：1）で等分に分け合います。</li>
                     <li><strong>縦幅（rows）の設定セオリー：</strong> Webページは上から下へスクロールする構造が基本となるため、縦幅（行）に fr を使うと高さが無限に伸びて計算が狂うことがあります。そのため、縦幅には <code>120px</code> などの固定値を指定するのが実務の一般的なセオリーです。</li>
                 </ul>
             </div>
@@ -52,18 +54,18 @@
             <!-- セクション3 -->
             <div class="note-section">
                 <h3 class="note-title">3. アイテムの配置指定（子要素の設定）</h3>
-                <p>形状を決めたら、子要素（アイテム）を「何番目のマスに置くか」を指定します。考え方のコツは、マス目ではなく**「縦横のグリッド線が何本目から何本目までか」**で範囲を指定する点です。</p>
+                <p>形状を決めたら、子要素（アイテム）を「何番目のマスに置くか」を指定します。考え方のコツは、マス目ではなく「縦横のグリッド線が何本目から何本目までか」で範囲を指定する点です。</p>
                 <ul>
                     <li><strong>横方向の範囲指定：</strong> <code>grid-column</code></li>
                     <li><strong>縦方向の範囲指定：</strong> <code>grid-row</code></li>
-                    <li><strong>記述ルール：</strong> 開始の線と終了の線を**スラッシュ（ <code>/</code> ）**で区切って記述します。（例：1本目の線から3本目の線までの範囲なら <code>1 / 3</code> と指定）</li>
+                    <li><strong>記述ルール：</strong> 開始の線と終了の線をスラッシュ（ <code>/</code> ）で区切って記述します。（例：1本目の線から3本目の線までの範囲なら <code>1 / 3</code> と指定）</li>
                 </ul>
 
                 <div class="sub-heading">■ 余白（gap）の一括指定</div>
                 <p>格子状の隙間（余白）を空けるには <code>gap</code> プロパティを使用します。</p>
                 <ul>
                     <li><code>gap: 10px;</code> （値が1つ） ➔ 縦・横すべての隙間に10pxが適用。</li>
-                    <li><code>gap: 10px 20px;</code> （半角スペース区切り） ➔ **[ 縦の隙間 ] [ 横の隙間 ]** の順で個別に適用されます。</li>
+                    <li><code>gap: 10px 20px;</code> （半角スペース区切り） ➔ [ 縦の隙間 ] [ 横の隙間 ] の順で個別に適用されます。</li>
                 </ul>
             </div>
 
@@ -192,4 +194,5 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

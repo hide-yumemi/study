@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -30,21 +32,21 @@
                 <p>
                     既存のHTML要素を基準にして、新しいタグ（要素）や文字列を任意の場所にピンポイントで挿入する強力なメソッドです。
                 </p>
-<pre><code>// 構文
+                <pre><code>// 構文
 （取得した基準要素）.insertAdjacentHTML(挿入する場所, 'タグを含む挿入したい文字列');</code></pre>
 
                 <div class="sub-heading">📐 4つの挿入位置（引数文字列の規則性）</div>
                 <p>場所の指定には英語の組み合わせ（前後の <code>before/after</code> ＋ 開始・終了の <code>begin/end</code>）からなる4つの固定文字列を使用します。</p>
-                
-                <!-- 視覚的図解ブロック -->
-                <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14.5px; line-height: 1.8;">
-                    <div>🟢 <strong>'beforebegin'</strong> ➔ 【要素の直前（外側）】</div>
-                    <div style="color: #1e3a8a; font-weight: bold;">&lt;p id="text"&gt;</div>
-                    <div style="padding-left: 20px;">🔵 <strong>'afterbegin'</strong> ➔ 【要素内の先頭（内側）】</div>
-                    <div style="padding-left: 20px; color: #64748b;">元のテキストコンテンツ</div>
-                    <div style="padding-left: 20px;">🟠 <strong>'beforeend'</strong> ➔ 【要素内の末尾（内側）】</div>
-                    <div style="color: #1e3a8a; font-weight: bold;">&lt;/p&gt;</div>
-                    <div>🔴 <strong>'afterend'</strong> ➔ 【要素の直後（外側）】</div>
+
+                <!-- 視覚的図解ブロック（共通のboard-dl構造で洗練された見た目に統一） -->
+                <div class="board-dl">
+                    <dt>🟢 'beforebegin' ➔ 【要素の直前（外側）】</dt>
+                    <dd><code>&lt;p id="text"&gt;</code></dd>
+                    <dt>🔵 'afterbegin' ➔ 【要素内の先頭（内側）】</dt>
+                    <dd>元のテキストコンテンツ</dd>
+                    <dt>🟠 'beforeend' ➔ 【要素内の末尾（内側）】</dt>
+                    <dd><code>&lt;/p&gt;</code></dd>
+                    <dt>🔴 'afterend' ➔ 【要素の直後（外側）】</dt>
                 </div>
 
                 <div class="sub-heading">コード例と最終出力結果</div>
@@ -60,12 +62,12 @@
             <!-- セクション2：タイポ防止テクニックと代替パターン -->
             <div class="note-section">
                 <h3 class="note-title">2. 実務の品質を高めるコーディングテクニック</h3>
-                
+
                 <div class="sub-heading">🤝 引数の「タイポ（打ち間違い）」を完全に防ぐ配列化手法</div>
                 <p>
                     <code>"beforebegin"</code> などの長い文字列は、コード内で何度も手書きするとスペルミスによるバグを引き起こしがちです。これを防ぐため、あらかじめ場所の指定文字列を配列に格納しておく設計技法を学びました。
                 </p>
-<pre><code>// 4つのキーワードを配列に定義
+                <pre><code>// 4つのキーワードを配列に定義
 let insArr = ["beforebegin", "afterbegin", "beforeend", "afterend"];
 
 // 手書きを避け、配列のインデックスで安全に場所を指示
@@ -84,9 +86,9 @@ Ulist[0].insertAdjacentHTML(insArr[2], "&lt;p&gt;リスト後&lt;/p&gt;"); // be
                 <p>
                     要素を追加した「後」のタイミングにおいて、従来の get~系（動的オブジェクト）と query~系（静的オブジェクト）で、要素の認識能力にどのような決定的違いが現れるかを検証する重要な実験ログです。
                 </p>
-                
+
                 <div class="sub-heading">🛠️ 1. 初期状態の取得（この時点ではどちらも同じ要素数 2 を認識）</div>
-<pre><code>// 元の構造: &lt;ul&gt;&lt;li&gt;リスト1&lt;/li&gt;&lt;li&gt;リスト2&lt;/li&gt;&lt;/ul&gt;
+                <pre><code>// 元の構造: &lt;ul&gt;&lt;li&gt;リスト1&lt;/li&gt;&lt;li&gt;リスト2&lt;/li&gt;&lt;/ul&gt;
 const Ulist = document.getElementsByTagName("ul"); // 基準ulの取得
 
 const docLi = document.getElementsByTagName("li"); // ➔ 従来の get~（動的取得）
@@ -96,7 +98,7 @@ console.log(docLi.length); // 結果：2
 console.log(selLi.length); // 結果：2</code></pre>
 
                 <div class="sub-heading">🛠️ 2. insertAdjacentHTMLによる要素の動的追加を実行</div>
-<pre><code>let insArr = ["beforebegin", "afterbegin", "beforeend", "afterend"];
+                <pre><code>let insArr = ["beforebegin", "afterbegin", "beforeend", "afterend"];
 
 Ulist[0].insertAdjacentHTML(insArr[0], "&lt;p&gt;リスト前&lt;/p&gt;");
 Ulist[0].insertAdjacentHTML(insArr[1], "&lt;li&gt;リスト先頭&lt;/li&gt;"); // 💡 新しいliを追加
@@ -104,37 +106,40 @@ Ulist[0].insertAdjacentHTML(insArr[2], "&lt;li&gt;リスト最後&lt;/li&gt;"); 
 Ulist[0].insertAdjacentHTML(insArr[3], "&lt;p&gt;リスト後&lt;/p&gt;");</code></pre>
 
                 <div class="sub-heading">🔍 3. 核心：追加完了後のスタイル変更における、認識された数の違い</div>
-                <p>デベロッパーツール（F12）で確認すると、追加後の <code>li</code> の総数は物理的に**4つ**に増えています。この状態で両者の変数を使ってループ処理を行うと、デザインの適用範囲に決定的な差が生まれます。</p>
-                
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <p><strong>🔴 動的オブジェクト（docLi）による処理</strong></p>
-<pre style="margin-top: 5px;"><code>// 文字色を赤に変更
+                <p>デベロッパーツール（F12）で確認すると、追加後の <code>li</code> の総数は物理的に4つに増えています。この状態で両者の変数を使ってループ処理を行うと、デザインの適用範囲に決定的な差が生まれます。</p>
+
+                <!-- 💡 横並び(flex)設定を解除し、自然に縦に並ぶ綺麗なマークアップへ修正 -->
+                <div style="margin-top: 15px;">
+                    <p><strong>🔴 動的オブジェクト（docLi）による処理</strong></p>
+                    <pre style="margin-top: 5px;"><code>// 文字色を赤に変更
 for (let i = 0; i &lt; docLi.length; i++) {
     docLi[i].style.color = "red";
 }
 // 📝 結果：
 // ライブ状態で追尾しているため、自動で要素数「4」を認識。
 // 後から追加された先頭・最後のliも含めた【4個すべて】が赤くなります！</code></pre>
-                    </div>
-                    
-                    <div style="flex: 1; min-width: 280px;">
-                        <p><strong>🔵 静的オブジェクト（selLi）による処理</strong></p>
-<pre style="margin-top: 5px;"><code>// 文字色を青に変更
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <p><strong>🔵 静的オブジェクト（selLi）による処理</strong></p>
+                    <pre style="margin-top: 5px;"><code>// 文字色を青に変更
 for (let i = 0; i &lt; selLi.length; i++) {
     selLi[i].style.color = "blue";
 }
 // 📝 結果：
 // 取得した瞬間のスナップショットのまま固定されているため、要素数「2」から更新されません。
 // 追加のliは完全に無視され、【元々の2個だけ】が青くなります！</code></pre>
-                    </div>
                 </div>
 
-                <p class="note" style="font-size: 13.5px; color: #b91c1c; background-color: #fff5f5; padding: 12px; border-radius: 6px; margin-top: 15px; border-left: 4px solid #b91c1c;">
-                    <strong>⚠️ システム設計における超重要結論：</strong><br>
-                    「要素をJavaScriptで動的に追加した後に、その要素も含めて一括でイベントを設定したりデザインを変更したい」という仕様の場合、取得タイミングをずらす（追加後に再取得する）コードを書くか、あるいは最初から自動同期してくれる <code>getElementById</code> などの動的オブジェクト（HTMLCollection）を使って定数管理しておかないと、デザインが部分的に崩れる重篤なフロントエンドのバグに直結します。
-                </p>
+                <!-- 注意喚起・結論用の共通枠（赤系）に上書き -->
+                <div class="board-figure" style="background-color: #fff1f2; border: 1px solid #fecdd3; text-align: left; padding: 15px; margin-top: 25px;">
+                    <strong style="color: #b91c1c;">⚠️ システム設計における超重要結論：</strong><br>
+                    <p style="font-size: 13.5px; color: #9f1239; margin-top: 5px; margin-bottom: 0;">
+                        「要素をJavaScriptで動的に追加した後に、その要素も含めて一括でイベントを設定したりデザインを変更したい」という仕様の場合、取得タイミングをずらす（追加後に再取得する）コードを書くか、あるいは最初から自動同期してくれる <code>getElementById</code> などの動的オブジェクト（HTMLCollection）を使って定数管理しておかないと、デザインが部分的に崩れる重篤なフロントエンドのバグに直結します。
+                    </p>
+                </div>
             </div>
+            
             <p style="margin-top: 25px;">
                 <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
@@ -145,4 +150,5 @@ for (let i = 0; i &lt; selLi.length; i++) {
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

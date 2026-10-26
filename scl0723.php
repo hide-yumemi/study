@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -25,12 +27,12 @@
             <div class="note-section">
                 <h3 class="note-title">1. ボックスモデルとdisplayの初期値（表示形式）のルール</h3>
                 <p>HTMLの各タグには、ブラウザで表示する際のはじめの見た目のルール（表示形式の初期値）が定められており、それによってボックスモデルの余白やサイズが効くかどうかが厳格に分かれます 。</p>
-                
+
                 <div class="sub-heading">■ ブロックレベル要素（<code>display: block</code>）</div>
                 <p><strong>対象タグ：</strong> 見出し系（h1〜h6）、セクション系（section, mainなど）、<code>p</code>, <code>div</code>, <code>ul</code>, <code>ol</code>, <code>dl</code>, <code>dt</code>, <code>dd</code> など </p>
                 <ul>
                     <li>上から下へ縦に積み重なるように配置される。</li>
-                    <li>ボックスモデルの5種（<code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, <code>border</code>）の命令が**すべて有効**。</li>
+                    <li>ボックスモデルの5種（<code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, <code>border</code>）の命令がすべて有効。</li>
                 </ul>
 
                 <div class="sub-heading">■ リストアイテム要素（<code>display: list-item</code>）</div>
@@ -43,7 +45,7 @@
                 <p><strong>対象タグ：</strong> <code>em</code>, <code>strong</code>, <code>a</code>, <code>span</code> など </p>
                 <ul>
                     <li>文章の一部として左から右へ横並びに流れるように配置される。</li>
-                    <li>原則としてボックスモデルの5種を**すべて持たない（<code>width</code>/<code>height</code>が完全に効かない）** 。</li>
+                    <li>原則としてボックスモデルの5種をすべて持たない（<code>width</code>/<code>height</code>が完全に効かない） 。</li>
                     <li><strong>💡 実務での補足・検証：</strong> 左右の <code>margin</code> / <code>padding</code>、および4方向 of <code>border</code> は実際には適用されます 。ただし、上下のパディングやマージンを指定しても、前後の行を上下に押し退けることはせず、周りの行と重なって表示されます 。</li>
                 </ul>
 
@@ -61,13 +63,13 @@
             <div class="note-section">
                 <h3 class="note-title">2. 文字・画像の縦位置（vertical-align プロパティ）</h3>
                 <p>横に並んだ文字や画像に対して、上下の縦方向の配置の基準位置を揃えるために使用します 。※<code>display: inline;</code> または表（テーブル）関係のタグでのみ使用可能です 。</p>
-                
+
                 <div class="sub-heading">■ 主な設定値と位置（4本線と文字の基準）</div>
                 <ul>
                     <li><code>baseline</code>（初期値）：通常の文字の底辺に揃える 。</li>
                     <li><code>top</code>：行の最上部に揃える 。</li>
                     <li><code>text-top</code>：文字の頭に揃える 。</li>
-                    <li><code>middle</code>：エリアの中心と文字の中心を同じ位置にする（**縦の中央揃え**） 。</li>
+                    <li><code>middle</code>：エリアの中心と文字の中心を同じ位置にする（縦の中央揃え） 。</li>
                     <li><code>text-bottom</code>：文字の足元に揃える 。</li>
                     <li><code>bottom</code>：行の最下部に揃える 。</li>
                     <li><code>super</code>：上付き文字（ <code>sup</code> タグ）と同じ位置にする 。※実務補足：実際には1996年のCSS1から存在する非常に古い値で、どのブラウザでも昔から安定して動作します 。</li>
@@ -117,15 +119,16 @@
                 <p>Flexboxの各種配置プロパティを扱う上で、最も大切なのが「主軸」の理解です 。配置ルールは単なる絶対的な上下左右ではなく、<strong>向き（direction）によって縦横の役割がカチャカチャと入れ替わる動的な仕組み</strong>になっています 。</p>
 
                 <p><strong>・ <code>flex-direction: row;</code> （横並び：初期値）のとき</strong></p>
-                <p>主軸（並ぶ方向）は**「水平（横）方向」**、交差軸は**「垂直（縦）方向」**になります 。</p>
-                
+                <p>主軸（並ぶ方向）は「水平（横）方向」、交差軸は「垂直（縦）方向」になります 。</p>
+
                 <p style="margin-top: 15px;"><strong>・ <code>flex-direction: column;</code> （縦並び）のとき</strong></p>
-                <p>主軸（並ぶ方向）は**「垂直（縦）方向」**、交差軸は**「水平（横）方向」**へと完全に反転します 。そのため、水平方向を揃えるはずのプロパティが縦方向の制御（上寄せ・下寄せ）に変化します 。</p>
-                
-                <div class="info-box" style="background-color: #fff1f2; border-left: 4px solid #f43f5e; color: #b91c1c;">
+                <p>主軸（並ぶ方向）は「垂直（縦）方向」、交差軸は「水平（横）方向」へと完全に反転します 。そのため、水平方向を揃えるはずのプロパティが縦方向の制御（上寄せ・下寄せ）に変化します 。</p>
+
+                <p class="note" style="font-size: 13.5px; color: #1e3a8a; background-color: #eff6ff; padding: 12px; border-radius: 6px; margin-top: 10px;">
                     <strong>💡 flex-direction: column 時の横幅に関する補足：</strong><br>
-                    縦並び（column）にした際、子要素が自動で横いっぱいにビシッと広がって配置される現象が起きます 。これはwidthの初期値が100%に変わったからではなく、交差軸方向（横方向）に対して初期値の「 <code>align-items: stretch</code> （隙間なく引き伸ばす）」という機能が自動で働くためです 。
-                </div>
+                    縦並び（column）にした際、子要素が自動で横いっぱいにビシッと広がって配置される現象が起きます。これはwidthの初期値が100%に変わったからではなく、交差軸方向（横方向）に対して初期値の「 <code>align-items: stretch</code> （隙間なく引き伸ばす）」という機能が自動で働くためです。
+                </p>
+
 
                 <div class="sub-heading">■ flex-direction プロパティ（並び順・向き）</div>
                 <ul>
@@ -163,10 +166,11 @@
                 <a href="0706_0914.php" class="td-link">➔ 授業一覧ページへ戻る</a>
             </p>
         </main>
-  </div> <!-- .container -->
+    </div> <!-- .container -->
 
     <!-- 右下：トップボタン -->
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

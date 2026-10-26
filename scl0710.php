@@ -73,34 +73,34 @@
 
                 <div class="sub-heading">■ 重要性・強調を表すタグ</div>
                 <ul>
-                    <li><strong><code>&lt;strong&gt;</code>：</strong> 文や単語に**重要性、緊急性、あるいは深刻であること**を示す。SEO評価に関係する。<br>
+                    <li><strong><code>&lt;strong&gt;</code>：</strong> 文や単語に重要性、緊急性、あるいは深刻であることを示す。SEO評価に関係する。<br>
                         <span class="sample-badge">見え方</span> <strong>strong（太字）</strong>
                     </li>
 
-                    <li><strong><code>&lt;b&gt;</code>：</strong> 特別な重要性や強調の意味は持たない。SEO評価にも関連せず、単にテキストの中でキーワードや製品名などを**視覚的に目立たせたい場合**に使う。<br>
+                    <li><strong><code>&lt;b&gt;</code>：</strong> 特別な重要性や強調の意味は持たない。SEO評価にも関連せず、単にテキストの中でキーワードや製品名などを視覚的に目立たせたい場合に使う。<br>
                         <span class="sample-badge">見え方</span> <b>b（太字）</b>
                     </li>
 
-                    <li><strong><code>&lt;em&gt;</code>：</strong> **強調する語句**に使う。ブラウザ上ではイタリック体（斜体）になり、音声読み上げソフトではこの部分が強調されて読まれることが多い。<br>
+                    <li><strong><code>&lt;em&gt;</code>：</strong> 強調する語句に使う。ブラウザ上ではイタリック体（斜体）になり、音声読み上げソフトではこの部分が強調されて読まれることが多い。<br>
                         <span class="sample-badge">見え方</span> <em>em（斜体）</em>
                     </li>
 
-                    <li><strong><code>&lt;i&gt;</code>：</strong> SEO評価には関連しない。通常の文章とは異なる口調や、**外来語・専門用語・書名など**の一部分を区別してイタリック体にする際に使用する。<br>
+                    <li><strong><code>&lt;i&gt;</code>：</strong> SEO評価には関連しない。通常の文章とは異なる口調や、外来語・専門用語・書名などの一部分を区別してイタリック体にする際に使用する。<br>
                         <span class="sample-badge">見え方</span> <i>i（斜体）</i>
                     </li>
                 </ul>
 
                 <div class="sub-heading">■ 変更履歴・修正を表すタグ</div>
                 <ul>
-                    <li><strong><code>&lt;del&gt;</code>：</strong> 文書から物理的・論理的に**削除（delete）されたテキスト**であることを示す。打ち消し線が入る。<br>
+                    <li><strong><code>&lt;del&gt;</code>：</strong> 文書から物理的・論理的に削除（delete）されたテキストであることを示す。打ち消し線が入る。<br>
                         <span class="sample-badge">見え方</span> <del>del（打ち消し線）</del>
                     </li>
 
-                    <li><strong><code>&lt;ins&gt;</code>：</strong> 挿入（insert）の略で、文書に**新しく追加・挿入されたテキスト**であることを示す。下線が入る。<br>
+                    <li><strong><code>&lt;ins&gt;</code>：</strong> 挿入（insert）の略で、文書に新しく追加・挿入されたテキストであることを示す。下線が入る。<br>
                         <span class="sample-badge">見え方</span> <ins>ins（下線）</ins>
                     </li>
 
-                    <li><strong><code>&lt;s&gt;</code>：</strong> 現在は内容が変更されて**古い情報（無効な情報）になったこと**を示す。文書の誤りを修正する目的には使わず、新旧の価格表記（例：旧価格<s>200円</s>から新価格300円へ）などで <code>&lt;ins&gt;</code> と組み合わせて使うことが多い。<br>
+                    <li><strong><code>&lt;s&gt;</code>：</strong> 現在は内容が変更されて古い情報（無効な情報）になったことを示す。文書の誤りを修正する目的には使わず、新旧の価格表記（例：旧価格<s>200円</s>から新価格300円へ）などで <code>&lt;ins&gt;</code> と組み合わせて使うことが多い。<br>
                         <span class="sample-badge">見え方</span> <s>s（打ち消し線）</s>
                     </li>
                 </ul>
@@ -120,7 +120,7 @@
             <!-- セクション4 -->
             <div class="note-section">
                 <h3 class="note-title">特殊文字・実体参照とその他の設定</h3>
-                <p>HTMLのコード内で <code>&lt;</code> や <code>&gt;</code>、<code>&amp;</code> などの記号をそのまま書くと、ブラウザが「HTMLタグの開始・終了」や「プログラムコードの始まり」と誤認して画面が崩れる原因になります。そのため、記号を表示させたい場合は以下の**「特殊文字（文字実体参照）」**を使って入力します。</p>
+                <p>HTMLのコード内で <code>&lt;</code> や <code>&gt;</code>、<code>&amp;</code> などの記号をそのまま書くと、ブラウザが「HTMLタグの開始・終了」や「プログラムコードの始まり」と誤認して画面が崩れる原因になります。そのため、記号を表示させたい場合は以下の「特殊文字（文字実体参照）」を使って入力します。</p>
 
                 <table class="lesson-table">
                     <thead>
@@ -167,7 +167,7 @@
 
                 <div class="sub-heading" style="margin-top: 25px;">■ その他の便利なタグ・記号</div>
                 <ul>
-                    <li><strong><code>&lt;mark&gt;</code>（マーカー表示）：</strong> サイト内の検索結果画面などで、指定したキーワードを蛍光ペンのように **<mark>マーク</mark>** して目立たせるタグ。</li>
+                    <li><strong><code>&lt;mark&gt;</code>（マーカー表示）：</strong> サイト内の検索結果画面などで、指定したキーワードを蛍光ペンのように <mark>マーク</mark> して目立たせるタグ。</li>
                     <li><strong><code>&lt;hr&gt;</code>（区切り線）：</strong> コンテンツの話題転換（区切り）として使用する、閉じタグのない「空要素」。</li>
                 </ul>
 

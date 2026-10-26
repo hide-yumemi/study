@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -30,7 +32,7 @@
                 <p>
                     データ構造の一種で、フォルダ階層のように「親は1つだが、子は複数持てる」という枝分かれした関係を表現します。
                 </p>
-                
+
                 <div class="sub-heading">🌲 二分木（にぶんぎ）の基本用語</div>
                 <ul>
                     <li><strong>根（ルート）：</strong> 一番上に位置する、親を持たない最初のノード（節点）。</li>
@@ -38,13 +40,13 @@
                     <li><strong>節（ノード）：</strong> 枝（ブランチ）で結ばれたデータそれぞれのポイント。</li>
                 </ul>
                 <p>
-                    すべての「節」から伸びる枝が**2本以下**である木構造を **二分木** と呼びます。
+                    すべての「節」から伸びる枝が2本以下である木構造を 二分木 と呼びます。
                 </p>
 
                 <div class="sub-heading">分類と特徴</div>
                 <ul>
                     <li><strong>完全二分木：</strong> 根から順にすべての階層が完全に、かつ左詰めでノードが埋まっている綺麗な構造。</li>
-                    <li><strong>二分探索木：</strong> **「左の子 ＜ 親 ＜ 右の子」** という大小関係のルールを厳格に持たせた二分木。この性質により、データの高速な検索や追加がダイレクトに行えます。</li>
+                    <li><strong>二分探索木：</strong> 「左の子 ＜ 親 ＜ 右の子」 という大小関係のルールを厳格に持たせた二分木。この性質により、データの高速な検索や追加がダイレクトに行えます。</li>
                 </ul>
             </div>
 
@@ -52,7 +54,7 @@
             <div class="note-section">
                 <h3 class="note-title">2. 探索・整列（ソート）アルゴリズムの最適化</h3>
                 <p>限られた計算資源でいかに高速に処理を行うかのアプローチです。</p>
-                
+
                 <div class="sub-heading">🔍 データを探索する3大アルゴリズム</div>
                 <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14.5px;">
                     <thead>
@@ -65,11 +67,12 @@
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 10px;"><strong>線形探索</strong></td>
                             <td style="padding: 10px;">先頭から1個ずつ順番に調べる。データが並んでいなくても探せるが低速。<br>
-                            <code>for (let i = 0; i &lt; 配列数; i++) { if(比較) { flag = true; break; } }</code></td>
+                                <code>for (let i = 0; i &lt; 配列数; i++) { if(比較) { flag = true; break; } }</code>
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 10px;"><strong>二分探索</strong></td>
-                            <td style="padding: 10px;">中央の値（mid）を見てデータを半分ずつ絞り込んで探す。**データがあらかじめソート（昇順・降順）されていることが大前提条件。**</td>
+                            <td style="padding: 10px;">中央の値（mid）を見てデータを半分ずつ絞り込んで探す。データがあらかじめソート（昇順・降順）されていることが大前提条件。</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 10px;"><strong>ハッシュ法</strong></td>
@@ -82,8 +85,8 @@
                 <p>要素数 1〜10 の配列において、中央の添字 <code>mid = (lo + hi) ÷ 2</code> (小数点以下切り捨て) を用いて絞り込んでいく流れです。</p>
                 <ol>
                     <li><code>lo: 1, hi: 10, mid: 5</code> ➔ midの値より小さいと判明 ➔ 範囲を1〜4に絞る</li>
-                    <li><code>lo: 1, hi: 4,  mid: 2</code> ➔ midの値より小さいと判明 ➔ 範囲を1〜1に絞る</li>
-                    <li><code>lo: 1, hi: 1,  mid: 1</code> ➔ midの値より小さいと判明 ➔ hiが 1 - 1 = 0 になる</li>
+                    <li><code>lo: 1, hi: 4, mid: 2</code> ➔ midの値より小さいと判明 ➔ 範囲を1〜1に絞る</li>
+                    <li><code>lo: 1, hi: 1, mid: 1</code> ➔ midの値より小さいと判明 ➔ hiが 1 - 1 = 0 になる</li>
                     <li><code>lo: 1, hi: 0</code> ➔ <code>lo &gt; hi</code> (逆転現象)となり、データが存在しないためループ終了</li>
                 </ol>
 
@@ -144,7 +147,7 @@
             <div class="note-section">
                 <h3 class="note-title">4. UML（統一モデリング言語）の主要ダイアグラム</h3>
                 <p>システムの設計図や動作の流れを、誰もが共通して読めるように規格化された「図（ダイアグラム）」の規格です。</p>
-                
+
                 <div class="sub-heading">📋 試験に直結する4大代表図面</div>
                 <ul>
                     <li><strong>クラス図（構造図）：</strong> クラスがどのような情報（属性）と機能（メソッド）を持ち、他のクラスとどう関係しているかを静的に表す図。</li>
@@ -158,10 +161,10 @@
             <div class="note-section">
                 <h3 class="note-title">5. 基本情報科目B 疑似言語のアルゴリズムトレース</h3>
                 <p>科目Bで頻出する、配列の要素（左右）を反転させるアルゴリズムの構造解析ログです。疑似言語特有の <code>endif;</code> や <code>endfor;</code> といった明示的なブロック構造に注意します。</p>
-                
+
                 <div class="sub-heading">🔄 配列反転（スワップ処理）の裏側のトレース</div>
                 <p>配列の中身を入れ替える際、1つの変数の値をそのまま上書きすると元のデータが消滅するため、<strong>「一時退避用の変数（tmp）」</strong>を使用します。</p>
-                
+
                 <pre><code>// 要素数の半分（中央）までループを回す
 for (left = 1; left &lt;= 要素数の半分; left++):
     
@@ -193,4 +196,5 @@ endfor;</code></pre>
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

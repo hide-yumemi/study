@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- ノート・共通追加CSSを読み込み -->
     <link rel="stylesheet" href="scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -30,7 +32,7 @@
                 <p>
                     JavaScriptでデータを一時的に保存する「箱」の宣言方法には3種類の手法があり、その特徴や有効範囲（スコープ）によって厳格に使い分けます。
                 </p>
-                
+
                 <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14.5px;">
                     <thead>
                         <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
@@ -89,7 +91,7 @@ taxRate = 0.08; // ❌ エラー：Assignment to constant variable.</code></pre>
             <div class="note-section">
                 <h3 class="note-title">2. 識別子（名前付け）のルール</h3>
                 <p>変数名や定数名（識別子）を決める際には、エラーを防ぐための絶対的なルールと、業界内で決められている共通ルール（命名規則）があります。</p>
-                
+
                 <div class="sub-heading">❌ 絶対NGな命名（構文エラーになります）</div>
                 <ul>
                     <li><strong>頭文字に数字を使う：</strong> <code>let 1num;</code> はエラーになります。（〇 <code>let num1;</code>）</li>
@@ -108,7 +110,7 @@ taxRate = 0.08; // ❌ エラー：Assignment to constant variable.</code></pre>
             <div class="note-section">
                 <h3 class="note-title">3. データ型（Data Type）と型変換</h3>
                 <p>JavaScriptは、プログラムの実行中に状況に応じて自動で型を変換する特性（動的型付け言語）を持っています。</p>
-                
+
                 <div class="sub-heading">主要な基本型</div>
                 <ul>
                     <li><strong>数値型（Number）：</strong> <code>1</code> や <code>3.14</code> など、計算に使う。</li>
@@ -119,7 +121,7 @@ taxRate = 0.08; // ❌ エラー：Assignment to constant variable.</code></pre>
 
                 <p class="note" style="font-size: 13.5px; color: #b91c1c; background-color: #fff5f5; padding: 12px; border-radius: 6px; margin-top: 15px;">
                     ⚠️<strong>超重要：足し算の罠と型キャスト（型変換）</strong><br>
-                    <code>+</code> 演算子は、計算する値の片方が「文字型」であると、全体を数値の計算ではなく**文字列の連結**として処理してしまいます。<br>
+                    <code>+</code> 演算子は、計算する値の片方が「文字型」であると、全体を数値の計算ではなく文字列の連結として処理してしまいます。<br>
                     例： <code>4 + "1"</code> ➔ <strong><code>"41"</code></strong> （文字列型になる）<br><br>
                     これを回避して数値として正しく足し算したい場合、変数の前に <code>+</code> 記号をつけることで、数値型に一瞬でキャスト（強制変換）できます（単項プラス演算子）。<br>
                     例： <code>4 + (+"1")</code> ➔ <strong><code>5</code></strong> （数値型として計算成功）
@@ -137,21 +139,21 @@ taxRate = 0.08; // ❌ エラー：Assignment to constant variable.</code></pre>
             <!-- セクション4：各種演算子の挙動と注意点 -->
             <div class="note-section">
                 <h3 class="note-title">4. 各種演算子の挙動と注意点</h3>
-                
+
                 <div class="sub-heading">① インクリメント演算子（ ++ / -- ）</div>
                 <p>値を1増やす（減らす）演算子ですが、記述を「前」にするか「後」にするかで、他の処理（代入など）へ反映されるタイミングが完全に異なります。</p>
                 <ul>
-                    <li><strong>後置（ num++ ）：</strong> 現在の値をそのまま処理（代入など）に使用した**後に**、値を1増やします。</li>
-                    <li><strong>前置（ ++num ）：</strong> 何よりも先に自身の値を1増やした**後に**、次の処理へ移ります。</li>
+                    <li><strong>後置（ num++ ）：</strong> 現在の値をそのまま処理（代入など）に使用した後に、値を1増やします。</li>
+                    <li><strong>前置（ ++num ）：</strong> 何よりも先に自身の値を1増やした後に、次の処理へ移ります。</li>
                 </ul>
-<pre><code>let num3 = 1;
+                <pre><code>let num3 = 1;
 let result1 = num3++; // 先に result1 に 1 が入り、そのあとで num3 が 2 になる。
 
 let num4 = 1;
 let result2 = ++num4; // 先に num4 が 2 になり、そのあとで result2 に 2 が入る。</code></pre>
 
                 <div class="sub-heading">② 同値演算子（ == と === の違い）</div>
-                <p>値を比較する演算子ですが、実務においてはバグを防ぐため**「型まで厳格にチェックする <code>===</code>（厳密等価演算子）の使用」が絶対のルール**です。</p>
+                <p>値を比較する演算子ですが、実務においてはバグを防ぐため「型まで厳格にチェックする <code>===</code>（厳密等価演算子）の使用」が絶対のルールです。</p>
                 <ul>
                     <li><code>1 == "1"</code> ➔ <strong><code>true</code></strong> （型は違うが、ブラウザが自動変換して同じと判定してしまうため、バグの原因になります）</li>
                     <li><code>1 === "1"</code> ➔ <strong><code>false</code></strong> （数値と文字列のため、型が違うので厳格に弾いてくれます）</li>
@@ -176,4 +178,5 @@ let result2 = ++num4; // 先に num4 が 2 になり、そのあとで result2 �
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

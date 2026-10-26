@@ -208,7 +208,7 @@ console.log(clientRect.top);  // 現在の画面の上端からの距離</code><
 
                 <div class="sub-heading">基本形B：ユーザーのスクロール量の加算による「絶対座標」の算出</div>
                 <p>
-                    <code>getBoundingClientRect()</code> で得られる数値は、画面がスクロールされると刻一刻と変化してしまいます。そこで、ページ全体の左上角（大原点）からの**「絶対に変わらない絶対座標」**を求めるために、現在のスクロール量を足し算（マージ）します。
+                    <code>getBoundingClientRect()</code> で得られる数値は、画面がスクロールされると刻一刻と変化してしまいます。そこで、ページ全体の左上角（大原点）からの「絶対に変わらない絶対座標」を求めるために、現在のスクロール量を足し算（マージ）します。
                 </p>
                 <ul>
                     <li><strong>横方向の絶対位置：</strong> <code>window.pageXOffset</code>（または <code>window.scrollX</code>）＋ <code>clientRect.left</code></li>

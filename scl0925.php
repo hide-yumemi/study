@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <!-- クイズ専用CSSを読み込み -->
     <link rel="stylesheet" href="quiz.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -21,7 +23,7 @@
     <!-- メインレイアウト -->
     <div class="container">
         <main class="main-content">
-            
+
             <h1>9/25(金)職業訓練授業</h1>
             <p style="color: #666; font-size: 14px; margin-bottom: 35px;">制御構文の応用・代替構文（コロン構文）・switch文の注意点・配列のループ処理</p>
 
@@ -29,9 +31,9 @@
             <div class="note-section">
                 <h3 class="note-title">1. 制御構文とブロック文の閉じ構文</h3>
                 <p>PHPでは、HTMLの中に処理を埋め込む際、通常の波括弧 <code>{ }</code> を使用する以外に、HTML記述を邪魔しないスマートな書き方が用意されています。</p>
-                
+
                 <div class="sub-heading"> HTML混在時の通常の書き方（波括弧形式）</div>
-<pre><code>&lt;?php if ($display_message) { ?&gt;
+                <pre><code>&lt;?php if ($display_message) { ?&gt;
     &lt;p&gt;このメッセージは$display_messageがtrueのときにのみ表示されるメッセージです。&lt;/p&gt;
 &lt;?php } else { ?&gt;
     &lt;p&gt;このメッセージは$display_messageがfalseのときにのみ表示されるメッセージです。&lt;/p&gt;
@@ -43,9 +45,9 @@
                 <h3 class="note-title">2. 波括弧を使用しない「代替構文（コロン構文）」</h3>
                 <p>分岐・ループ命令において <code>{ }</code> を使用せず、開始の波括弧 <code>{</code> の代わりに<strong>コロン :</strong> を使い、閉じの波括弧 <code>}</code> の代わりに <strong>end~;</strong> を使用する構文です。</p>
                 <p>HTMLとPHPが複雑に入り組むテンプレートファイルなどで、構文の構造が視覚的に分かりやすくなるため非常によく使われます。</p>
-                
+
                 <div class="sub-heading"> コロン（:）を用いたif文の代替構文例</div>
-<pre><code>&lt;?php if ($display_message): ?&gt;
+                <pre><code>&lt;?php if ($display_message): ?&gt;
     &lt;p&gt;条件が一致（true）したときの表示&lt;/p&gt;
 &lt;?php else: ?&gt;
     &lt;p&gt;条件が不不一致（false）したときの表示&lt;/p&gt;
@@ -69,7 +71,7 @@
             <!-- 3. 多分岐命令（elseif）と switch case 文の注意点 -->
             <div class="note-section">
                 <h3 class="note-title">3. 多分岐命令（elseif）と switch case 文の注意点</h3>
-                
+
                 <div class="sub-heading"> elseif の半角スペースについて</div>
                 <p>JavaScriptなどでは <code>else if</code> と必ず半角スペースを空けて記述しますが、PHPでは <strong>else if と elseif の両方が使用可能</strong>です。半角スペースを空けずにくっつけて書いても文法エラーにはなりません。</p>
 
@@ -77,13 +79,13 @@
                 <p>PHPの switch case 文は、値の判定を <strong>緩やかな比較 ==</strong> （型を自動変換して比較）で行います。値もデータ型も完全に一致しているか調べる <strong>厳密な比較 ===</strong> を行いたい場合は、 switch文ではなく if 文で実装する必要があります。</p>
 
                 <p><strong>💡 【重要】なぜこの仕様に注意が必要か？</strong></p>
-                <p>PHPでは、Webフォームのユーザー入力値（テキストボックスの値など）を処理することが多くあります。ユーザーが半角数字（例： 10 ）だけを入力した場合でも、PHP側には**文字列（ "10" ）として渡される**ため、暗黙の型変換を考慮したプログラム設計が必要になります。</p>
+                <p>PHPでは、Webフォームのユーザー入力値（テキストボックスの値など）を処理することが多くあります。ユーザーが半角数字（例： 10 ）だけを入力した場合でも、PHP側には文字列（ "10" ）として渡されるため、暗黙の型変換を考慮したプログラム設計が必要になります。</p>
             </div>
             <!-- 4. 配列・連想配列とループ処理 -->
             <div class="note-section">
                 <h3 class="note-title">4. 配列・連想配列とループ処理</h3>
                 <p>PHPにおいて、データの集合をループ処理する方法は、配列の種類（添字配列と連想配列）によって使い分けるか、もしくは共通の構文を利用します。</p>
-                
+
                 <div class="sub-heading"> 連想配列へのアクセス（foreach文）</div>
                 <p>連想配列は添字配列（0から始まるインデックス）とは異なり、各要素に対して個別の「キー（文字列など）」を割り当てています。そのため、キーが分からないと目的のデータに直接アクセスできません。</p>
                 <p><strong>foreach 文</strong>を使用すると、内部の格納順に従って<strong>キーを指定することなく全データへ順番にアクセス</strong>でき、さらに「キー」と「値」の両方を同時に受け取ることができます。</p>
@@ -107,12 +109,12 @@
 
                 <div class="sub-heading"> foreach文の具体的な使い方（代替構文形式）</div>
                 <p><strong>① 値（value）のみを受け取る場合</strong></p>
-<pre><code>&lt;?php foreach ($配列変数 as $value): ?&gt;
+                <pre><code>&lt;?php foreach ($配列変数 as $value): ?&gt;
     // ループごとに $value を使用した処理を記述
 &lt;?php endforeach; ?&gt;</code></pre>
 
                 <p><strong>② キー（key）と値（value）の両方を受け取る場合</strong></p>
-<pre><code>&lt;?php foreach ($配列変数 as $key =&gt; $value): ?&gt;
+                <pre><code>&lt;?php foreach ($配列変数 as $key =&gt; $value): ?&gt;
     // ループごとに $key と $value の両方を使用可能
 &lt;?php endforeach; ?&gt;</code></pre>
             </div>
@@ -195,4 +197,5 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>

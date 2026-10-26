@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scl_style.css">
 </head>
+
 <body>
 
     <!-- 共通ヘッダー -->
@@ -24,7 +26,7 @@
             <!-- セクション1 -->
             <div class="note-section">
                 <h3 class="note-title">1. background プロパティ（一括指定・ショートハンド）</h3>
-                <p>背景に関する複数の独立したスタイルを、スペース区切りで1行にまとめて指定できる非常に強力なプロパティです。以下の個別プロパティの値を一度に引き受けることができます。</p>
+                <p>背景に関する複数の独立したスタイルをスペース区切りで1行にまとめて指定できる非常に強力なプロパティです。以下の個別プロパティの値を一度に引き受けることができます。</p>
                 <ul>
                     <li><code>background-color</code> （背景色）</li>
                     <li><code>background-image</code> （背景画像）</li>
@@ -36,7 +38,7 @@
                 </ul>
                 <div class="info-box">
                     <strong>💡 記述方法の鉄則：</strong><br>
-                    複数の値を1行に並べる際は、それぞれの値の間を**半角スペース**で区切って記述します。
+                    複数の値を1行に並べる際は、それぞれの値の間を半角スペースで区切って記述します。
                 </div>
             </div>
 
@@ -44,9 +46,9 @@
             <div class="note-section">
                 <h3 class="note-title">2. 背景画像の複数指定と詳細プロパティ</h3>
                 <p>現代のCSS設計では、背景に複数の画像を同時に読み込んで「レイヤー（重ね絵）」のように表現することが認められています。</p>
-                
+
                 <div class="sub-heading">■ 複数の画像指定（マルチ背景）</div>
-                <p>複数の背景画像を指定する際は、それぞれの画像を**カンマ（ <code>,</code> ）**で区切って記述します。</p>
+                <p>複数の背景画像を指定する際は、それぞれの画像をカンマ（ <code>,</code> ）で区切って記述します。</p>
                 <div class="demo-box">
                     background-image: url("image1.png"), url("image2.png");
                 </div>
@@ -77,15 +79,15 @@
                 <div class="sub-heading">■ background-size （背景画像のサイズ制御）</div>
                 <p>画像を拡大・縮小し、背景エリアに対してどのようにフィットさせるかを制御します。特にスマートフォン対応で真価を発揮します。</p>
                 <ul>
-                    <li><strong><code>contain</code> ：</strong> 画像のアスペクト比（縦横比）を100%完全に維持したまま、画像全体が**ボックスの枠からはみ出さない最大サイズ**まで自動拡大・縮小します。</li>
-                    <li><strong><code>cover</code> ：</strong> ボックスの背景エリア全体を**隙間なく100%埋め尽くす**ように、自動で拡大・縮小してフィットさせます。ボックスの比率と画像の比率が合わない場合、画像の一部分が自動的にお外へはみ出してカットされますが、背景を綺麗に埋められるため実務で圧倒的に多用されます。</li>
+                    <li><strong><code>contain</code> ：</strong> 画像のアスペクト比（縦横比）を100%完全に維持したまま、画像全体がボックスの枠からはみ出さない最大サイズまで自動拡大・縮小します。</li>
+                    <li><strong><code>cover</code> ：</strong> ボックスの背景エリア全体を隙間なく100%埋め尽くすように、自動で拡大・縮小してフィットさせます。ボックスの比率と画像の比率が合わない場合、画像の一部分が自動的にお外へはみ出してカットされますが、背景を綺麗に埋められるため実務で圧倒的に多用されます。</li>
                 </ul>
             </div>
             <!-- セクション3 -->
             <div class="note-section">
                 <h3 class="note-title">3. HTML5基準：表（テーブル）を作成する正しい構造設計</h3>
                 <p>HTMLで表を作るには <code>&lt;table&gt;</code> タグを使用しますが、現代のWeb標準では単にデータを並べるだけでなく、文書の意味を明確にするセマンティックな構造タグを組み合わせる必要があります。</p>
-                
+
                 <div class="sub-heading">■ テーブルを構成する主要な構造タグ</div>
                 <ul>
                     <li><strong><code>&lt;table&gt;</code> 〜 <code>&lt;/table&gt;</code>：</strong> 表全体の範囲を指定する最外枠の親タグ。</li>
@@ -102,7 +104,7 @@
                     <li><strong><code>&lt;th&gt;</code> （Table Header）：</strong> 見出しとなるセル。文字が自動で「太字・中央寄せ」になります。基本的に <code>&lt;thead&gt;</code> 内のtrの中で使用します。</li>
                     <li><strong><code>&lt;td&gt;</code> （Table Data）：</strong> 通常のデータを記述するセル。文字は「左寄せ」になります。</li>
                 </ul>
-<pre><code>&lt;table&gt;
+                <pre><code>&lt;table&gt;
   &lt;caption&gt;売上表&lt;/caption&gt;
   &lt;thead&gt;
     &lt;tr&gt; &lt;th&gt;商品名&lt;/th&gt; &lt;th&gt;価格&lt;/th&gt; &lt;/tr&gt;
@@ -117,17 +119,17 @@
             <div class="note-section">
                 <h3 class="note-title">4. 複数のセルを連結する高度な属性（colspan / rowspan）</h3>
                 <p>Excelの「セルの結合」と同じように、<code>&lt;th&gt;</code> や <code>&lt;td&gt;</code> タグに対して属性を追加することで、縦や横のマス目をダイナミックに繋ぎ合わせることができます。</p>
-                
+
                 <ul>
                     <li><strong>横方向に連結： <code>colspan="連結するマス数"</code></strong><br>
-                    Column Span（列の結合）の略です。指定した数値分、**右側に向かって**セルを一体化させます。</li>
-                    
+                        Column Span（列の結合）の略です。指定した数値分、右側に向かってセルを一体化させます。</li>
+
                     <li><strong>縦方向に連結： <code>rowspan="連結するマス数"</code></strong><br>
-                    Row Span（行の結合）の略です。指定した数値分、**下方向に向かって**セルを一体化させます。</li>
+                        Row Span（行の結合）の略です。指定した数値分、下方向に向かってセルを一体化させます。</li>
                 </ul>
                 <div class="info-box">
                     <strong>⚠️ セル連結時の超重要ポイント：</strong><br>
-                    例えば、横に2マス分連結（ <code>colspan="2"</code> ）させた場合、そのセル自身が2マス分の横幅を消費することになります。そのため、同じ行の中にある隣の <code>&lt;td&gt;</code> をコード上から**1個削除して間引き算**してあげないと、表の右端が外側にはみ出して崩れてしまうため注意が必要です。
+                    例えば、横に2マス分連結（ <code>colspan="2"</code> ）させた場合、そのセル自身が2マス分の横幅を消費することになります。そのため、同じ行の中にある隣の <code>&lt;td&gt;</code> をコード上から1個削除して間引き算してあげないと、表の右端が外側にはみ出して崩れてしまうため注意が必要です。
                 </div>
             </div>
 
@@ -138,7 +140,7 @@
 
                 <div class="sub-heading">■ 枠線の二重線バグを防ぐ（<code>border-collapse</code>）</div>
                 <p>初期状態（ <code>separate</code> ）のままテーブルの各セルに枠線（border）を引くと、セル同士の間に不自然な隙間が空いてしまい、すべての線が「二重線」になって古臭い見た目になります。</p>
-                <p>これを解消するために、**<code>table</code> タグに対して必ず以下の指定を行います。**</p>
+                <p>これを解消するために、<code>table</code> タグに対して必ず以下の指定を行います。</p>
                 <pre><code>table {
     border-collapse: collapse; /* 💡 隣り合う枠線をガッチャンコして1本の綺麗な線にする */
 }</code></pre>
@@ -157,4 +159,5 @@
     <a href="#" class="top-button" aria-label="ページトップへ戻る">▲ TOP</a>
 
 </body>
+
 </html>
