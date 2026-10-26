@@ -20,12 +20,8 @@
   <!-- 共通ヘッダー -->
   <?php include 'header.php'; ?>
 
-  <!-- メインレイアウト（広々とコードに集中できる1カラム仕様） -->
   <div class="container">
-    <main class="index-main-content" style="display: block; max-width: 1000px; margin: 0 auto;">
-
-      <h1>【PHP自主学習】フォーム送受信の仕組みとセキュリティ対策</h1>
-      <p style="color: #666; font-size: 14px; margin-bottom: 35px;">受講内容の深掘り研究：スーパーグローバル変数の制御・ファイルアップロード・サニタイズ技術</p>
+    <main class="main-content">
 
       <!-- 1. スーパーグローバル変数とHTMLフォームのメソッド属性 -->
       <div class="note-section">

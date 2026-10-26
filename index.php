@@ -19,12 +19,17 @@
             <ul class="history-list">
 
                 <li class="history-item">
+                    <strong class="history-date">2026/10/25</strong><br>
+                    📝 10/25 データベースを利用しサイト内検索の窓を作成・配置しました。
+                </li>
+
+                <li class="history-item">
                     <strong class="history-date">2026/10/21</strong><br>
                     📝 10/22 授業10/21の正規表現やpreg_matchを用いたメール・パスワードの検証ノートを追加しました。
                 </li>
 
                 <li class="history-item">
-                    <strong class="history-date">2026/10/20</strong><br>
+                    <strong class="history-date">2026/10/21</strong><br>
                     📝 10/21 自主学習ページの項目追加
                 </li>
 

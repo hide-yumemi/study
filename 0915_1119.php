@@ -176,6 +176,12 @@
                         <td><a href="scl1023.txt" class="td-link" target="_blank">授業の記述</a></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td class=" td-date">10/26</td>
+                        <td><a href="scl1026.php" class="td-link"></a></td>
+                        <td><a href="scl1026.txt" class="td-link" target="_blank">授業の記述</a></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </main>

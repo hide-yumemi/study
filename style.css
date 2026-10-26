@@ -84,7 +84,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: #ffffff;
-    min-width: 400px;
+    min-width: 220px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     border: 1px solid #ddd;
@@ -108,6 +108,27 @@ body {
     background-color: #f5f5f5;
     color: #1e3a8a;
 }
+
+/* タイトルと検索窓を横並びにする */
+.title-area {
+    display: flex;
+    justify-content: center; /* 中央に寄せる（左右の余白を均等に） */
+    align-items: center;     /* 上下の高さを中央で揃える */
+    gap: 20px;               /* タイトルと検索窓の間のスキマ */
+}
+
+
+/* ==========================================
+   🔗 自主学習ボタン（リンク化）の微調整
+   ========================================== */
+.study-link-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; /* 下線を消す */
+    color: #333333;        /* 文字色を他のボタンと統一 */
+    line-height: 20px;     /* ボタン内の縦中央揃えの調整 */
+}
+
 
 /* 親要素(.menu-item)にホバー時、子要素(.dropdown-content)を表示 */
 .menu-item:hover .dropdown-content {
@@ -269,7 +290,7 @@ body {
 }
 
 /* ==========================================
-   📚 授業の参考書紹介エリア専用スタイル
+    授業の参考書紹介エリア専用スタイル
    ========================================== */
 
 /* 本の紹介を包む薄グレーの枠（Flexboxで横並び化） */
@@ -306,4 +327,74 @@ body {
 
 .book-details p:last-child {
     margin-bottom: 0;
+}
+
+/* ==========================================
+   📱 スマホ・タブレット用（画面幅768px以下）のスタイル
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. ヘッダーの固定位置と余白の調整 */
+    body {
+        padding-top: 240px;
+        /* スマホはヘッダーが縦に伸びるので、本文との隙間を広げる */
+    }
+
+    .site-header {
+        padding: 10px;
+        /* 余白を狭くして画面いっぱいに使う */
+    }
+
+    /* 2. タイトルと検索窓のレイアウト */
+    .title-area {
+        flex-direction: column;
+        /* 横並びから「縦並び」に変更 */
+        gap: 10px;
+    }
+
+    .site-title {
+        font-size: 18px;
+        /* 文字を少し小さくして1行に収める */
+        margin-bottom: 5px;
+    }
+
+    /* 検索窓をスマホ幅に合わせて少し広げる */
+    .header-search-input {
+        width: 200px;
+    }
+
+    .header-search-input:focus {
+        width: 220px;
+    }
+
+    /* 3. ナビゲーションメニューの調整（ここが一番重要です） */
+    .nav-menu {
+        flex-wrap: wrap;
+        /* 画面幅に合わせて自動で折り返すようにする */
+        justify-content: center;
+        gap: 8px;
+        /* ボタン同士の間隔を少し狭く */
+    }
+
+    .menu-item {
+        padding-bottom: 0;
+    }
+
+    .menu-btn {
+        width: 130px;
+        /* ボタンの横幅を少しだけスリムに */
+        padding: 6px 12px;
+        /* 内側の余白を減らす */
+        font-size: 14px;
+        /* 文字を少し小さく */
+    }
+
+    /* 4. 本文エリア（.main-content）のスマホ対応 */
+    .main-content {
+        margin: 15px 10px 40px;
+        padding: 20px;
+        /* スマホでは内側の余白を狭くする */
+        border-radius: 15px;
+        /* 角丸を少し控えめに */
+    }
 }

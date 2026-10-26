@@ -30,7 +30,7 @@
             <!-- 1. クッキー（Cookie）の仕組み -->
             <div class="note-section">
                 <h3 class="note-title">1. クッキー（Cookie）の仕組み</h3>
-                <p>ユーザーがWebサイトにアクセス（HTML等のファイルを要求）した際、サーバー側はユーザーの**ブラウザ（クライアント側）に「クッキー」という小さなテキスト情報を保存**させることができます。</p>
+                <p>ユーザーがWebサイトにアクセス（HTML等のファイルを要求）した際、サーバー側はユーザーの**ブラウザ（クライアント側）に「クッキー」という小さなテキスト情報を保存させることができます。</p>
                 <p>保存されたクッキーデータは、ユーザーが再度そのサーバーへアクセスする際、ブラウザからサーバー側へ自動的に送信されます。</p>
 
                 <div class="sub-heading"> 主な利用シーン</div>
@@ -61,8 +61,41 @@ echo constant($target); // 出力結果: マイシステム
                 <ul>
                     <li><strong>従来のルール（黒板の解説）：</strong> 古いHTTP/1.1の仕様では、Locationに指定するのは「 http:// から始まる絶対パス」と厳格に決まっていました。基本に忠実で最も安全な指定方法となります。</li>
                     <li><strong>現代のルール（AIの解説）：</strong> 現代の新しい仕様ではルールが緩和され、 /next.php のような相対パスでもブラウザ側が自動変換してくれるようになったため、開発現場では短い相対パスも多く使われます。</li>
-                    <li><strong>$_SERVER と __DIR__ の組み合わせ：</strong> 「現在のフォルダ内にある別ページへの絶対URLを安全に自動計算する」ための非常に実務的なテクニックです。将来サイトのドメイン（URL）が変わっても、コードを書き直さずに自動で正しい移動先URLを組み立てられるメリットがあります。</li>
+                    <li><strong>$_SERVER や　 __DIR__ の組み合わせ：</strong> 「現在のフォルダ内にある別ページへの絶対URLを安全に自動計算する」ための非常に実務的なテクニックです。将来サイトのドメイン（URL）が変わっても、コードを書き直さずに自動で正しい移動先URLを組み立てられるメリットがあります。</li>
                 </ul>
+                <pre><code>&lt;?php
+1. プロトコル（http / https）の判定
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+
+2. ホスト名（ドメイン名 + ポート番号）の取得
+$host = $_SERVER['HTTP_HOST'];
+
+3. ドキュメントルートと現在のスクリプト（__DIR__）の物理パスの差分から、URLのパスを割り出す
+Windows環境のバックスラッシュ（\）をスラッシュ（/）に統一
+$doc_root   = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+$current_dir = str_replace('\\', '/', __DIR__);
+
+ドキュメントルート部分を削除して、Web上の絶対パスを取り出す
+$relative_path = str_replace($doc_root, '', $current_dir);
+
+先頭と末尾のスラッシュをクリーンアップ
+$url_path = '/' . trim($relative_path, '/');
+if ($url_path !== '/') {
+    $url_path .= '/';
+}
+
+4. すべてを結合して「現在のフォルダの絶対URL」を完成させる
+$current_folder_url = $protocol . $host . $url_path;
+// ==========================================
+// 実務での利用例：同じフォルダ内の「target.php」への遷移
+// ==========================================
+$destination_url = $current_folder_url . 'target.php';
+
+例: 出力やリダイレクトに利用
+echo '移動先URL: ' . htmlspecialchars($destination_url, ENT_QUOTES, 'UTF-8');
+header("Location: " . $destination_url);
+exit;
+?&gt;</code></pre>
             </div>
 
             <!-- 3. 各種データ型の詳細と注意点 -->
