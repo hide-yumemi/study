@@ -14,15 +14,19 @@
     <div class="container">
         <main class="main-content">
             <h2>授業 database / php</h2>
-            <p>日付：学校のスケジュールに合わせている為、休校などは飛ばしてます。</p>
-            <p>授業内容まとめ：当日のノートを元に、AIを活用しつつ補足をいれながらマークアップしたものです。</p>
-            <p>ノート：学校でのホワイトボードの記述・VScode内での記述を乗せております。（個人的なメモも載せてます）
-            <p>動作確認：phpはコードが隠れてしまう為,必要に応じて生コードを見せたりプログラムの動作確認を行います</p>
+            <div class="table-readme">
+                <p><strong>💡 各列の見方・注意点</strong></p>
+                <ul>
+                    <li><strong>日付：</strong> 授業日のみの掲載の為、連番ではありません（補足情報込）。</li>
+                    <li><strong>ノート：</strong> ホワイトボードの記述やVSCode内のメモ（私的メモ込）を掲載しています。</li>
+                    <li><strong>動作確認：</strong> 必要に応じて生コードの確認や、プログラムの実証デモを行えます。</li>
+                </ul>
+            </div>
             <table class="lesson-table">
                 <thead>
                     <tr>
                         <th>日付</th>
-                        <th>授業内容まとめ</th>
+                        <th>授業内容まとめ(ページ後半にはミニクイズがあります)</th>
                         <th>ノート</th>
                         <th>動作確認</th>
                     </tr>

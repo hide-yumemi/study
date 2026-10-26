@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* ==========================================
+   📄 1. ノートセクション・テキスト基本装飾
+   ========================================== */
+
 /* ノート全体の段落（各セクション）の装飾 */
 .note-section {
     background-color: #ffffff;
@@ -48,6 +52,35 @@
     color: #1e3a8a;
 }
 
+/* 強調文字（em / b）のカラー調整 */
+em {
+    color: #e07b00;
+    font-weight: bold;
+    font-style: normal;
+}
+b {
+    color: #1e3a8a;
+    background-color: #eff6ff;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* サブ見出し用 (7/7・7/8ノート用) */
+.sub-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+}
+
+
+/* ==========================================
+   💻 2. ソースコードブロック（pre / code）
+   ========================================== */
+
 /* ソースコードブロック（pre / code）の装飾 */
 pre {
     background-color: #f8fafc;
@@ -71,25 +104,17 @@ pre code {
 code {
     font-family: Consolas, Monaco, monospace;
     background-color: #f1f5f9;
-    color: #b91c1c; /* タグ特有 of 赤文字強調 */
+    color: #b91c1c; /* タグ特有の赤文字強調 */
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
 }
 
-/* 強調文字（em / b）のカラー調整 */
-em {
-    color: #e07b00;
-    font-weight: bold;
-    font-style: normal;
-}
-b {
-    color: #1e3a8a;
-    background-color: #eff6ff;
-    padding: 2px 4px;
-    border-radius: 4px;
-}
+
+/* ==========================================
+   🖼️ 3. 特殊タグ・画像回り（figure / dl / 連携手順ページ用拡張）
+   ========================================== */
 
 /* 本文内の dl タグを綺麗にする設定 (7/8ノート用) */
 .board-dl {
@@ -114,22 +139,23 @@ b {
     font-size: 14.5px;
 }
 
-/* 本文内の figure タグを綺麗にする設定 (7/8ノート用) */
-.board-figure {
+/* 本文内の figure タグ・画像関連の配置設定（手順ページ用コンテナも統合） */
+.board-figure, .note-img-container {
     background-color: #f0f4f8;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     padding: 15px;
-    margin: 20px 0;
+    margin: 20px 0 30px 0;
     text-align: center;
 }
-.board-figure img {
+.board-figure img, img.note-img {
     max-width: 100%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
     padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 .board-figcaption {
     margin-top: 10px;
@@ -137,79 +163,3 @@ b {
     font-weight: bold;
     color: #4a5568;
 }
-
-/* サブ見出し用 (7/7・7/8ノート用) */
-.sub-heading {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1e3a8a;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 4px;
-}
-
-/* ==========================================
-   クイズエリア専用の共通追加スタイル
-   ========================================== */
-
-/* クイズ全体を包む外枠 */
-.quiz-container {
-    border: 2px solid #cbd5e1;
-    background-color: #f8fafc;
-    padding: 25px 30px;
-    margin-bottom: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-}
-
-/* クイズ各問題の白いカード */
-.quiz-box {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-}
-.quiz-box:last-child {
-    margin-bottom: 5px; /* 最後だけ余白を調整 */
-}
-
-/* 問題文のテキスト */
-.quiz-question {
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: #1e293b;
-}
-
-/* 開閉アコーディオン（details） */
-.quiz-details {
-    cursor: pointer;
-    color: #1e3a8a;
-    font-size: 14.5px;
-}
-.quiz-details summary {
-    font-weight: bold;
-    outline: none;
-    margin-bottom: 5px;
-}
-
-/* アコーディオンが開いた中身（正解と解説） */
-.quiz-answer-area {
-    color: #334155;
-    background-color: #f1f5f9;
-    padding: 12px;
-    border-radius: 6px;
-    margin-top: 8px;
-    cursor: default; /* 解説文の上ではカーソルを通常に戻す */
-}
-
-/* 正解の緑文字強調 */
-.quiz-correct-text {
-    font-weight: bold;
-    color: #16a34a;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-

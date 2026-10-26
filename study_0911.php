@@ -191,9 +191,9 @@ for (let day = 1; day &lt;= totalDays; day++) {
 
       </section>
 
-      <!-- ➔ トップページへ戻るリンク -->
+      <!-- ← 前へ戻る（リンク先へ） -->
       <p style="margin-top: 25px;">
-        <a href="index.php" class="td-link">➔ トップページへ戻る</a>
+        <a href="study_index.php" class="td-link">←前のページへ</a>
       </p>
     </main>
   </div>

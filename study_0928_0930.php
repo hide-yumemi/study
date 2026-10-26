@@ -217,7 +217,10 @@ endif;</code></pre>
           </details>
         </div>
       </div> <!-- .quiz-container 終了 -->
-
+      <!-- ← 前へ戻る（リンク先へ） -->
+      <p style="margin-top: 25px;">
+        <a href="study_index.php" class="td-link">←前のページへ</a>
+      </p>
     </main>
   </div> <!-- .container -->
 

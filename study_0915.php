@@ -688,8 +688,9 @@ document.getElementById("calendar").innerHTML = box_table;
 
         });
     &lt;/script&gt;</code></pre>
+      <!-- ← 前へ戻る（リンク先へ） -->
       <p style="margin-top: 25px;">
-        <a href="0915_1119.php" class="td-link">➔ 授業一覧ページへ戻る</a>
+        <a href="study_index.php" class="td-link">←前のページへ</a>
       </p>
     </main>
   </div>
