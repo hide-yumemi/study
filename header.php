@@ -19,9 +19,9 @@
         <div class="menu-item">
             <button class="menu-btn">授業内容</button>
             <div class="dropdown-content">
-                <a href="./0609_0703.php">2026/06/09～07/03<br>基本情報処理（60時間）</a>
-                <a href="./0706_0914.php">2026/07/06～09/14<br>html/css/js(220時間)</a>
-                <a href="./0915_1119.php">2026/09/15～11/19<br>データベース・php(208時間)</a>
+                <a href="/0609_0703.php">2026/06/09～07/03...</a>
+                <a href="/0706_0914.php">2026/07/06～09/14...</a>
+                <a href="/0915_1119.php">2026/09/15～11/19...</a>
             </div>
         </div>
 
@@ -29,26 +29,26 @@
         <div class="menu-item">
             <button class="menu-btn">定期テスト</button>
             <div class="dropdown-content">
-                <a href="./test0629.php">第1回テスト問題</a>
-                <a href="./test0803.php">第2回テスト問題</a>
-                <a href="./test0903.php">第3回テスト問題</a>
-                <a href="./test1005.php">第4回テスト問題</a>
+                <a href="/test0629.php">第1回テスト問題</a>
+                <a href="/test0803.php">第2回テスト問題</a>
+                <a href="/test0903.php">第3回テスト問題</a>
+                <a href="/test1005.php">第4回テスト問題</a>
             </div>
         </div>
 
         <!-- 自主学習 -->
         <div class="menu-item">
-            <a href="./study_index.php" class="menu-btn study-link-btn">自主学習</a>
+            <a href="/study_index.php" class="menu-btn study-link-btn">自主学習</a>
         </div>
 
         <!-- 作品 -->
         <div class="menu-item">
             <button class="menu-btn">作品</button>
             <div class="dropdown-content">
-                <a href="./original_mannen.php">オリジナル万年カレンダー</a>
-                <a href="./original_squash.php">オリジナルスカッシュ</a>
+                <a href="/original_mannen.php">オリジナル万年カレンダー</a>
+                <a href="/original_squash.php">オリジナルスカッシュ</a>
             </div>
         </div>
-        </div>
     </nav>
+
 </header>

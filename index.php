@@ -70,11 +70,11 @@
 
                 <li class="history-item">
                     <strong class="history-date">2026/10/16</strong><br>
-                    📝 9/30までの授業ノートの追加　表のデザイン変更と授業内容のタイトルの要約化を行いました。
+                    📝 9/30までの授業ノートの追加:表のデザイン変更と授業内容のタイトルの要約化を行いました。
                 </li>
 
                 <li class="history-item">
-                    ・授業内容9/29までを更新<br>
+                    <strong class="history-date">2026/10/16</strong><br><br>
                     ・デザイン変更<br>
                     ・全授業ノートを1カラム仕様へ変更。<br>
                     ・全実技デモ画面「記述＆出力結果」へ変更。<br>

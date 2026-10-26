@@ -1,4 +1,8 @@
-/* 全体設定 */
+@charset "UTF-8";
+
+/* ==========================================
+   📦 1. 全体設定・共通のリセット
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,13 +12,14 @@
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #333333;
     background-color: #fcfcfc;
-    padding-top: 180px;
+    padding-top: 180px; /* 固定ヘッダーに隠れないための余白 */
 }
 
-/* 1. 固定ヘッダー部分 */
-
+/* ==========================================
+   固定ヘッダー部分
+   ========================================== */
 .site-header {
     position: fixed;
     top: 0;
@@ -27,31 +32,42 @@ body {
     padding: 15px 20px;
 }
 
+/* タイトルと検索窓を横並びにするエリア */
+.title-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
 .site-title {
-    text-align: center;
     font-size: 22px;
     color: #1e3a8a;
-    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* ヘッダー内のサイト説明文 */
 .site-desc {
     font-size: 13px;
-    color: #555;
+    color: #555555;
     display: block;
+    text-align: center;
     font-weight: normal;
-    margin-top: 5px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 5px auto 15px auto;
     line-height: 1.4;
 }
 
-/* ナビゲーションメニュー */
+/* ==========================================
+   🧭 2. ナビゲーションメニュー（PC用：標準）
+   ========================================== */
 .nav-menu {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* パソコン時は中央揃え */
     gap: 15px;
+    width: 100%;
 }
 
 .menu-item {
@@ -60,6 +76,9 @@ body {
 }
 
 .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -67,8 +86,18 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
-    width: 140px;
+    width: 140px; /* パソコン時は一律の幅に固定 */
     font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* 自主学習リンクボタン（aタグ）の微調整 */
+.study-link-btn {
+    text-decoration: none;
+    color: #333333;
+    line-height: 20px;
+    display: inline-block;
 }
 
 /* メニューにホバー時のボタン色 */
@@ -92,7 +121,7 @@ body {
 }
 
 .dropdown-content a {
-    color: #333;
+    color: #333333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -109,82 +138,40 @@ body {
     color: #1e3a8a;
 }
 
-/* タイトルと検索窓を横並びにする */
-.title-area {
-    display: flex;
-    justify-content: center; /* 中央に寄せる（左右の余白を均等に） */
-    align-items: center;     /* 上下の高さを中央で揃える */
-    gap: 20px;               /* タイトルと検索窓の間のスキマ */
-}
-
-
-/* ==========================================
-   🔗 自主学習ボタン（リンク化）の微調整
-   ========================================== */
-.study-link-btn {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none; /* 下線を消す */
-    color: #333333;        /* 文字色を他のボタンと統一 */
-    line-height: 20px;     /* ボタン内の縦中央揃えの調整 */
-}
-
-
 /* 親要素(.menu-item)にホバー時、子要素(.dropdown-content)を表示 */
 .menu-item:hover .dropdown-content {
     display: block;
 }
 
+/* ==========================================
+   📄 3. メインコンテンツエリア
+   ========================================== */
 .main-content {
     max-width: 1100px;
     margin: 30px auto 60px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     border-radius: 30px;
     padding: 40px;
     min-height: 500px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-.main-content h2 {
+.main-content h2,
+.main-content h3 {
     color: #1e3a8a;
     margin-bottom: 20px;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 10px;
 }
 
-
-/* 3. 画面右下のトップボタン */
-.top-button {
-    position: fixed;
-    bottom: 25px;
-    right: calc(50% - 550px - 20px - 70px);
-    background-color: #ff8c00;
-    color: white;
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 12px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background 0.3s;
-}
-
-@media (max-width: 1280px) {
-    .top-button {
-        right: 25px;
-    }
-}
-
 /* ==========================================
-   更新履歴・活動ログ（index.php専用）
+   🕒 4. 更新履歴・活動ログ（index.php専用）
    ========================================== */
 .history-list {
     list-style: none;
 }
 
-/* 各ログの枠線と余白 */
 .history-item {
     margin-bottom: 12px;
     border-bottom: 1px dashed #e2e8f0;
@@ -194,7 +181,6 @@ body {
     line-height: 1.6;
 }
 
-/* 日付の青文字強調 */
 .history-date {
     color: #1e3a8a;
     font-weight: bold;
@@ -202,8 +188,9 @@ body {
     margin-bottom: 4px;
 }
 
-
-/* 4.table枠組み */
+/* ==========================================
+   📊 5. 授業ノート・共通テーブル（PC用：標準）
+   ========================================== */
 .lesson-table {
     width: 100%;
     border-collapse: collapse;
@@ -217,7 +204,7 @@ body {
 .lesson-table td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
 }
 
 .lesson-table th {
@@ -227,10 +214,9 @@ body {
     border-bottom: 2px solid #1e3a8a;
 }
 
-
 .td-date {
     font-weight: bold;
-    color: #666;
+    color: #666666;
     width: 80px;
     text-align: center;
 }
@@ -239,33 +225,26 @@ body {
 .lesson-table th:nth-child(1),
 .lesson-table td:nth-child(1) {
     font-weight: bold;
-    color: #666;
+    color: #666666;
     width: 80px;
-    /* 元の横幅を維持 */
     text-align: center;
-    /* 中央寄せに統一 */
 }
 
 /* 3列目：生コードコピペ用列 */
 .lesson-table th:nth-child(3),
 .lesson-table td:nth-child(3) {
     width: 160px;
-    /* 「生コードコピペ用」が絶対に改行されない幅に拡張 */
     text-align: center;
-    /* ボタンの文字を中央に寄せて綺麗に整列 */
 }
 
 /* 4列目：動作確認列 */
 .lesson-table th:nth-child(4),
 .lesson-table td:nth-child(4) {
     width: 180px;
-    /* 「動作確認」が1行で美しく収まる幅に固定 */
     text-align: center;
-    /* リンク文字を中央に配置 */
-
 }
 
-/* リンクのデザイン */
+/* リンク各種のデザイン */
 .link-board {
     color: #1e3a8a;
     text-decoration: none;
@@ -285,15 +264,9 @@ body {
     text-decoration: underline;
 }
 
-.top-button:hover {
-    background-color: #e07b00;
-}
-
 /* ==========================================
-    授業の参考書紹介エリア専用スタイル
+   📖 6. 授業の参考書紹介エリア専用
    ========================================== */
-
-/* 本の紹介を包む薄グレーの枠（Flexboxで横並び化） */
 .book-container {
     background-color: #f9f9f9;
     padding: 20px;
@@ -301,21 +274,16 @@ body {
     border-left: 4px solid #1e3a8a;
     margin-top: 20px;
     display: flex;
-    /* 画像とテキストを横並びにする */
     align-items: center;
-    /* 上下を中央揃えにする */
     gap: 20px;
-    /* 画像とテキストの間の余白 */
 }
 
-/* 本の画像配置エリア */
 .book-image img {
     width: 100px;
     height: auto;
     display: block;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
 }
-
 
 .book-details {
     flex: 1;
@@ -330,35 +298,58 @@ body {
 }
 
 /* ==========================================
-   📱 スマホ・タブレット用（画面幅768px以下）のスタイル
+   🔼 7. 画面右下のトップボタン
+   ========================================== */
+.top-button {
+    position: fixed;
+    bottom: 25px;
+    right: calc(50% - 550px - 20px - 70px);
+    background-color: #ff8c00;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.top-button:hover {
+    background-color: #e07b00;
+}
+
+@media (max-width: 1280px) {
+    .top-button {
+        right: 25px;
+    }
+}
+
+/* ==========================================
+   📱 8. スマホ・タブレット用（画面幅768px以下）のスタイル
    ========================================== */
 @media (max-width: 768px) {
-
-    /* 1. ヘッダーの固定位置と余白の調整 */
     body {
-        padding-top: 240px;
-        /* スマホはヘッダーが縦に伸びるので、本文との隙間を広げる */
+        padding-top: 250px; /* スマホ時はヘッダーの高さに合わせて余白を拡張 */
     }
 
     .site-header {
         padding: 10px;
-        /* 余白を狭くして画面いっぱいに使う */
     }
 
-    /* 2. タイトルと検索窓のレイアウト */
+    /* タイトルエリアを縦並びにして画面内に収める */
     .title-area {
         flex-direction: column;
-        /* 横並びから「縦並び」に変更 */
         gap: 10px;
+        margin-bottom: 5px;
     }
 
     .site-title {
         font-size: 18px;
-        /* 文字を少し小さくして1行に収める */
-        margin-bottom: 5px;
+        text-align: center;
     }
 
-    /* 検索窓をスマホ幅に合わせて少し広げる */
     .header-search-input {
         width: 200px;
     }
@@ -367,34 +358,114 @@ body {
         width: 220px;
     }
 
-    /* 3. ナビゲーションメニューの調整（ここが一番重要です） */
+    .site-desc {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    /* メニューをきれいに「2行×2列」にする設定 */
     .nav-menu {
-        flex-wrap: wrap;
-        /* 画面幅に合わせて自動で折り返すようにする */
-        justify-content: center;
-        gap: 8px;
-        /* ボタン同士の間隔を少し狭く */
+        display: flex;
+        flex-wrap: wrap;         /* はみ出したら2行目に折り返す */
+        justify-content: center; /* ボタンを中央寄せ */
+        gap: 10px;
+        padding: 0 5px;
+        overflow-x: visible;     /* 横スクロール用の設定を完全に解除 */
+        white-space: normal;
     }
 
     .menu-item {
         padding-bottom: 0;
+        width: calc(50% - 5px);  /* 画面幅のちょうど半分の幅に固定（2列化） */
+        flex-shrink: 0;          /* ボタンを絶対に潰さない */
     }
 
     .menu-btn {
-        width: 130px;
-        /* ボタンの横幅を少しだけスリムに */
-        padding: 6px 12px;
-        /* 内側の余白を減らす */
+        width: 100%;             /* PC用の固定幅を無効化し横幅いっぱいにする */
+        padding: 10px 0;
         font-size: 14px;
-        /* 文字を少し小さく */
+        white-space: nowrap;     /* 文字の折り返しを絶対に防ぐ */
     }
 
-    /* 4. 本文エリア（.main-content）のスマホ対応 */
+    /* 本文エリアのスマホ調整 */
     .main-content {
         margin: 15px 10px 40px;
         padding: 20px;
-        /* スマホでは内側の余白を狭くする */
         border-radius: 15px;
-        /* 角丸を少し控えめに */
+    }
+
+    /* ------------------------------------------
+       テーブルをスマホで「縦並びのカード型」に解体する設定
+       （PCの詳細度に対抗するためにセレクタを細かく定義、!important全廃）
+       ------------------------------------------ */
+    .lesson-table, 
+    .lesson-table tbody, 
+    .lesson-table tr {
+        display: block; 
+        width: 100%;
+    }
+    
+    .lesson-table td,
+    .lesson-table td:nth-child(1),
+    .lesson-table td:nth-child(2),
+    .lesson-table td:nth-child(3),
+    .lesson-table td:nth-child(4) {
+        display: block;
+        width: 100%;
+        border: none; 
+        padding: 3px 5px;
+        text-align: left;
+    }
+
+    /* スマホ時はヘッダー（見出し行）を非表示にする */
+    .lesson-table thead,
+    .lesson-table th {
+        display: none;
+    }
+
+    /* 1行（カード）ごとの余白とスキマの調整 */
+    .lesson-table tr {
+        margin-bottom: 12px;
+        border: 1px solid #1e3a8a;
+        border-radius: 8px;
+        padding: 8px 10px;
+        background-color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* 1列目（日付バッジ）の個別調整 */
+    .lesson-table td:nth-child(1) {
+        display: inline-block;
+        width: auto;
+        background-color: #f4f6f9;
+        color: #1e3a8a;
+        font-size: 11px;
+        padding: 1px 6px;
+        border-radius: 3px;
+        margin-bottom: 3px;
+    }
+
+    /* 2列目（授業内容まとめ）の個別調整 */
+    .lesson-table td:nth-child(2) {
+        font-size: 14.5px;
+        font-weight: bold;
+        color: #333333;
+        padding-bottom: 6px;
+        border-bottom: 1px dashed #eeeeee; 
+        line-height: 1.4;
+    }
+
+    /* 3列目・4列目（各リンクボタン）をスマホで2列の横並びにする調整 */
+    .lesson-table td:nth-child(3),
+    .lesson-table td:nth-child(4) {
+        display: inline-block;
+        width: 48%; 
+        margin-top: 6px;
+        text-align: center;
+        font-size: 13.5px;
+    }
+    
+    .lesson-table td:nth-child(3) {
+        margin-right: 4%;
     }
 }
