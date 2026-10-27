@@ -108,6 +108,11 @@
                 </p>
 
                 <div class="sub-heading"> foreach文の具体的な使い方（代替構文形式）</div>
+                <p><strong>💡 構文の重要キーワード： <code>as</code> とは？</strong></p>
+                <p>foreach文の <code>as</code> は、PHPに対して<strong>「左側の配列データを、右側の変数名に移し替えながら（〜として）処理してね」</strong>と命令するための必須の決まり文句（構文ルール）です。省略したり、別の単語に変えたりすることはできません。</p>
+                <p>なお、<code>as</code> の後ろに指定する変数名（<code>$value</code> や <code>$key</code> など）は、その場で新しく作られる変数であるため、プログラムに合わせて<strong>自分が好きな変数名を自由につけることができます。</strong></p>
+                <br>
+
                 <p><strong>① 値（value）のみを受け取る場合</strong></p>
                 <pre><code>&lt;?php foreach ($配列変数 as $value): ?&gt;
     // ループごとに $value を使用した処理を記述

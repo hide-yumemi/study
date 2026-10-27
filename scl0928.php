@@ -96,29 +96,55 @@ function greet($message, $name = 'ゲスト') {
 greet('こんにちは'); // 「ゲストさん、こんにちは」と出力される
 ?&gt;</code></pre>
             </div>
+
             <!-- 4. 関数の引数（型指定 / タイプヒンティング） -->
             <div class="note-section">
                 <h3 class="note-title">4. 関数の引数（型指定 / タイプヒンティング）</h3>
                 <p>関数に渡される引数のデータ型をあらかじめ指定しておく仕組みです。これにより、意図しない型のデータが渡されて関数が誤作動を起こすのを未然に防ぐことができます。配列処理を行う際などに特によく活用されます。</p>
                 <p><strong>書き方：</strong> 型と引数名の間を「半角スペース」で区切って指定します。</p>
                 <pre><code>function 関数名(型 $引数名) { 〜 }</code></pre>
-                <p><strong>主要な型の一覧：</strong>
+
+                <p><strong>主要な型の一覧：</strong></p>
                 <ul>
                     <li><code>string</code> （文字列）</li>
                     <li><code>int</code> （整数）</li>
                     <li><code>float</code> （浮動小数点数）</li>
                     <li><code>bool</code> （論理値）</li>
                     <li><code>array</code> （配列）</li>
-            </div>
+                </ul>
 
+                <p class="note" style="font-size: 13.5px; color: #1e3a8a; background-color: #eff6ff; padding: 12px; border-radius: 6px; margin-top: 15px;">
+                    <strong>💡 【重要】「型宣言」と「型変換関数」の表記の違い：</strong><br>
+                    関数の引数部分に書くものは、データを入れる制限をかけるための<strong>「看板（型宣言）」</strong>です。そのため、純粋なデータ型名である <code>int</code> や <code>string</code> をそのまま記述します（<code>intval</code> などのように後ろに <code>val</code> は付きません）。
+                </p>
+            </div>
             <!-- 5. array_map() 関数 -->
             <div class="note-section">
-                <h3 class="note-title">5. array_map() 関数</h3>
+                <h3 class="note-title">5. array_map() 関数とデータ型変換</h3>
                 <p>第2引数に指定した配列のすべての要素に対して、第1引数に指定した関数（コールバック関数）を適用し、加工された新しい配列を返す組み込み関数です。</p>
+                <p>Webフォームから送られてきた文字列データを一括で数値に変換するなど、データのクレンジング処理で非常によく使われます。</p>
+
+                <div class="sub-heading"> 📐 型変換関数（〜val）の指定ルール</div>
+                <p><code>array_map()</code> を使って配列要素のデータ型を変換する（キャストする）場合、第1引数には<strong>「実際に変換処理を行う関数（マシーン）の名前」</strong>を文字列で指定します。</p>
+                <p>関数の引数に書く「型宣言（看板）」とは異なり、こちらは実行関数であるため、データ型名の後ろに <strong><code>val</code></strong>（Valueの略）を付ける必要があります。</p>
+
+                <p><strong>主要な型変換関数の全パターン：</strong></p>
                 <pre><code>&lt;?php
-// $arrayの全要素の型を文字列型（string）にした新しい配列$new_arrayを作成する
-$array = array(10, 20, 30);
-$new_array = array_map('strval', $array); // 結果: ['10', '20', '30']
+// 1. 整数型（int）への一括変換：intval()
+$strings = array('10', '20', '30');
+$integers = array_map('intval', $strings);      // 結果: [10, 20, 30]
+
+// 2. 文字列型（string）への一括変換：strval()
+$numbers = array(10, 20, 30);
+$strings2 = array_map('strval', $numbers);     // 結果: ['10', '20', '30']
+
+// 3. 浮動小数点数型（float）への一括変換：floatval()
+$prices = array('12.5', '99.9', '100');
+$floats = array_map('floatval', $prices);      // 結果: [12.5, 99.9, 100.0]
+
+// 4. 真偽値型（bool）への一括変換：boolval()
+$inputs = array(1, 0, 'text', '');
+$booleans = array_map('boolval', $inputs);     // 結果: [true, false, true, false]
 ?&gt;</code></pre>
             </div>
 
@@ -159,7 +185,7 @@ if (function_exists($name)) {
             <!-- 8. 参照（リファレンス） -->
             <div class="note-section">
                 <h3 class="note-title">8. 参照（リファレンス）</h3>
-                <p>メモリ上に保存された1つの同じ値を、複数の異なる変数が共有する仕組みです。変数を参照させるには、代入や引数定義の際に変数名の前に <strong>&amp; （アンパサンド）</strong> を付けます。</p>
+                <p>メモリ上に保存された1つの同じ値を、複数の異なる変数が共有する仕組みです。変数を参照させるするには、代入や引数定義の際に変数名の前に <strong>&amp; （アンパサンド）</strong> を付けます。</p>
                 <pre><code>&lt;?php
 $a = 1;
 $b = &amp;$a; // $bは$aを参照（値を共有）

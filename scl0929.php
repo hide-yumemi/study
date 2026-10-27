@@ -88,6 +88,15 @@
                 <p class="note" style="font-size: 13.5px; color: #1e3a8a; background-color: #eff6ff; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
                     <strong>💡 HTML側の必須ルール：</strong> ファイル送信を行う場合は、HTMLの <code>&lt;form&gt;</code> タグに必ず <code>method="post"</code> と <code>enctype="multipart/form-data"</code> の2つを指定する必要があります。これが無いとファイルデータがサーバーに送信されません。
                 </p>
+                <pre><code>&lt;!-- upload.html （送信側のHTML） --&gt;
+&lt;form action="upload.php" method="post" enctype="multipart/form-data"&gt; //<-決まり文句として覚る
+    
+    &lt;label for="user-file"&gt;アップロードするファイルを選択：&lt;/label&gt;
+    &lt;!-- type="file" でファイル選択ボタンを表示。name属性がPHP側のキーになります --&gt;
+    &lt;input type="file" name="upload_image" id="user-file"&gt;
+    
+    &lt;button type="submit"&gt;サーバーへ送信&lt;/button&gt;
+&lt;/form&gt;</code></pre>
 
                 <div class="sub-heading">3-1. PHPで受け取れるファイル情報</div>
                 <p>アップロードされたファイルの各種情報は、スーパーグローバル変数である二次元配列 <code>$_FILES['name属性値']</code> から取得できます。</p>
